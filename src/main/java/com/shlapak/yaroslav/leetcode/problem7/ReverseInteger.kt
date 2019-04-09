@@ -25,10 +25,10 @@ class Solution {
 }
 
 fun main() {
-    assertEquals(Solution().reverse(0), 0)
-    assertEquals(Solution().reverse(123), 321)
-    assertEquals(Solution().reverse(-123), -321)
-    assertEquals(Solution().reverse(120), 21)
-    assertEquals(Solution().reverse(Int.MAX_VALUE + 1), 0)
-    assertEquals(Solution().reverse(Int.MIN_VALUE - 1), 0)
+    assertEquals(0, Solution().reverse(0))
+    assertEquals(321, Solution().reverse(123))
+    assertEquals(-321, Solution().reverse(-123))
+    assertEquals(21, Solution().reverse(120))
+    assertEquals(0, Solution().reverse(Int.MAX_VALUE + 1))
+    assertEquals(0, Solution().reverse(Int.MIN_VALUE - 1))
 }

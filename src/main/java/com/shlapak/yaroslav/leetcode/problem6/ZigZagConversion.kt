@@ -46,18 +46,18 @@ class Solution {
 
 fun main() {
     //println(Solution().convert("PAYPALISHIRING", 5))
-    assertEquals(Solution().convert("PAYPALISHIRING", 2), "PYAIHRNAPLSIIG")
+    assertEquals("PYAIHRNAPLSIIG", Solution().convert("PAYPALISHIRING", 2))
     /*
     PYAIHRN
     APLSIIG
     */
-    assertEquals(Solution().convert("PAYPALISHIRING", 3), "PAHNAPLSIIGYIR")
+    assertEquals("PAHNAPLSIIGYIR", Solution().convert("PAYPALISHIRING", 3))
     /*
     P   A   H   N
     A P L S I I G
     Y   I   R
     */
-    assertEquals(Solution().convert("PAYPALISHIRING", 4), "PINALSIGYAHRPI")
+    assertEquals("PINALSIGYAHRPI", Solution().convert("PAYPALISHIRING", 4))
     /*
     P     I    N
     A   L S  I G
@@ -65,7 +65,7 @@ fun main() {
     P     I
     */
 
-    assertEquals(Solution().convert("PAYPALISHIRING", 5), "PHASIYIRPLIGAN")
+    assertEquals("PHASIYIRPLIGAN", Solution().convert("PAYPALISHIRING", 5))
     /*
     P       H
     A     S I
@@ -73,7 +73,7 @@ fun main() {
     P L     I G
     A       N
     */
-    assertEquals(Solution().convert("A", 1), "A")
-    assertEquals(Solution().convert("A", 0), "A")
-    assertEquals(Solution().convert("AB", 1), "AB")
+    assertEquals("A", Solution().convert("A", 1))
+    assertEquals("A", Solution().convert("A", 0))
+    assertEquals("AB", Solution().convert("AB", 1))
 }
