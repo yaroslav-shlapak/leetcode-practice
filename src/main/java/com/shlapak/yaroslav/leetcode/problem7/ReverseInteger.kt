@@ -11,7 +11,7 @@ class Solution {
         if (x / 10 == 0) return x
 
         val s = x.toString()
-        val res = StringBuffer()
+        val res = StringBuilder()
         if (s[0] == '-') res.append("-")
         s.reversed().asSequence().filter { it.isDigit() }.forEach { char ->
             res.append(char)

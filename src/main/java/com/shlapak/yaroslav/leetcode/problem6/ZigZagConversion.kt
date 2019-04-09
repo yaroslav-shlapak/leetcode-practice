@@ -18,7 +18,7 @@ class Solution {
             list[i].append(char)
         }
 
-        val res = StringBuffer()
+        val res = StringBuilder()
         list.asSequence().forEach {
             res.append(it)
         }
