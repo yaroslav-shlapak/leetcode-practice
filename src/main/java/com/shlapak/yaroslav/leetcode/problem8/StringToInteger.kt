@@ -12,28 +12,38 @@ class Solution {
             return 0
         }
         val s = StringBuilder()
-        str.asSequence().forEach { char ->
-            if (char.isDigit() || char == '-') {
-                s.append(char)
-            } else if (char != ' ' && s.isEmpty()) {
-                return 0
+        run loop@{
+            str.asSequence().forEach { char ->
+                when {
+                    char.isDigit() -> {
+                        s.append(char)
+                    }
+                    s.isEmpty() && (char == '-' || char == '+') -> {
+                        s.append(char)
+                    }
+                    char != ' ' && s.isEmpty() -> {
+                        return 0
+                    }
+                    !char.isDigit() && s.isNotEmpty() -> {
+                        return@loop
+                    }
+                }
             }
         }
 
-        val res = try {
-            s.toString().toLong()
+        return try {
+            s.toString().toInt()
         } catch (e: Throwable) {
-            0L
-        }
-        return when {
-            (res >= Int.MAX_VALUE) -> {
-                Int.MAX_VALUE
-            }
-            (res <= Int.MIN_VALUE) -> {
-                Int.MIN_VALUE
-            }
-            else -> {
-                res.toInt()
+            when {
+                s.length > 4 && s[0] == '-' -> {
+                    Int.MIN_VALUE
+                }
+                s.length > 4 -> {
+                    Int.MAX_VALUE
+                }
+                else -> {
+                    0
+                }
             }
         }
     }
@@ -55,4 +65,10 @@ fun main() {
     assertEquals(0, Solution().myAtoi(""))
     assertEquals(0, Solution().myAtoi(" "))
     assertEquals(0, Solution().myAtoi("-"))
+    assertEquals(3, Solution().myAtoi("3.14"))
+    assertEquals(1, Solution().myAtoi("+1"))
+    assertEquals(123, Solution().myAtoi("   +123"))
+    assertEquals(-12, Solution().myAtoi("  -0012a42"))
+    assertEquals(Int.MAX_VALUE, Solution().myAtoi("20000000000000000000"))
+    assertEquals(-5, Solution().myAtoi("-5-"))
 }
