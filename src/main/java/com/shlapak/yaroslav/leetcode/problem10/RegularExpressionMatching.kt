@@ -2,6 +2,7 @@ package com.shlapak.yaroslav.leetcode.problem10
 
 /**
  * Created on 2019/04/10.
+ * https://leetcode.com/problems/regular-expression-matching/
  */
 class Solution {
     fun isMatch2(s: String, p: String): Boolean {
