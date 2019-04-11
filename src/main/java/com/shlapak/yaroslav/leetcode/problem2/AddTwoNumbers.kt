@@ -25,7 +25,7 @@ class Solution {
             var div = 0
             var root: ListNode? = null
             var res: ListNode? = root
-            while(next1 != null || next2 != null) {
+            while (next1 != null || next2 != null) {
                 val sum = (next1?.`val` ?: 0) + (next2?.`val` ?: 0) + div
                 val rem = sum % 10
                 div = sum / 10
@@ -58,7 +58,7 @@ class Solution {
             var div = 0
             var root: ListNode? = null
             var res: ListNode? = root
-            while(next1 != null || next2 != null) {
+            while (next1 != null || next2 != null) {
                 val sum = (next1?.`val` ?: 0) + (next2?.`val` ?: 0) + div
                 val rem = sum % 10
                 div = sum / 10

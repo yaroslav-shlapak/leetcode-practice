@@ -13,7 +13,7 @@ class Solution {
         }
         val list = MutableList(size = numRows, init = { StringBuffer() })
 
-        s.asSequence().forEachIndexed{ index, char ->
+        s.asSequence().forEachIndexed { index, char ->
             val i = calculateIndex(index, numRows)
             list[i].append(char)
         }

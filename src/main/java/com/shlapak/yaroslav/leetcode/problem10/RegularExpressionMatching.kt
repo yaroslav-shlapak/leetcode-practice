@@ -8,6 +8,7 @@ class Solution {
     fun isMatch2(s: String, p: String): Boolean {
         return s.matches(p.toRegex())
     }
+
     fun isMatch(s: String, p: String): Boolean {
         var result = false
         when {

@@ -23,7 +23,7 @@ class Solution {
         var i2 = 0
         var i = 0
         while (i < arr.size) {
-            if(nums1.getOrLast(i1) < nums2.getOrLast(i2)) {
+            if (nums1.getOrLast(i1) < nums2.getOrLast(i2)) {
                 if (i1 < nums1.size) {
                     arr[i] = nums1.getOrLast(i1)
                     i1++
