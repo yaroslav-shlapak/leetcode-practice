@@ -35,6 +35,24 @@ dependencies {
 
     // Test assertion
     implementation "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
+
+    // Test spek2
+    testImplementation "org.spekframework.spek2:spek-dsl-jvm:$spekVersion"
+    testImplementation "org.spekframework.spek2:spek-runner-junit5:$spekVersion"
+
+    // Test kotlin
+    testImplementation "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
+
+    // Test junit
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation"de.mannodermaus.junit5:android-instrumentation-test-runner:$junit5RunnerVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion"
+
+    // test assertion libtestRuntimeOnly
+    testImplementation "io.kotlintest:kotlintest-runner-junit5:$kotlinTestVersion"
+    testImplementation "io.mockk:mockk:$mockkVersion"
 }
 
 
