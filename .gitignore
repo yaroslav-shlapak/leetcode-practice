@@ -1,14 +1,6 @@
 .gradle/
 .idea/
-build/classes/main/META-INF/
-build/classes/test/
-build/kotlin-classes/main/META-INF/
-build/kotlin/
-build/tmp/
 leetcode-practice.iml
 local.properties
-src/test/
-build/classes/main/com/
-build/kotlin-classes/main/com/
-build/libs/
+
 /build/
