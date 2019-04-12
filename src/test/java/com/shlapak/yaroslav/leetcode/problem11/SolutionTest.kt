@@ -6,6 +6,9 @@ import org.spekframework.spek2.Spek
 /**
  * Created on 2019/04/11.
  */
+/** tests for
+ * @see com.shlapak.yaroslav.leetcode.problem11.Solution
+ **/
 object SolutionTest : Spek({
     val inputs = mapOf(
             intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7) to 49
