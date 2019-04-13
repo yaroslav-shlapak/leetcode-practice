@@ -30,7 +30,7 @@ object SolutionTest : Spek({
 
     )
 
-    group("intToRoman") {
+    group("romanToInt") {
         inputs.asSequence().forEach { (expected, input) ->
             test("input: $input expected: $expected") {
                 Solution().romanToInt(input) shouldBe expected
