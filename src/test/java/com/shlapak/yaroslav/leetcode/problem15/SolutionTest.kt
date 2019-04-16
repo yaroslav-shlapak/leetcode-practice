@@ -3,8 +3,6 @@ package com.shlapak.yaroslav.leetcode.problem15
 import io.kotlintest.shouldBe
 import org.spekframework.spek2.Spek
 
-import org.junit.jupiter.api.Assertions.*
-
 /**
  * Created on 2019/04/13.
  */
@@ -20,7 +18,7 @@ object SolutionTest : Spek({
                     )
     )
 
-    group("longestCommonPrefix") {
+    group("threeSum") {
         inputs.asSequence().forEach { (input, expected) ->
             test("input: ${input.asList()} expected: $expected") {
                 Solution().threeSum(input) shouldBe expected
