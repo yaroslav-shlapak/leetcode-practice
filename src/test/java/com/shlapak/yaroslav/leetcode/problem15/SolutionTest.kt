@@ -3,12 +3,10 @@
 import com.google.gson.Gson
 import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getExpected
 import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getInput
-import io.kotlintest.matchers.collections.shouldContain
 import io.kotlintest.matchers.collections.shouldContainAll
-import io.kotlintest.matchers.collections.shouldContainExactly
-import io.kotlintest.shouldBe
 import org.spekframework.spek2.Spek
 import java.io.File
+import java.nio.file.Paths
 
 /**
  * Created on 2019/04/13.
@@ -53,7 +51,8 @@ object SolutionTest : Spek({
         }
     }
 }) {
-    val path = "/home/yaroslav/sources/pet/leetcode-practice/src/test/java/com/shlapak/yaroslav/leetcode/problem15/"
+    val path = Paths.get("").toAbsolutePath().toString() +
+            "/src/test/java/com/shlapak/yaroslav/leetcode/problem15/"
 
     fun getInput(): IntArray  {
         val name = "input.json"
