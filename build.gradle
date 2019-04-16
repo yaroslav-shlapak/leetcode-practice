@@ -36,6 +36,9 @@ dependencies {
     // Test assertion
     implementation "org.jetbrains.kotlin:kotlin-test:$kotlinVersion"
 
+    // GSON
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
     // Test spek2
     testImplementation "org.spekframework.spek2:spek-dsl-jvm:$spekVersion"
     testImplementation "org.spekframework.spek2:spek-runner-junit5:$spekVersion"
