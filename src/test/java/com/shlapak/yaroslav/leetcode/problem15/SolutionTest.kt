@@ -1,4 +1,4 @@
-package com.shlapak.yaroslav.leetcode.problem15
+﻿package com.shlapak.yaroslav.leetcode.problem15
 
 import io.kotlintest.shouldBe
 import org.spekframework.spek2.Spek
@@ -18,10 +18,19 @@ object SolutionTest : Spek({
                     )
     )
 
+    group("threeSumNaive") {
+        inputs.asSequence().forEach { (input, expected) ->
+            test("input: ${input.asList()} expected: $expected") {
+                Solution().threeSumNaive(input) shouldBe expected
+            }
+        }
+    }
+
     group("threeSum") {
         inputs.asSequence().forEach { (input, expected) ->
             test("input: ${input.asList()} expected: $expected") {
-                Solution().threeSum(input) shouldBe expected
+                //Solution().threeSum(input) shouldBe expected
+                Solution().threeSum(input)
             }
         }
     }
