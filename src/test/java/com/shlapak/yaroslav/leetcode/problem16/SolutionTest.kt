@@ -19,7 +19,20 @@ object SolutionTest : Spek({
             ) to 2
     )
 
-    group("threeSumNaive") {
+    group("threeSumClosestNive") {
+        inputs.asSequence().forEach { (param, expected) ->
+            test("param.target: ${param.target}, expected: $expected") {
+                val actual = Solution().threeSumClosestNaive(
+                        nums = param.nums,
+                        target = param.target
+                )
+
+                actual shouldBe expected
+            }
+        }
+    }
+
+    group("threeSumClosest") {
         inputs.asSequence().forEach { (param, expected) ->
             test("param.target: ${param.target}, expected: $expected") {
                 val actual = Solution().threeSumClosest(
