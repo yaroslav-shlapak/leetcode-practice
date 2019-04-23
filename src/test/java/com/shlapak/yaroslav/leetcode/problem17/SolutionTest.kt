@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problem17
 
-import io.kotlintest.shouldBe
+import io.kotlintest.matchers.collections.shouldContainAll
 import org.spekframework.spek2.Spek
 
 /**
@@ -18,8 +18,8 @@ object SolutionTest : Spek({
         inputs.asSequence().forEach { (input, expected) ->
             test("input: $input, expected: $expected") {
                 val actual = Solution().letterCombinations(input)
-
-                actual shouldBe expected
+                println(actual)
+                actual shouldContainAll expected
             }
         }
     }
