@@ -1,9 +1,9 @@
 ﻿package com.shlapak.yaroslav.leetcode.problem15
 
 import com.google.gson.Gson
+import com.shlapak.yaroslav.leetcode.getSting
 import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getExpected
 import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getInput
-import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getSting
 import io.kotlintest.matchers.collections.shouldContainAll
 import org.spekframework.spek2.Spek
 import java.io.File
@@ -98,33 +98,5 @@ object SolutionTest : Spek({
         val s = file.readText()
         val gson = Gson()
         return gson.fromJson<List<List<Int>>>(s, List::class.java)
-    }
-
-    fun IntArray.getSting(): String {
-        return when (val size = this.size) {
-            0 -> {
-                this.toString()
-            }
-            in 0..5 -> {
-                this.slice(0 until size).toString()
-            }
-            else -> {
-                this.slice(0 until 5).toString()
-            }
-        }
-    }
-
-    fun List<List<Int>>.getSting(): String {
-        return when (val size = this.size) {
-            0 -> {
-                this.toString()
-            }
-            in 0..5 -> {
-                this.slice(0 until size).toString()
-            }
-            else -> {
-                this.slice(0 until 5).toString()
-            }
-        }
     }
 }
