@@ -14,7 +14,7 @@ package com.shlapak.yaroslav.leetcode.problem19
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
  */
 class Solution {
-    fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+    fun removeNthFromEndFirst(head: ListNode?, n: Int): ListNode? {
         return if (head == null) {
             null
         } else {
@@ -32,6 +32,25 @@ class Solution {
             ln?.next = ln?.next?.next
 
             if (key < 0) head.next else head
+        }
+    }
+
+    fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+        return if (head == null) {
+            null
+        } else {
+            val list = mutableListOf<ListNode?>()
+            var next = head
+            while (next != null) {
+                list.add(next)
+                next = next.next
+            }
+            val index = list.size - n - 1
+            val ln = list.getOrNull(index)
+            println("index: $index, val: ${ln?.`val`}")
+            ln?.next = ln?.next?.next
+
+            if (index < 0) head.next else head
         }
     }
 }
