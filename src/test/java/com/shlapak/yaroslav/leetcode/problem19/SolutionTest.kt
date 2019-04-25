@@ -10,28 +10,44 @@ object SolutionTest : Spek({
     val inputs = mapOf(
             Prameter(
                     listOf(1, 2, 3, 4, 5).toListNode(),
-                    2
-            ) to listOf(1, 2, 4, 5).toListNode(),
-            Prameter(
-                    listOf(1).toListNode(),
-                    1
-            ) to listOf(1).toListNode(),
-            Prameter(
-                    listOf(1, 2).toListNode(),
                     0
-            ) to listOf(2).toListNode(),
-            Prameter(
-                    listOf(1).toListNode(),
-                    0
-            ) to null,
+            ) to listOf(1, 2, 3, 4, 5).toListNode(),
             Prameter(
                     listOf(1, 2, 3, 4, 5).toListNode(),
-                    4
+                    1
             ) to listOf(1, 2, 3, 4).toListNode(),
             Prameter(
                     listOf(1, 2, 3, 4, 5).toListNode(),
                     2
-            ) to listOf(1, 2, 3, 5).toListNode()
+            ) to listOf(1, 2, 3, 5).toListNode(),
+            Prameter(
+                    listOf(1, 2, 3, 4, 5).toListNode(),
+                    3
+            ) to listOf(1, 2, 4, 5).toListNode(),
+            Prameter(
+                    listOf(1, 2, 3, 4, 5).toListNode(),
+                    4
+            ) to listOf(1, 3, 4, 5).toListNode(),
+            Prameter(
+                    listOf(1, 2, 3, 4, 5).toListNode(),
+                    5
+            ) to listOf(2, 3, 4, 5).toListNode(),
+            Prameter(
+                    listOf(1, 2).toListNode(),
+                    1
+            ) to listOf(1).toListNode(),
+            Prameter(
+                    listOf(1).toListNode(),
+                    0
+            ) to listOf(1).toListNode(),
+            Prameter(
+                    listOf(1).toListNode(),
+                    1
+            ) to null,
+            Prameter(
+                    listOf(1, 2, 3, 4, 5, 6).toListNode(),
+                    2
+            ) to listOf(1, 2, 3, 4, 6).toListNode()
 
     )
 
@@ -96,4 +112,15 @@ fun ListNode?.toIntList(): List<Int> {
         }
     }
     return list
+}
+
+fun ListNode?.copy(): ListNode? {
+    return if (this == null) {
+        null
+    } else {
+        val res = ListNode(this.`val`)
+        val next = this.next
+        res.next = this.next
+        res
+    }
 }

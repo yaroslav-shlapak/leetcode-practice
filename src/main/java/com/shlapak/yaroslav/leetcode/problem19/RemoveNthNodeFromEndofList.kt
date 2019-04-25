@@ -18,41 +18,20 @@ class Solution {
         return if (head == null) {
             null
         } else {
-            val res = if (n == 0) {
-                val next = head.next
-                if (next != null) {
-                    next
-                } else {
-                    null
-                }
-            } else {
-                head
-            }
-
-            var next = res?.next
-            var count = 2
+            val map = mutableMapOf<Int, ListNode?>()
+            var next = head
+            var count = 0
             while (next != null) {
-                if (count != n) {
-                    next = next.next
-                } else {
-                    println(next.next?.`val`)
-                    next.next = next.next?.next
-                }
+                map.put(count, next)
+                next = next.next
                 count++
             }
+            val key = count - 1 - n
+            val ln = map[key]
+            println("key: $key, val: ${ln?.`val`}")
+            ln?.next = ln?.next?.next
 
-            res
-        }
-    }
-
-    fun ListNode?.copy(): ListNode? {
-        return if (this == null) {
-            null
-        } else {
-            val res = ListNode(this.`val`)
-            val next = this.next
-            res.next = this.next
-            res
+            if (key < 0) head.next else head
         }
     }
 }
