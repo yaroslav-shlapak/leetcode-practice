@@ -20,6 +20,18 @@ object SolutionTest : Spek({
         }
     }
 
+    group("removeNthFromEndSecond") {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            test("input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}") {
+                val actual = Solution().removeNthFromEndSecond(input.head, input.n)
+                println("actual:   ${actual.toIntList()}")
+                println("expected: ${expected.toIntList()}")
+                actual.toIntList() shouldBe expected.toIntList()
+            }
+        }
+    }
+
     group("removeNthFromEnd") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
