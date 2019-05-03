@@ -8,23 +8,23 @@ import java.util.*
  */
 class Solution {
 
-    private val map = mapOf(
-            '(' to ')',
-            '{' to '}',
-            '[' to ']'
-    )
-
     fun isValid(s: String): Boolean {
-        val stack = LinkedList<Char>()
-        s.asSequence().forEach {
-            val last = stack.peekLast()
-            if (map.get(last) == it) {
-                stack.pollLast()
+        val stack = Stack<Char>()
+        s.forEach {
+            if (stack.isNotEmpty() && map[stack.peek()] == it) {
+                stack.pop()
             } else {
                 stack.add(it)
             }
         }
-        println(stack)
         return stack.size == 0
+    }
+
+    companion object {
+        private val map = mapOf(
+                '(' to ')',
+                '{' to '}',
+                '[' to ']'
+        )
     }
 }
