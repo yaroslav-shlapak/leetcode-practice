@@ -16,7 +16,8 @@ allprojects {
         jcenter()
     }
     apply from: "$rootDir/versions.gradle"
-
+    compileKotlin.kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
+    compileTestKotlin.kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8
 }
 
 dependencies {
