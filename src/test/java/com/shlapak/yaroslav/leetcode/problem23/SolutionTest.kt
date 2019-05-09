@@ -15,7 +15,19 @@ import org.spekframework.spek2.Spek
  **/
 object SolutionTest : Spek({
 
-    group("mergeTwoLists") {
+    group("mergeKListsNaive") {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            test("input: $input, expected: ${expected.toString()}") {
+                val actual = Solution().mergeKListsNaive(input)
+                println("actual:   ${actual.toIntList()}")
+                println("expected: ${expected.toIntList()}")
+                actual.toIntList() shouldBe expected.toIntList()
+            }
+        }
+    }
+
+    group("mergeKLists") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             test("input: $input, expected: ${expected.toString()}") {
