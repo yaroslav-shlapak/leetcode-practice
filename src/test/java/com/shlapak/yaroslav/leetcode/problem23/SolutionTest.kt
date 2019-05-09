@@ -27,6 +27,18 @@ object SolutionTest : Spek({
         }
     }
 
+    group("mergeKListsNaive2") {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            test("input: $input, expected: ${expected.toString()}") {
+                val actual = Solution().mergeKListsNaive2(input)
+                println("actual:   ${actual.toIntList()}")
+                println("expected: ${expected.toIntList()}")
+                actual.toIntList() shouldBe expected.toIntList()
+            }
+        }
+    }
+
     group("mergeKLists") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->

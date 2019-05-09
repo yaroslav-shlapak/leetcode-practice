@@ -2,6 +2,7 @@ package com.shlapak.yaroslav.leetcode.problem23
 
 import com.shlapak.yaroslav.leetcode.utils.ListNode
 import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created on 2019/05/09.
@@ -24,6 +25,35 @@ class Solution {
                 .asSequence()
                 .forEach { value ->
                     next?.next = ListNode(value)
+                    next = next?.next
+                }
+        return res.next
+    }
+
+    fun mergeKListsNaive2(lists: Array<ListNode?>): ListNode? {
+        val temp = ArrayList<ListNode>(lists.size)
+        lists.asSequence().forEach {
+            var next = it
+            while (next != null) {
+                temp.add(next)
+                next = next.next
+            }
+        }
+        val res = ListNode(0)
+        var next: ListNode? = res
+        temp.sortWith(
+                Comparator { o1, o2 ->
+                    when {
+                        o1.`val` < o2.`val` -> -1
+                        o1.`val` == o2.`val` -> 0
+                        else -> 1
+                    }
+                }
+        )
+        temp
+                .asSequence()
+                .forEach { value ->
+                    next?.next = value
                     next = next?.next
                 }
         return res.next
