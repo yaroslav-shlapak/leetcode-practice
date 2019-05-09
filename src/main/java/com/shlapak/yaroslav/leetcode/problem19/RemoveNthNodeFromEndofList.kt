@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem19
 
+import com.shlapak.yaroslav.leetcode.utils.ListNode
+
 /**
  * Created on 2019/04/25.
  */
@@ -71,6 +73,3 @@ class Solution {
     }
 }
 
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}

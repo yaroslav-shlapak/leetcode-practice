@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problem21
 
-import com.shlapak.yaroslav.leetcode.problem19.ListNode
+import com.shlapak.yaroslav.leetcode.utils.ListNode
 
 /**
  * Created on 2019/05/03.

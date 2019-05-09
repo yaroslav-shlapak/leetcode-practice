@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem2
 
+import com.shlapak.yaroslav.leetcode.utils.ListNode
+
 /**
  * Created on 2019/04/08.
  */
@@ -12,9 +14,6 @@ package com.shlapak.yaroslav.leetcode.problem2
  *     var next: ListNode? = null
  * }
  */
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
-}
 
 class Solution {
     fun addTwoNumbers2(l1: ListNode?, l2: ListNode?): ListNode? {
