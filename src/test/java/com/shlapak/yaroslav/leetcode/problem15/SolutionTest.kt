@@ -1,9 +1,9 @@
 ﻿package com.shlapak.yaroslav.leetcode.problem15
 
 import com.google.gson.Gson
-import com.shlapak.yaroslav.leetcode.getSting
 import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getExpected
 import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getInput
+import com.shlapak.yaroslav.leetcode.utils.getSting
 import io.kotlintest.matchers.collections.shouldContainAll
 import org.spekframework.spek2.Spek
 import java.io.File

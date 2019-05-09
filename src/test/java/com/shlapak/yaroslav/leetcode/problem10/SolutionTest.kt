@@ -29,14 +29,6 @@ object SolutionTest : Spek({
             RegInput("mississippi", "mis*is*ip*.") to true
     )
 
-    group("isMatch2") {
-        inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: $expected") {
-                Solution().isMatch2(input.s, input.p) shouldBe expected
-            }
-        }
-    }
-
     group("isMatch") {
         inputs.asSequence().forEach { (input, expected) ->
             test("input: $input, expected: $expected") {

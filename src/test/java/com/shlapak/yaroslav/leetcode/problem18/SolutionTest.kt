@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problem18
 
-import com.shlapak.yaroslav.leetcode.getSting
+import com.shlapak.yaroslav.leetcode.utils.getSting
 import io.kotlintest.matchers.collections.shouldContainAll
 import org.spekframework.spek2.Spek
 

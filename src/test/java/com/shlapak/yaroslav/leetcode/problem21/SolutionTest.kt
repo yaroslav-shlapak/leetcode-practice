@@ -1,8 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problem21
 
-import com.shlapak.yaroslav.leetcode.problem19.ListNode
-import com.shlapak.yaroslav.leetcode.problem19.toIntList
-import com.shlapak.yaroslav.leetcode.problem19.toListNode
+import com.shlapak.yaroslav.leetcode.utils.ListNode
+import com.shlapak.yaroslav.leetcode.utils.toIntList
+import com.shlapak.yaroslav.leetcode.utils.toListNode
 import io.kotlintest.shouldBe
 import org.spekframework.spek2.Spek
 

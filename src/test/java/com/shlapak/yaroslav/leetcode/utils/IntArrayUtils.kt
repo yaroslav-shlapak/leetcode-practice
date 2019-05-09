@@ -1,4 +1,4 @@
-package com.shlapak.yaroslav.leetcode
+package com.shlapak.yaroslav.leetcode.utils
 
 /**
  * Created on 2019/04/24.
