@@ -6,6 +6,9 @@ import org.spekframework.spek2.Spek
 /**
  * Created on 2019/05/09.
  */
+/** tests for
+ * @see com.shlapak.yaroslav.leetcode.problem22.Solution
+ **/
 object SolutionTest : Spek({
     group("generateParenthesis") {
         val inputs = getInputs()
