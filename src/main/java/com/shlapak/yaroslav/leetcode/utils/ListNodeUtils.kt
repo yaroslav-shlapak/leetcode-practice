@@ -19,7 +19,7 @@ fun List<Int>?.toListNode(): ListNode? {
     }
 }
 
-fun ListNode?.toString(): String {
+fun ListNode?.asString(): String {
     val s = StringBuilder()
     if (this != null) {
         var next = this
