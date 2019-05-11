@@ -1,9 +1,9 @@
 package com.shlapak.yaroslav.leetcode.problem23
 
 import com.shlapak.yaroslav.leetcode.utils.ListNode
+import com.shlapak.yaroslav.leetcode.utils.asString
 import com.shlapak.yaroslav.leetcode.utils.toIntList
 import com.shlapak.yaroslav.leetcode.utils.toListNode
-import com.shlapak.yaroslav.leetcode.utils.toString
 import io.kotlintest.shouldBe
 import org.spekframework.spek2.Spek
 
@@ -18,7 +18,7 @@ object SolutionTest : Spek({
     group("mergeKListsNaive") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: ${expected.toString()}") {
+            test("input: $input, expected: ${expected.asString()}") {
                 val actual = Solution().mergeKListsNaive(input)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
@@ -30,7 +30,7 @@ object SolutionTest : Spek({
     group("mergeKListsNaive2") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: ${expected.toString()}") {
+            test("input: $input, expected: ${expected.asString()}") {
                 val actual = Solution().mergeKListsNaive2(input)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
@@ -42,7 +42,7 @@ object SolutionTest : Spek({
     group("mergeKLists") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: ${expected.toString()}") {
+            test("input: $input, expected: ${expected.asString()}") {
                 val actual = Solution().mergeKLists(input)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
