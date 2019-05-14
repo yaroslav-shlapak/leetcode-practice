@@ -9,6 +9,9 @@ import org.spekframework.spek2.Spek
 /**
  * Created on 2019/04/25.
  */
+/** tests for
+ * @see com.shlapak.yaroslav.leetcode.problem19.Solution
+ **/
 object SolutionTest : Spek({
 
     group("removeNthFromEndFirst") {
