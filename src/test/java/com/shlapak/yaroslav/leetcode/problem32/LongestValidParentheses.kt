@@ -19,6 +19,46 @@ class Solution {
                     max = sub.length
                     break@inside
                 }
+                if (max > sub.length) {
+                    break@inside
+                }
+            }
+            if (max > s.length - start) {
+                break@outside
+            }
+        }
+
+        return max
+    }
+
+    private fun isValid(s: String): Boolean {
+        val stack = Stack<Char>()
+        s.forEach {
+            if (it == '(') {
+                stack.push('(')
+            } else if (!stack.empty() && stack.peek() == '(') {
+                stack.pop()
+            } else {
+                return false
+            }
+        }
+        return stack.size == 0
+    }
+}
+
+class SolutionSlow {
+    fun longestValidParentheses(s: String): Int {
+        var max = 0
+
+        outside@ for (start in 0 until s.length) {
+            inside@ for (end in s.length downTo start + 1) {
+                val sub = s.substring(start, end)
+                val valid = isValid(sub)
+                if (valid && sub.length > max) {
+                    println("valid sub: $sub")
+                    max = sub.length
+                    break@inside
+                }
             }
             if (max > s.length - start) {
                 break@outside
