@@ -23,6 +23,18 @@ object SolutionTest : Spek({
         }
     }
 
+    group("longestValidParentheses faster") {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            test("nums: ${input}, expected: ${expected}") {
+                val actual = SolutionFaster().longestValidParentheses(input)
+                println("actual:   ${actual}")
+                println("expected: ${expected}")
+                actual shouldBe expected
+            }
+        }
+    }
+
     group("longestValidParentheses slow") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->

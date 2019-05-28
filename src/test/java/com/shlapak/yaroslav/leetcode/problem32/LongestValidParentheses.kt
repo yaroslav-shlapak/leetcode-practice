@@ -6,7 +6,30 @@ import java.util.*
  * Created on 2019/05/28.
  * https://leetcode.com/problems/longest-valid-parentheses/
  */
+
 class Solution {
+
+    fun longestValidParentheses(s: String): Int {
+        var max = 0
+        val stack = Stack<Int>()
+        stack.push(-1)
+        for (i in 0 until s.length) {
+            if (s[i] == '(') {
+                stack.push(i)
+            } else {
+                stack.pop()
+                if (stack.empty()) {
+                    stack.push(i)
+                } else {
+                    max = Math.max(max, i - stack.peek())
+                }
+            }
+        }
+        return max
+    }
+}
+
+class SolutionFaster {
     fun longestValidParentheses(s: String): Int {
         var max = 0
 
