@@ -13,7 +13,7 @@ import org.spekframework.spek2.Spek
  **/
 object SolutionTest : Spek({
 
-    group("removeNthFromEndFirst") {
+    group("nextPermutation") {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             test("nums: ${input.getSting()}, expected: ${expected.getSting()}") {
