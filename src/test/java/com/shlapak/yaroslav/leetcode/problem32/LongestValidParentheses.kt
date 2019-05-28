@@ -21,9 +21,12 @@ class Solution {
                 if (stack.empty()) {
                     stack.push(i)
                 } else {
-                    max = Math.max(max, i - stack.peek())
+                    val first = stack.peek()
+                    max = Math.max(max, i - first) // i is las index
+                    println("max: $max, i: $i, stack.peek(): ${stack.peek()}")
                 }
             }
+            println("stack: $stack")
         }
         return max
     }
