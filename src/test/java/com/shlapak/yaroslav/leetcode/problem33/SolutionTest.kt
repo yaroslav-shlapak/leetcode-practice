@@ -25,6 +25,18 @@ object SolutionTest : Spek({
         }
     }
 
+    group("search2 ") {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected}") {
+                val actual = Solution2().search(input.nums, input.target)
+                println("actual:   ${actual}")
+                println("expected: ${expected}")
+                actual shouldBe expected
+            }
+        }
+    }
+
 }) {
     data class Parameter(
             val nums: IntArray,
