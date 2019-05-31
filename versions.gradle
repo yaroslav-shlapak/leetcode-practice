@@ -10,6 +10,6 @@ project.ext {
     junitJupiterVersion = "5.5.0-M1"
     junit5RunnerVersion = "0.2.2"
     junit5GradlePuginVersion = "1.4.0.0"
-    kotlinTestVersion = "3.1.10"//"3.3.2"
+    kotlinTestVersion = "3.3.2"
     mockkVersion = "1.9.3"
 }
