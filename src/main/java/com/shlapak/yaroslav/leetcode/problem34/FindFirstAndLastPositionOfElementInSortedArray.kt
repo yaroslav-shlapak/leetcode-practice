@@ -102,7 +102,8 @@ class Solution3 {
         val res = intArrayOf(-1, -1)
 
         res[0] = binarySearchRightLeft(nums, target, 0, nums.size - 1, true)
-        res[1] = binarySearchRightLeft(nums, target, 0, nums.size - 1, false)
+        if (res[0] == -1) return res
+        res[1] = binarySearchRightLeft(nums, target, res[0], nums.size - 1, false)
 
         return res
     }
