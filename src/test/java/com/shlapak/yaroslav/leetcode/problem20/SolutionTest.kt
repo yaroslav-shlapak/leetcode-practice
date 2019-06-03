@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem20
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/03.
@@ -9,7 +9,7 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem20.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
     val inputs = mapOf(
             "()" to true,
             "()[]{}" to true,
@@ -19,9 +19,9 @@ object SolutionTest : Spek({
             "{{}[][[[]]]}" to true
     )
 
-    group("isValid") {
+    "isValid" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: $expected") {
+            "input: $input, expected: $expected" {
                 val actual = Solution().isValid(input)
                 println(actual)
                 actual shouldBe expected

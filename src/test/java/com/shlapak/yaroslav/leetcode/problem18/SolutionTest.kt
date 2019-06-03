@@ -1,8 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problem18
 
-import com.shlapak.yaroslav.leetcode.utils.getSting
+import com.shlapak.yaroslav.leetcode.utils.asString
 import io.kotlintest.matchers.collections.shouldContainAll
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/04/24.
@@ -10,7 +10,7 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem18.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
     val inputs = mapOf(
             Prameter(
                     intArrayOf(1, 0, -1, 0, -2, 2),
@@ -62,9 +62,9 @@ object SolutionTest : Spek({
             )
     )
 
-    group("fourSum") {
+    "fourSum" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected.getSting()}") {
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected.asString()}" {
                 val actual = Solution().fourSum(input.nums, input.target)
                 println("actual.size: ${actual.size}")
                 println("actual:   $actual")

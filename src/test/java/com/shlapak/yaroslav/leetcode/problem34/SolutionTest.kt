@@ -1,45 +1,45 @@
 package com.shlapak.yaroslav.leetcode.problem34
 
-import com.shlapak.yaroslav.leetcode.utils.getSting
+import com.shlapak.yaroslav.leetcode.utils.asString
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/31.
  */
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("search") {
+    "search" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected.getSting()}") {
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected.asString()}" {
                 val actual = Solution().searchRange(input.nums, input.target)
-                println("actual:   ${actual.getSting()}")
-                println("expected: ${expected.getSting()}")
+                println("actual:   ${actual.asString()}")
+                println("expected: ${expected.asString()}")
                 actual shouldBe expected
             }
         }
     }
 
-    group("search2") {
+    "search2" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected.getSting()}") {
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected.asString()}" {
                 val actual = Solution2().searchRange(input.nums, input.target)
-                println("actual:   ${actual.getSting()}")
-                println("expected: ${expected.getSting()}")
+                println("actual:   ${actual.asString()}")
+                println("expected: ${expected.asString()}")
                 actual shouldBe expected
             }
         }
     }
 
-    group("search3") {
+    "search3" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected.getSting()}") {
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected.asString()}" {
                 val actual = Solution3().searchRange(input.nums, input.target)
-                println("actual:   ${actual.getSting()}")
-                println("expected: ${expected.getSting()}")
+                println("actual:   ${actual.asString()}")
+                println("expected: ${expected.asString()}")
                 actual shouldBe expected
             }
         }

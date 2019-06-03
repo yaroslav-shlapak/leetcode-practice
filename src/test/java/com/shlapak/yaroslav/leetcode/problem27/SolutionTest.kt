@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem27
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/14.
@@ -9,12 +9,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem27.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("removeElement") {
+    "removeElement" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.asList()}, input.value: ${input.value} expected: $expected") {
+            "input.nums: ${input.nums.asList()}, input.value: ${input.value} expected: $expected" {
                 val actual = Solution().removeElement(input.nums, input.value)
                 println("actual:   $actual")
                 println("expected: $expected")

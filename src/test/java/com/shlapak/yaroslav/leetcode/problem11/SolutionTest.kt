@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem11
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/04/11.
@@ -9,14 +9,14 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem11.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
     val inputs = mapOf(
             intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7) to 49
     )
 
-    group("maxArea") {
+    "maxArea" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.asList()}, expected: $expected") {
+            "input: ${input.asList()}, expected: $expected" {
                 Solution().maxArea(input) shouldBe expected
             }
         }

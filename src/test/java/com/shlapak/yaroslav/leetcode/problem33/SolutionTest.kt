@@ -1,8 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problem33
 
-import com.shlapak.yaroslav.leetcode.utils.getSting
+import com.shlapak.yaroslav.leetcode.utils.asString
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 
 /**
@@ -11,12 +11,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem33.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("search") {
+    "search" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected}") {
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected}" {
                 val actual = Solution().search(input.nums, input.target)
                 println("actual:   ${actual}")
                 println("expected: ${expected}")
@@ -25,10 +25,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("search2 ") {
+    "search2 "  {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.nums: ${input.nums.getSting()}, input.target: ${input.target}, expected: ${expected}") {
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected}" {
                 val actual = Solution2().search(input.nums, input.target)
                 println("actual:   ${actual}")
                 println("expected: ${expected}")

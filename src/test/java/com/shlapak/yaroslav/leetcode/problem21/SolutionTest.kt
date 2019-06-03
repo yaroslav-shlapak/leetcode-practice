@@ -4,7 +4,7 @@ import com.shlapak.yaroslav.leetcode.utils.ListNode
 import com.shlapak.yaroslav.leetcode.utils.toIntList
 import com.shlapak.yaroslav.leetcode.utils.toListNode
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 
 /**
@@ -13,12 +13,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem21.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("mergeTwoLists") {
+    "mergeTwoLists" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.l1: ${input.l1.toString()}, input.l2: ${input.l2.toString()}, expected: ${expected.toString()}") {
+            "input.l1: ${input.l1.toString()}, input.l2: ${input.l2.toString()}, expected: ${expected.toString()}" {
                 val actual = Solution().mergeTwoLists(input.l1, input.l2)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")

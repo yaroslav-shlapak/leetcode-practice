@@ -1,11 +1,9 @@
 ﻿package com.shlapak.yaroslav.leetcode.problem15
 
 import com.google.gson.Gson
-import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getExpected
-import com.shlapak.yaroslav.leetcode.problem15.SolutionTest.getInput
-import com.shlapak.yaroslav.leetcode.utils.getSting
+import com.shlapak.yaroslav.leetcode.utils.asString
 import io.kotlintest.matchers.collections.shouldContainAll
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 import java.io.File
 import java.nio.file.Paths
 
@@ -15,7 +13,7 @@ import java.nio.file.Paths
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem15.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
     val list = getInput()
     var expected = getExpected()
@@ -54,9 +52,9 @@ object SolutionTest : Spek({
                     )
     )
 
-    group("threeSumNaive") {
+    "threeSumNaive" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.getSting()} expected: ${expected.getSting()}") {
+            "input: ${input.asString()} expected: ${expected.asString()}" {
                 val actual = Solution().threeSumNaive(input)
                 println("actual.size: ${actual.size}")
                 println("expected.size: ${expected.size}")
@@ -65,9 +63,9 @@ object SolutionTest : Spek({
         }
     }
 
-    group("threeSum") {
+    "threeSum" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.getSting()} expected: ${expected.getSting()}") {
+            "input: ${input.asString()} expected: ${expected.asString()}" {
                 val actual = Solution().threeSum(input)
                 println("actual.size: ${actual.size}")
                 println("expected.size: ${expected.size}")
@@ -78,25 +76,25 @@ object SolutionTest : Spek({
             }
         }
     }
-}) {
-    val path = Paths.get("").toAbsolutePath().toString() +
-            "/src/test/java/com/shlapak/yaroslav/leetcode/problem15/"
+})
 
-    fun getInput(): IntArray {
-        val name = "input.json"
-        val inputFilePath = path + name
-        val file = File(inputFilePath)
-        val s = file.readText()
-        val gson = Gson()
-        return gson.fromJson<List<Int>>(s, List::class.java).toIntArray()
-    }
+private val path = Paths.get("").toAbsolutePath().toString() +
+        "/src/test/java/com/shlapak/yaroslav/leetcode/problem15/"
 
-    fun getExpected(): List<List<Int>> {
-        val name = "expected.json"
-        val inputFilePath = path + name
-        val file = File(inputFilePath)
-        val s = file.readText()
-        val gson = Gson()
-        return gson.fromJson<List<List<Int>>>(s, List::class.java)
-    }
+private fun getInput(): IntArray {
+    val name = "input.json"
+    val inputFilePath = path + name
+    val file = File(inputFilePath)
+    val s = file.readText()
+    val gson = Gson()
+    return gson.fromJson<List<Int>>(s, List::class.java).toIntArray()
+}
+
+private fun getExpected(): List<List<Int>> {
+    val name = "expected.json"
+    val inputFilePath = path + name
+    val file = File(inputFilePath)
+    val s = file.readText()
+    val gson = Gson()
+    return gson.fromJson<List<List<Int>>>(s, List::class.java)
 }

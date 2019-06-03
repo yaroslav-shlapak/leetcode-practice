@@ -1,8 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problem31
 
-import com.shlapak.yaroslav.leetcode.utils.getSting
+import com.shlapak.yaroslav.leetcode.utils.asString
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 
 /**
@@ -11,16 +11,16 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem31.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("nextPermutation") {
+    "nextPermutation" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("nums: ${input.getSting()}, expected: ${expected.getSting()}") {
+            "nums: ${input.asString()}, expected: ${expected.asString()}" {
                 Solution().nextPermutation(input)
-                println("actual:   ${input.getSting()}")
-                println("expected: ${expected.getSting()}")
-                input.getSting() shouldBe expected.getSting()
+                println("actual:   ${input.asString()}")
+                println("expected: ${expected.asString()}")
+                input.asString() shouldBe expected.asString()
             }
         }
     }

@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem12
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/04/12.
@@ -9,7 +9,7 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem12.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
     val inputs = mapOf(
             1 to "I",
             3 to "III",
@@ -30,9 +30,9 @@ object SolutionTest : Spek({
 
     )
 
-    group("intToRoman") {
+    "intToRoman" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input expected: $expected") {
+            "input: $input expected: $expected" {
                 Solution().intToRoman(input) shouldBe expected
             }
         }

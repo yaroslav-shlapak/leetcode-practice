@@ -4,7 +4,7 @@ import com.shlapak.yaroslav.leetcode.utils.ListNode
 import com.shlapak.yaroslav.leetcode.utils.toIntList
 import com.shlapak.yaroslav.leetcode.utils.toListNode
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/04/25.
@@ -12,12 +12,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem19.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("removeNthFromEndFirst") {
+    "removeNthFromEndFirst" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}") {
+            "input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}" {
                 val actual = Solution().removeNthFromEndFirst(input.head, input.n)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
@@ -26,10 +26,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("removeNthFromEndSecond") {
+    "removeNthFromEndSecond" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}") {
+            "input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}" {
                 val actual = Solution().removeNthFromEndSecond(input.head, input.n)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
@@ -38,10 +38,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("removeNthFromEnd") {
+    "removeNthFromEnd" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}") {
+            "input.head: ${input.head.toString()}, input.n: ${input.n}, expected: ${expected.toString()}" {
                 val actual = Solution().removeNthFromEnd(input.head, input.n)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")

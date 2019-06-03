@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem32
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/28.
@@ -9,12 +9,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem32.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("longestValidParentheses") {
+    "longestValidParentheses" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("nums: ${input}, expected: ${expected}") {
+            "nums: ${input}, expected: ${expected}" {
                 val actual = Solution().longestValidParentheses(input)
                 println("actual:   ${actual}")
                 println("expected: ${expected}")
@@ -23,10 +23,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("longestValidParentheses faster") {
+    "longestValidParentheses faster" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("nums: ${input}, expected: ${expected}") {
+            "nums: ${input}, expected: ${expected}" {
                 val actual = SolutionFaster().longestValidParentheses(input)
                 println("actual:   ${actual}")
                 println("expected: ${expected}")
@@ -35,10 +35,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("longestValidParentheses slow") {
+    "longestValidParentheses slow" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("nums: ${input}, expected: ${expected}") {
+            "nums: ${input}, expected: ${expected}" - {
                 val actual = SolutionSlow().longestValidParentheses(input)
                 println("actual:   ${actual}")
                 println("expected: ${expected}")

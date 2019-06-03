@@ -2,7 +2,7 @@ package com.shlapak.yaroslav.leetcode.problem26
 
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/14.
@@ -10,12 +10,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem26.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("removeDuplicates1") {
+    "removeDuplicates1" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.asList()}, expected: $expected") {
+            "input: ${input.asList()}, expected: $expected" {
                 val actual = Solution().removeDuplicates1(input)
                 println("actual:   $actual")
                 println("expected: $expected")
@@ -25,10 +25,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("removeDuplicates") {
+    "removeDuplicates" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.asList()}, expected: $expected") {
+            "input: ${input.asList()}, expected: $expected" {
                 val actual = Solution().removeDuplicates(input)
                 println("actual:   $actual")
                 println("expected: $expected")

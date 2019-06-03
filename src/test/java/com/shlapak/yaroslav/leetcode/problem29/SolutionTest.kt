@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem29
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/22.
@@ -9,11 +9,11 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem29.Solution
  **/
-object SolutionTest : Spek({
-    group("divideNaive") {
+class SolutionTest : FreeSpec({
+    "divideNaive" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input.dividend: ${input.dividend}, input.divisor: ${input.divisor} expected: $expected") {
+            "input.dividend: ${input.dividend}, input.divisor: ${input.divisor} expected: $expected" {
                 val actual = Solution().divideNaive(input.dividend, input.divisor)
                 println("actual:   $actual")
                 println("expected: $expected")

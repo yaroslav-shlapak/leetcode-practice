@@ -5,7 +5,7 @@ import com.shlapak.yaroslav.leetcode.utils.asString
 import com.shlapak.yaroslav.leetcode.utils.toIntList
 import com.shlapak.yaroslav.leetcode.utils.toListNode
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/12.
@@ -13,11 +13,11 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem25.Solution
  **/
-object SolutionTest : Spek({
-    group("reverseKGroup") {
+class SolutionTest : FreeSpec({
+    "reverseKGroup" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.k}, expected: ${expected.asString()}") {
+            "input: ${input.k}, expected: ${expected.asString()}" {
                 val actual = Solution().reverseKGroup(input.head, input.k)
                 println("actual:   ${actual.asString()}")
                 println("expected: ${expected.asString()}")

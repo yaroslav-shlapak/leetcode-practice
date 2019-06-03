@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem16
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 
 /**
@@ -10,7 +10,7 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem16.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
     val inputs = mapOf(
             Param(
@@ -19,9 +19,9 @@ object SolutionTest : Spek({
             ) to 2
     )
 
-    group("threeSumClosestNaive") {
+    "threeSumClosestNaive" - {
         inputs.asSequence().forEach { (param, expected) ->
-            test("param.target: ${param.target}, expected: $expected") {
+            "param.target: ${param.target}, expected: $expected" {
                 val actual = Solution().threeSumClosestNaive(
                         nums = param.nums,
                         target = param.target
@@ -32,9 +32,9 @@ object SolutionTest : Spek({
         }
     }
 
-    group("threeSumClosest") {
+    "threeSumClosest" - {
         inputs.asSequence().forEach { (param, expected) ->
-            test("param.target: ${param.target}, expected: $expected") {
+            "param.target: ${param.target}, expected: $expected" {
                 val actual = Solution().threeSumClosest(
                         nums = param.nums,
                         target = param.target

@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem10
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/04/11.
@@ -9,7 +9,7 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem10.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
     val inputs = mapOf(
             RegInput(" ", "") to false,
@@ -29,9 +29,9 @@ object SolutionTest : Spek({
             RegInput("mississippi", "mis*is*ip*.") to true
     )
 
-    group("isMatch") {
+    "isMatch" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: $expected") {
+            "input: $input, expected: $expected" {
                 Solution().isMatch(input.s, input.p) shouldBe expected
             }
         }

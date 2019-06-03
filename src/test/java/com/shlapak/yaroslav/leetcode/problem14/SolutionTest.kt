@@ -1,9 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem14
 
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
-
-import org.junit.jupiter.api.Assertions.*
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/04/13.
@@ -11,7 +9,7 @@ import org.junit.jupiter.api.Assertions.*
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem14.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
     val inputs = mapOf(
             arrayOf("flower", "flow", "flight") to "fl",
             arrayOf("dog", "racecar", "car") to "",
@@ -30,9 +28,9 @@ object SolutionTest : Spek({
             arrayOf("abababababab", "abab", "ababab") to "abab"
     )
 
-    group("longestCommonPrefix") {
+    "longestCommonPrefix" - {
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: ${input.asList()} expected: $expected") {
+            "input: ${input.asList()} expected: $expected" {
                 Solution().longestCommonPrefix(input) shouldBe expected
             }
         }

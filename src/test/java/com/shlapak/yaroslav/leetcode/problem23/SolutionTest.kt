@@ -5,7 +5,7 @@ import com.shlapak.yaroslav.leetcode.utils.asString
 import com.shlapak.yaroslav.leetcode.utils.toIntList
 import com.shlapak.yaroslav.leetcode.utils.toListNode
 import io.kotlintest.shouldBe
-import org.spekframework.spek2.Spek
+import io.kotlintest.specs.FreeSpec
 
 /**
  * Created on 2019/05/09.
@@ -13,12 +13,12 @@ import org.spekframework.spek2.Spek
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem23.Solution
  **/
-object SolutionTest : Spek({
+class SolutionTest : FreeSpec({
 
-    group("mergeKListsNaive") {
+    "mergeKListsNaive" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: ${expected.asString()}") {
+            "input: $input, expected: ${expected.asString()}" {
                 val actual = Solution().mergeKListsNaive(input)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
@@ -27,10 +27,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("mergeKListsNaive2") {
+    "mergeKListsNaive2" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: ${expected.asString()}") {
+            "input: $input, expected: ${expected.asString()}" {
                 val actual = Solution().mergeKListsNaive2(input)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
@@ -39,10 +39,10 @@ object SolutionTest : Spek({
         }
     }
 
-    group("mergeKLists") {
+    "mergeKLists" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            test("input: $input, expected: ${expected.asString()}") {
+            "input: $input, expected: ${expected.asString()}" {
                 val actual = Solution().mergeKLists(input)
                 println("actual:   ${actual.toIntList()}")
                 println("expected: ${expected.toIntList()}")
