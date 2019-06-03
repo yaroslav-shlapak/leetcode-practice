@@ -5,7 +5,6 @@ project.ext {
 
     junitVersion = "4.12"
     testRunnerVersion = "1.1.0-beta01"
-    spekVersion = "2.0.5"
     androidTestRunnerVersion = "1.0.2"
     junitJupiterVersion = "5.5.0-M1"
     junit5RunnerVersion = "0.2.2"

@@ -1,6 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem30
 
 import com.shlapak.yaroslav.leetcode.utils.asString
+import io.kotlintest.seconds
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.FreeSpec
 
@@ -15,7 +16,8 @@ class SolutionTest : FreeSpec({
     "findSubstring" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}" {
+            "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}"
+                    .config(timeout = 2.seconds) {
                 val actual = Solution().findSubstring(input.s, input.words)
                 println("actual:   $actual")
                 println("expected: $expected")
@@ -27,7 +29,8 @@ class SolutionTest : FreeSpec({
     "findSubstring2" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
-            "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}" {
+            "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}"
+                    .config(timeout = 2.seconds, enabled = false) {
                 val actual = Solution2().findSubstring(input.s, input.words)
                 println("actual:   $actual")
                 println("expected: $expected")
@@ -57,7 +60,6 @@ class SolutionTest : FreeSpec({
         }
     }
 }
-
 fun getInputs(): Map<SolutionTest.Parameter, List<Int>> {
     return mapOf(
             SolutionTest.Parameter(

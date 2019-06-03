@@ -25,7 +25,7 @@ class SolutionTest : FreeSpec({
         }
     }
 
-    "search2 "  {
+    "search2" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected}" {
