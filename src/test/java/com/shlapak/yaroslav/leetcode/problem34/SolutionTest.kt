@@ -7,6 +7,9 @@ import io.kotlintest.specs.FreeSpec
 /**
  * Created on 2019/05/31.
  */
+/** tests for
+ * @see com.shlapak.yaroslav.leetcode.problem34.Solution
+ **/
 class SolutionTest : FreeSpec({
 
     "search" - {
