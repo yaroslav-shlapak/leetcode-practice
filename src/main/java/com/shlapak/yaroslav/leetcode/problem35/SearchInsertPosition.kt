@@ -52,3 +52,38 @@ class Solution {
         return lo + (hi - lo) / 2
     }
 }
+
+class Solution2 {
+    fun searchInsert(nums: IntArray, target: Int): Int {
+        var hi = nums.size - 1
+        var lo = 0
+        var mid: Int = calcMid(hi, lo)
+        var found = false
+
+        loop@ while (hi >= lo) {
+            mid = calcMid(hi, lo)
+            when {
+                target == nums[mid] -> {
+                    found = true
+                    break@loop
+                }
+                target > nums[mid] -> {
+                    lo = mid + 1
+                }
+                else -> {
+                    hi = mid - 1
+                }
+            }
+        }
+
+        if (!found) {
+            mid = lo
+        }
+
+        return mid
+    }
+
+    private fun calcMid(hi: Int, lo: Int): Int {
+        return lo + (hi - lo) / 2
+    }
+}

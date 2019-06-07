@@ -23,6 +23,18 @@ internal class SolutionTest : FreeSpec({
             }
         }
     }
+
+    "searchInsert2" - {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            "input.nums: ${input.nums.asString()}, input.target: ${input.target}, expected: ${expected}" {
+                val actual = Solution2().searchInsert(input.nums, input.target)
+                println("actual:   ${actual}")
+                println("expected: ${expected}")
+                actual shouldBe expected
+            }
+        }
+    }
 })
 
 data class Parameter(
