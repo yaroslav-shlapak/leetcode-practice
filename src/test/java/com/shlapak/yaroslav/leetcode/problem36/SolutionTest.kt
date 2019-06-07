@@ -22,6 +22,18 @@ internal class SolutionTest : FreeSpec({
             }
         }
     }
+
+    "isValidSudoku2" - {
+        val inputs = getInputs()
+        inputs.asSequence().forEach { (input, expected) ->
+            "input: ${input}, expected: ${expected}" {
+                val actual = Solution2().isValidSudoku(input)
+                println("actual:   ${actual}")
+                println("expected: ${expected}")
+                actual shouldBe expected
+            }
+        }
+    }
 })
 
 private fun getInputs(): Map<Array<CharArray>, Boolean> {

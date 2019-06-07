@@ -41,3 +41,23 @@ class Solution {
         }
     }
 }
+
+class Solution2 {
+    fun isValidSudoku(board: Array<CharArray>): Boolean {
+        val set = mutableSetOf<String>()
+
+        board.forEachIndexed { arrayIndex, chars ->
+            chars.forEachIndexed { charIndex, c ->
+                if (c != '.') {
+                    if (!set.add("$c in row $arrayIndex")
+                            || !set.add("$c in column $charIndex")
+                            || !set.add("$c in box ${arrayIndex / 3} - ${charIndex / 3}")
+                    ) {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+}
