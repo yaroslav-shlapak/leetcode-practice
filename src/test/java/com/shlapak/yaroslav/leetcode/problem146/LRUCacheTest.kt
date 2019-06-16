@@ -2,7 +2,9 @@ package com.shlapak.yaroslav.leetcode.problem146
 
 import io.kotlintest.specs.FreeSpec
 import io.kotlintest.shouldBe
-
+/** tests for
+ * @see com.shlapak.yaroslav.leetcode.problem146.LRUCache
+ **/
 class LRUCacheTest : FreeSpec({
     "mainTest" - {
         val inputs = getInputs()
@@ -15,7 +17,7 @@ class LRUCacheTest : FreeSpec({
                         when (action) {
                             is TestAction.GetAction -> {
                                 val actual = lruCache.get(action.key)
-                                println("actual:   ${actual}")
+                                println("actual: ${actual}")
                                 println("expected: ${action.result}")
                                 actual shouldBe action.result
                             }
@@ -23,6 +25,7 @@ class LRUCacheTest : FreeSpec({
                                 lruCache.put(action.key, action.value)
                             }
                         }
+                        println("lruCache: ${lruCache}")
 
                     }
                 }
@@ -59,9 +62,9 @@ cache.get(4);       // returns 4
 private fun getInputs(): List<Pair<Int, List<TestAction>>> {
     return listOf(
             2 to listOf(
-                    TestAction.PutAction(key = 1, value = 2),
+                    TestAction.PutAction(key = 1, value = 1),
                     TestAction.PutAction(key = 2, value = 2),
-                    TestAction.GetAction(key = 2, result = 1),
+                    TestAction.GetAction(key = 1, result = 1),
                     TestAction.PutAction(key = 3, value = 3),
                     TestAction.GetAction(key = 2, result = -1),
                     TestAction.PutAction(key = 4, value = 4),
