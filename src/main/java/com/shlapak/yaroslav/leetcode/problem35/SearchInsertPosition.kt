@@ -2,7 +2,7 @@ package com.shlapak.yaroslav.leetcode.problem35
 
 /**
  * Created on 2019/06/07.
- * https://leetcode.com/problems/search-insert-position/
+ * https://leetcode.com/problems/search-remove-position/
  */
 class Solution {
     fun searchInsert(nums: IntArray, target: Int): Int {

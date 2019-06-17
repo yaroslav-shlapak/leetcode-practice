@@ -6,12 +6,39 @@ import io.kotlintest.shouldBe
  * @see com.shlapak.yaroslav.leetcode.problem146.LRUCache
  **/
 class LRUCacheTest : FreeSpec({
-    "mainTest" - {
+    "LRUCache" - {
         val inputs = getInputs()
 
         for (input in inputs) {
             "input: ${input}" - {
                 val lruCache: LRUCache = LRUCache(input.first)
+                input.second.asSequence().forEach { action ->
+                    "action: $action" {
+                        when (action) {
+                            is TestAction.GetAction -> {
+                                val actual = lruCache.get(action.key)
+                                println("actual: ${actual}")
+                                println("expected: ${action.result}")
+                                actual shouldBe action.result
+                            }
+                            is TestAction.PutAction -> {
+                                lruCache.put(action.key, action.value)
+                            }
+                        }
+                        println("lruCache: ${lruCache}")
+
+                    }
+                }
+            }
+        }
+    }
+
+    "LRUCache2" - {
+        val inputs = getInputs()
+
+        for (input in inputs) {
+            "input: ${input}" - {
+                val lruCache: LRUCache2 = LRUCache2(input.first)
                 input.second.asSequence().forEach { action ->
                     "action: $action" {
                         when (action) {
