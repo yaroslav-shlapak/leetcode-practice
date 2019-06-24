@@ -11,7 +11,7 @@ import io.kotlintest.specs.FreeSpec
  **/
 internal class SolutionTest : FreeSpec({
 
-    "isValidSudoku" - {
+    "solveSudoku" - {
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input: ${input}, expected: ${expected}" {
