@@ -15,10 +15,12 @@ internal class SolutionTest : FreeSpec({
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input: ${input}, expected: ${expected}" {
-                val actual = Solution().solveSudoku(input)
-                println("actual:   ${actual}")
-                println("expected: ${expected}")
-                actual shouldBe expected
+                Solution().solveSudoku(input)
+                for (i in 0 until 9) {
+                    for (j in 0 until 9) {
+                        input[i][j] shouldBe expected[i][j]
+                    }
+                }
             }
         }
     }
