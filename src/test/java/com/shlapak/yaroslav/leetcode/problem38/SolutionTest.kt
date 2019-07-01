@@ -6,6 +6,9 @@ import io.kotlintest.specs.FreeSpec
 /**
  * Created on 2019/06/24.
  */
+/** tests for
+ * @see com.shlapak.yaroslav.leetcode.problem38.Solution
+ **/
 internal class SolutionTest : FreeSpec({
     "countAndSay" - {
         val inputs = getInputs()

@@ -2,6 +2,7 @@ package com.shlapak.yaroslav.leetcode.problem38
 
 /**
  * Created on 2019/06/24.
+ * https://leetcode.com/problems/count-and-say/
  */
 class Solution {
     fun countAndSay(n: Int): String {
