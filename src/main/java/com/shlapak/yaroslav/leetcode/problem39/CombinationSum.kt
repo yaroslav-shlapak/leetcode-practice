@@ -7,7 +7,16 @@ package com.shlapak.yaroslav.leetcode.problem39
 class Solution {
     fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
         val list = mutableListOf<List<Int>>()
+        val map = mutableMapOf<Int, List<Int>>()
 
+        candidates.sorted().asSequence().forEach { cur ->
+            if (cur == target) {
+                list.add(listOf(cur))
+                return list
+            } else {
+
+            }
+        }
 
         return list
     }
