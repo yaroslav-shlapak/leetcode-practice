@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problem39
 
-import io.kotlintest.shouldBe
+import io.kotlintest.matchers.collections.shouldContainAll
 import io.kotlintest.specs.FreeSpec
 
 /** tests for
@@ -14,7 +14,7 @@ class SolutionTest : FreeSpec() {
             inputs.asSequence().forEach { (input, expected) ->
                 "input: ${input}, expected: ${expected}" {
                     val actual = Solution().combinationSum(input.first, input.second)
-                    actual shouldBe expected
+                    actual shouldContainAll expected
                 }
             }
         }
