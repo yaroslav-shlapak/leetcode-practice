@@ -18,6 +18,16 @@ class SolutionTest : FreeSpec() {
                 }
             }
         }
+
+        "combinationSum2 2" - {
+            val inputs = getInputs()
+            inputs.asSequence().forEach { (input, expected) ->
+                "input: ${input}, expected: ${expected}" {
+                    val actual = Solution2().combinationSum2(input.first, input.second)
+                    actual shouldContainAll expected
+                }
+            }
+        }
     }
 
 

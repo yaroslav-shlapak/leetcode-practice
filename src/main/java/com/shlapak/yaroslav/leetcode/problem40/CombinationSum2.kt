@@ -2,6 +2,7 @@ package com.shlapak.yaroslav.leetcode.problem40
 
 import java.util.*
 
+
 /**
  * Created on 2019/07/02.
  * https://leetcode.com/problems/combination-sum-ii/
@@ -30,5 +31,32 @@ class Solution {
             }
         }
         if (target == 0) result.add(ArrayList(current).sorted())
+    }
+}
+
+class Solution2 {
+    val result = mutableListOf<List<Int>>()
+    val path = mutableListOf<Int>()
+    lateinit var cand: IntArray
+    fun combinationSum2(candidates: IntArray, target: Int): List<List<Int>> {
+        candidates.sort()
+        cand = candidates
+        dfs(0, target)
+        return result
+    }
+
+    fun dfs(cur: Int, target: Int) {
+        if (target == 0) {
+            result.add(ArrayList(path))
+            return
+        }
+        if (target < 0) return
+        for (i in cur until cand.size) {
+            if (i <= cur || cand[i] != cand[i - 1]) {
+                path.add(path.size, cand[i])
+                dfs(i + 1, target - cand[i])
+                path.removeAt(path.size - 1)
+            }
+        }
     }
 }
