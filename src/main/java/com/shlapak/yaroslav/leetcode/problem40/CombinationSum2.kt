@@ -52,7 +52,9 @@ class Solution2 {
         }
         if (target < 0) return
         for (i in cur until cand.size) {
-            if (i <= cur || cand[i] != cand[i - 1]) {
+            if (i > cur && cand[i] == cand[i - 1]) {
+                // nothing here
+            } else {
                 path.add(path.size, cand[i])
                 dfs(i + 1, target - cand[i])
                 path.removeAt(path.size - 1)
