@@ -34,3 +34,31 @@ class Solution {
         return if (last > 0) last + 1 else 1
     }
 }
+
+class Solution2 {
+    fun firstMissingPositive(nums: IntArray): Int {
+        var i = 0
+        while (i < nums.size) {
+            if (nums[i] == i + 1 || nums[i] <= 0 || nums[i] > nums.size) {
+                i++
+            } else if (nums[nums[i] - 1] != nums[i]) {
+                swap(nums, i, nums[i] - 1)
+            } else {
+                i++
+            }
+        }
+        println("nums: ${nums.toList()}")
+
+        i = 0
+        while (i < nums.size && nums[i] == i + 1) {
+            i++
+        }
+        return i + 1
+    }
+
+    private fun swap(nums: IntArray, i: Int, j: Int) {
+        val temp = nums[i]
+        nums[i] = nums[j]
+        nums[j] = temp
+    }
+}
