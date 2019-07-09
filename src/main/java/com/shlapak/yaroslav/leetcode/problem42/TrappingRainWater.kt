@@ -1,5 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problem42
 
+import kotlin.math.max
+import kotlin.math.min
+
 
 /**
  * Created on 2019/07/04.
@@ -29,6 +32,26 @@ class Solution {
                 --right
             }
         }
+        return ans
+    }
+}
+
+class Solution2 {
+    fun trap(height: IntArray): Int {
+        var ans = 0
+
+        height.asSequence().forEachIndexed { index, element ->
+            var leftMax = 0
+            var rightMax = 0
+            for (i in index downTo 0) {
+                leftMax = max(leftMax, height[i])
+            }
+            for (i in index until height.size) {
+                rightMax = max(rightMax, height[i])
+            }
+            ans += min(leftMax, rightMax) - element
+        }
+
         return ans
     }
 }

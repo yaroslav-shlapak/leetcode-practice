@@ -20,6 +20,16 @@ class SolutionTest : FreeSpec() {
             }
         }
 
+        "trap 2" - {
+            val inputs = getInputs()
+            inputs.asSequence().forEach { (input, expected) ->
+                "input: ${input.asString()}, expected: ${expected}" {
+                    val actual = Solution2().trap(input)
+                    actual shouldBe expected
+                }
+            }
+        }
+
     }
 
     private fun getInputs(): Map<IntArray, Int> {
