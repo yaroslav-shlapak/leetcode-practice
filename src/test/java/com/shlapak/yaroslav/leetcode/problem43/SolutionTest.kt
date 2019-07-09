@@ -9,7 +9,7 @@ import io.kotlintest.specs.FreeSpec
 class SolutionTest : FreeSpec() {
 
     init {
-        "trap" - {
+        "multiply" - {
             val inputs = getInputs()
             inputs.asSequence().forEach { (input, expected) ->
                 "input: ${input}, expected: ${expected}" {
@@ -19,7 +19,7 @@ class SolutionTest : FreeSpec() {
             }
         }
 
-        "trap2" - {
+        "multiply 2" - {
             val inputs = getInputs()
             inputs.asSequence().forEach { (input, expected) ->
                 "input: ${input}, expected: ${expected}" {
