@@ -18,6 +18,30 @@ class SolutionTest : FreeSpec() {
                 }
             }
         }
+
+        "maxSubArray2" - {
+            val inputs = getInputs()
+            inputs.asSequence().forEach { (input, expected) ->
+                "input: ${input}, expected: ${expected}" {
+                    val actual = Solution2().maxSubArray(input.toIntArray())
+                    println("actual: ${actual}")
+                    println("expected: ${expected}")
+                    actual shouldBe expected
+                }
+            }
+        }
+
+        "maxSubArray3" - {
+            val inputs = getInputs()
+            inputs.asSequence().forEach { (input, expected) ->
+                "input: ${input}, expected: ${expected}" {
+                    val actual = Solution3().maxSubArray(input.toIntArray())
+                    println("actual: ${actual}")
+                    println("expected: ${expected}")
+                    actual shouldBe expected
+                }
+            }
+        }
     }
 
     private fun getInputs(): Map<List<Int>, Int> {
