@@ -3,8 +3,8 @@ package com.shlapak.yaroslav.leetcode.problem21
 import com.shlapak.yaroslav.leetcode.utils.ListNode
 import com.shlapak.yaroslav.leetcode.utils.toIntList
 import com.shlapak.yaroslav.leetcode.utils.toListNode
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.FreeSpec
+import io.kotest.matchers.shouldBe
+import io.kotest.core.spec.style.FreeSpec
 
 
 /**

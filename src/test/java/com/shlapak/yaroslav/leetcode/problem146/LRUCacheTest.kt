@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem146
 
-import io.kotlintest.specs.FreeSpec
-import io.kotlintest.shouldBe
+import io.kotest.core.spec.style.FreeSpec
+import io.kotest.matchers.shouldBe
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem146.LRUCache
  **/

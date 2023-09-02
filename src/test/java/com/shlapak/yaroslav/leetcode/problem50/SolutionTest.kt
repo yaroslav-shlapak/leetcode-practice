@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem50
 
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.FreeSpec
+import io.kotest.matchers.shouldBe
+import io.kotest.core.spec.style.FreeSpec
 
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem50.Solution

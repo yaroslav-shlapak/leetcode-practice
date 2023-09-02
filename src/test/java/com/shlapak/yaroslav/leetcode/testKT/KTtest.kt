@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.testKT
 
-import io.kotlintest.IsolationMode
-import io.kotlintest.specs.FreeSpec
+import io.kotest.core.spec.IsolationMode
+import io.kotest.core.spec.style.FreeSpec
 import java.util.concurrent.atomic.AtomicInteger
 
 /**

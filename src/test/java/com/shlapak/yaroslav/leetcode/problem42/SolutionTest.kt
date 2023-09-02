@@ -1,8 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problem42
 
 import com.shlapak.yaroslav.leetcode.utils.asString
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.FreeSpec
+import io.kotest.matchers.shouldBe
+import io.kotest.core.spec.style.FreeSpec
 
 /** tests for
  * @see com.shlapak.yaroslav.leetcode.problem42.Solution

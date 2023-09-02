@@ -1,9 +1,9 @@
 package com.shlapak.yaroslav.leetcode.problem30
 
 import com.shlapak.yaroslav.leetcode.utils.asString
-import io.kotlintest.seconds
-import io.kotlintest.shouldBe
-import io.kotlintest.specs.FreeSpec
+import io.kotest.matchers.shouldBe
+import io.kotest.core.spec.style.FreeSpec
+import kotlin.time.Duration.Companion.seconds
 
 
 /**
@@ -18,11 +18,11 @@ class SolutionTest : FreeSpec({
         inputs.asSequence().forEach { (input, expected) ->
             "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}"
                     .config(timeout = 2.seconds) {
-                val actual = Solution().findSubstring(input.s, input.words)
-                println("actual:   $actual")
-                println("expected: $expected")
-                actual.sorted() shouldBe expected
-            }
+                        val actual = Solution().findSubstring(input.s, input.words)
+                        println("actual:   $actual")
+                        println("expected: $expected")
+                        actual.sorted() shouldBe expected
+                    }
         }
     }
 
@@ -31,11 +31,11 @@ class SolutionTest : FreeSpec({
         inputs.asSequence().forEach { (input, expected) ->
             "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}"
                     .config(timeout = 2.seconds, enabled = false) {
-                val actual = Solution2().findSubstring(input.s, input.words)
-                println("actual:   $actual")
-                println("expected: $expected")
-                actual.sorted() shouldBe expected
-            }
+                        val actual = Solution2().findSubstring(input.s, input.words)
+                        println("actual:   $actual")
+                        println("expected: $expected")
+                        actual.sorted() shouldBe expected
+                    }
         }
     }
 }) {
@@ -60,6 +60,7 @@ class SolutionTest : FreeSpec({
         }
     }
 }
+
 fun getInputs(): Map<SolutionTest.Parameter, List<Int>> {
     return mapOf(
             SolutionTest.Parameter(

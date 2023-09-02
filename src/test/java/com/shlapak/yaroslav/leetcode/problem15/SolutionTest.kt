@@ -2,8 +2,9 @@
 
 import com.google.gson.Gson
 import com.shlapak.yaroslav.leetcode.utils.asString
-import io.kotlintest.matchers.collections.shouldContainAll
-import io.kotlintest.specs.FreeSpec
+import io.kotest.matchers.collections.shouldContainAll
+import io.kotest.core.spec.style.FreeSpec
+import io.kotest.matchers.collections.shouldContainAll
 import java.io.File
 import java.nio.file.Paths
 

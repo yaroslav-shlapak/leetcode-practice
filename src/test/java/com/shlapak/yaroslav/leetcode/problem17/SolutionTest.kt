@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem17
 
-import io.kotlintest.matchers.collections.shouldContainAll
-import io.kotlintest.specs.FreeSpec
+import io.kotest.matchers.collections.shouldContainAll
+import io.kotest.core.spec.style.FreeSpec
 
 /**
  * Created on 2019/04/23.
