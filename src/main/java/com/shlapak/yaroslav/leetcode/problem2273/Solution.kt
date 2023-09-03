@@ -72,4 +72,18 @@ class Solution {
 
         return sortedS == sortedT
     }
+
+    private fun isAnagram2(s: String, t: String): Boolean {
+        val c = IntArray(26)
+        for (l in s) {
+            c[l - 'a']++;
+        }
+        for (l in t) {
+            c[l - 'a']--;
+        }
+        for (i in c) {
+            if (i != 0) return false
+        }
+        return true
+    }
 }
