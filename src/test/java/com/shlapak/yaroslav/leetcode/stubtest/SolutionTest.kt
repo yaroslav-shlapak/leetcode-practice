@@ -1,6 +1,7 @@
 package com.shlapak.yaroslav.leetcode.stubtest
 
 import io.kotest.core.spec.style.FreeSpec
+import io.kotest.matchers.shouldBe
 
 /** tests for
  * @see com.shlapak.yaroslav.leetcode
