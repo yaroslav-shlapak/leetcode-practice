@@ -10,8 +10,35 @@ class SolutionTest : FreeSpec() {
 
     init {
         "groupAnagrams" - {
-            val inputs = getInputs()
-            inputs.asSequence().forEach { (input, expected) ->
+            val inputs = listOf(
+                    TestCase(
+                            input = arrayOf(
+                                    "eat", "tea", "tan", "ate", "nat", "bat"
+                            ),
+                            expected = listOf(
+                                    listOf("eat", "tea", "ate"),
+                                    listOf("tan", "nat"),
+                                    listOf("bat")
+                            )
+                    ),
+                    TestCase(
+                            input = arrayOf(
+                                    ""
+                            ),
+                            expected = listOf(
+                                    listOf("")
+                            )
+                    ),
+                    TestCase(
+                            input = arrayOf(
+                                    "a"
+                            ),
+                            expected = listOf(
+                                    listOf("a")
+                            )
+                    )
+            )
+            inputs.forEach { (input, expected) ->
                 "input: ${input.toList()}, expected: ${expected.toList()}" {
                     val actual = Solution().groupAnagrams(input)
                     println("actual: ${actual}")
@@ -22,15 +49,8 @@ class SolutionTest : FreeSpec() {
         }
     }
 
-    private fun getInputs(): Map<Array<String>, List<List<String>>> {
-        return mapOf(
-                arrayOf(
-                        "eat", "tea", "tan", "ate", "nat", "bat"
-                ) to listOf(
-                        listOf("eat", "tea", "ate"),
-                        listOf("tan", "nat"),
-                        listOf("bat")
-                )
-        )
-    }
+    data class TestCase(
+            val input: Array<String>,
+            val expected: List<List<String>>
+    )
 }
