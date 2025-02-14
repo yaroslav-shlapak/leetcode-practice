@@ -1,15 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problem49
 
 /**
- * Created on 2019/07/22.
  * https://leetcode.com/problems/group-anagrams/
- *
- * Given an array of strings strs, group the anagrams together. You can return the answer in any order.
- *
- * An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
- * typically using all the original letters exactly once.
- *
- *
  *
  * Example 1:
  *
@@ -31,6 +23,31 @@ package com.shlapak.yaroslav.leetcode.problem49
  * 0 <= strs[i].length <= 100
  * strs[i] consists of lowercase English letters.
  */
+class Solution2 {
+    /**
+     *  Given an array of strings strs, group the anagrams together.
+     *  You can return the answer in any order.
+     *
+     *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+     *  typically using all the original letters exactly once.
+     */
+    fun groupAnagrams(strs: Array<String>): List<List<String>> {
+        val map = mutableMapOf<List<Char>, Int>()
+        val result = mutableListOf<MutableList<String>>()
+        strs.forEach { str ->
+            val key = str.toList().sorted()
+            val indexOfList = map[key]
+            if (indexOfList != null) {
+                result[indexOfList].add(str)
+            } else {
+                map[key] = result.size
+                result.add(mutableListOf(str))
+            }
+        }
+        return result
+    }
+}
+
 class Solution {
     fun groupAnagrams(strs: Array<String>): List<List<String>> {
         val result = mutableListOf<MutableList<String>>()
