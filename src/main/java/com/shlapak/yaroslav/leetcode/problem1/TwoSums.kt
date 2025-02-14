@@ -1,9 +1,37 @@
 package com.shlapak.yaroslav.leetcode.problem1
 
 /**
- * Created on 2019/04/08.
+ * https://leetcode.com/problems/two-sum/submissions/1543335819/
  */
+class Solution2 {
+
+    /**
+     * Given an array of integers nums and an integer target,
+     * return indices of the two numbers such that they add up to target.
+     *
+     * You may assume that each input would have exactly one solution,
+     * and you may not use the same element twice.
+     *
+     * You can return the answer in any order.
+     */
+
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        val possiblePair = mutableMapOf<Int, Int>()
+        nums.forEachIndexed { index, i ->
+            val candidate = possiblePair[i]
+            if (candidate != null) {
+                return@twoSum intArrayOf(candidate, index)
+            } else {
+                possiblePair[target - i] = index
+            }
+        }
+        return intArrayOf(0, 0)
+    }
+}
+
+
 class Solution {
+
     fun twoSum2(nums: IntArray, target: Int): IntArray {
         for (i in 0 until nums.size - 1) {
             for (j in i + 1 until nums.size) {

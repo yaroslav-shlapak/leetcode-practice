@@ -1,7 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problem242
 
-import java.util.LinkedList
-
 /**
  * https://leetcode.com/problems/valid-anagram/
  *
@@ -46,5 +44,17 @@ class Solution {
             if (i != 0) return false
         }
         return true
+    }
+}
+
+class ValidAnagram {
+    // Given two strings s and t, return true if t is an
+    // anagram
+    // of s, and false otherwise.
+    // Anagram --
+    // a word, phrase, or name formed by rearranging the letters of another,
+    // such as spar, formed from rasp.
+    fun isAnagram(s: String, t: String): Boolean {
+        return s.toList().sorted() == t.toList().sorted()
     }
 }
