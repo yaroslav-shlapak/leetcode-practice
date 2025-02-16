@@ -64,6 +64,25 @@ class ValidSudoku {
         }
     }
 
+    fun isValidSudoku2(board: Array<CharArray>): Boolean {
+        val set = HashSet<String>(boardSize * boardSize)
+
+        for (i in 0 until boardSize) {
+            for (j in 0 until boardSize) {
+                val c = board[i][j]
+                if (c != '.') {
+                    if (!set.add("$c in row $i")
+                        || !set.add("$c in column $j")
+                        || !set.add("$c in box ${i / 3} - ${j / 3}")
+                    ) {
+                        return false
+                    }
+                }
+            }
+        }
+        return true
+    }
+
 }
 
 class Solution {
