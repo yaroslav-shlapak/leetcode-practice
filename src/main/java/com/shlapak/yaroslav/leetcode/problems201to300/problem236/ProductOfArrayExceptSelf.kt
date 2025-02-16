@@ -52,8 +52,6 @@ class ProductOfArrayExceptSelf {
                     prefixes[i] = prefixes[i - 1] * nums[i - 1]
                 }
             }
-
-
         }
         for (i in nums.size - 1 downTo 0) {
             when (i) {
