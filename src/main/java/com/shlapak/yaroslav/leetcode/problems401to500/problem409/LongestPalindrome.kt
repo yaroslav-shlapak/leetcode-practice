@@ -56,4 +56,24 @@ class LongestPalindrome {
             }
         }
     }
+
+    fun longestPalindrome2(s: String) : Int {
+        val map = mutableSetOf<Char>()
+        var count = 0;
+        if (s.length == 1) return 1
+
+        for (i in s.indices) {
+            val key = s[i]
+            if (map.contains(key)) {
+                count += 2
+                map.remove(key)
+            } else {
+                map.add(key)
+            }
+        }
+        if (count < s.length) {
+            count++
+        }
+        return count
+    }
 }
