@@ -30,6 +30,16 @@ class SolutionTest : FreeSpec() {
             }
         }
 
+        "trap 3"  - {
+            val inputs = getInputs()
+            inputs.asSequence().forEach { (input, expected) ->
+                "input: ${input.asString()}, expected: ${expected}" {
+                    val actual = TrappingRainWaterEfficientSimple().trap(input)
+                    actual shouldBe expected
+                }
+            }
+        }
+
     }
 
     private fun getInputs(): Map<IntArray, Int> {
