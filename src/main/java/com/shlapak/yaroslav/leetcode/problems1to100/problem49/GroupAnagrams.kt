@@ -23,6 +23,40 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem49
  * 0 <= strs[i].length <= 100
  * strs[i] consists of lowercase English letters.
  */
+class GroupAnagrams {
+    /**
+     *  Given an array of strings strs, group the anagrams together.
+     *  You can return the answer in any order.
+     *
+     *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+     *  typically using all the original letters exactly once.
+     */
+    fun groupAnagrams(strs: Array<String>): List<List<String>> {
+        val res = mutableListOf<MutableList<String>>()
+        val map = mutableMapOf<String, Int>()
+        strs.forEach { s ->
+            val key = getKey(s)
+            val index = map[key]
+            if (index != null) {
+                res[index].add(s)
+            } else {
+                map[key] = res.size
+                res.add(mutableListOf(s))
+            }
+        }
+        return res
+    }
+
+    private fun getKey(s: String): String {
+        val letters = CharArray(26)
+        for (c in s) {
+            letters[c - 'a']++
+        }
+        val key = String(letters)
+        return key
+    }
+}
+
 class Solution2 {
     /**
      *  Given an array of strings strs, group the anagrams together.

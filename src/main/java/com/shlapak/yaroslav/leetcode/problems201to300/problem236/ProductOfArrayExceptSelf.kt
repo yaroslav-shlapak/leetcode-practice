@@ -26,6 +26,26 @@ package com.shlapak.yaroslav.leetcode.problems201to300.problem236
  * (The output array does not count as extra space for space complexity analysis.)
  */
 
+class ProductOfArraysExceptSelf3 {
+    fun productExceptSelf(nums: IntArray): IntArray {
+        val res = IntArray(nums.size) { 1 }
+
+        var lastPrefix = 1
+        for (i in 0 until nums.size) {
+            res[i] = lastPrefix
+            lastPrefix *= nums[i]
+        }
+
+        var lastSuffix = 1
+        for (i in nums.size - 1 downTo 0) {
+            res[i] *= lastSuffix
+            lastSuffix *= nums[i]
+        }
+
+        return res
+    }
+}
+
 class ProductOfArrayExceptSelf2 {
     /**
      * Given an integer array nums,
