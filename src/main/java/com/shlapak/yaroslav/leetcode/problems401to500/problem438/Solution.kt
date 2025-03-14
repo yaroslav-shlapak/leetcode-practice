@@ -36,6 +36,35 @@ package com.shlapak.yaroslav.leetcode.problems401to500.problem438
  * 1 <= s.length, p.length <= 3 * 104
  * s and p consist of lowercase English letters.
  */
+class FindAllAnagramsInString5 {
+    fun findAnagrams(s: String, p: String): List<Int> {
+        val res = mutableListOf<Int>()
+        val n = s.length
+        val m = p.length
+        val golden = IntArray(26)
+        for (i in 0 .. n - m) {
+            for (j in 0 until m) {
+                golden[s[i + j] - 'a']++
+                golden[p[j] - 'a']--
+            }
+            var found = true
+            for (j in golden.indices) {
+                if (golden[j] != 0) {
+                    found = false
+                    golden[j] = 0
+                    break
+                } else {
+                    golden[j] = 0
+                }
+            }
+            if (found) {
+                res.add(i)
+            }
+        }
+        return res
+    }
+}
+
 class FindAllAnagramsInString {
     fun findAnagrams(s: String, p: String): List<Int> {
         val sl = s.toList()
