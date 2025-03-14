@@ -31,6 +31,31 @@ import kotlin.math.min
  * 1 <= n <= 2 * 104
  * 0 <= height[i] <= 105
  */
+class TrappingRainWater2{
+    fun trap(height: IntArray): Int {
+        val n = height.size
+        val maxRight = IntArray(n)
+        maxRight[0] = height[0]
+        for (i in 1 until n) {
+            maxRight[i] = maxOf(maxRight[i - 1], height[i])
+        }
+
+        val maxLeft = IntArray(n)
+        maxLeft[n - 1] = height[n - 1]
+        for (i in n - 2 downTo 0) {
+            maxLeft[i] = maxOf(maxLeft[i + 1], height[i])
+        }
+
+        var res = 0
+        for (i in 0 until n) {
+            val candidate = minOf(maxLeft[i], maxRight[i]) - height[i]
+            if (candidate > 0) {
+                res += candidate
+            }
+        }
+        return res
+    }
+}
 class TrappingRainWaterEfficientSimple {
     fun trap(height: IntArray): Int {
         if (height.size < 2) return 0
