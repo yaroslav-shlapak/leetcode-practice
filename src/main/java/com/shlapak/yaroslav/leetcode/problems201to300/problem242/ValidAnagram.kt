@@ -24,6 +24,23 @@ package com.shlapak.yaroslav.leetcode.problems201to300.problem242
  *
  * Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
  */
+class ValidAnagram2 {
+    fun isAnagram(s: String, t: String): Boolean {
+        if (s.length != t.length) return false
+        val numberOfLowercaseLetters = 26
+        val arr = IntArray(numberOfLowercaseLetters) { 0 }
+        for (i in s.indices) {
+            arr[s[i] - 'a']++
+            arr[t[i] - 'a']--
+        }
+        for (i in arr) {
+            if (i != 0) return false
+        }
+        return true
+    }
+}
+
+
 class Solution {
     fun isAnagram(s: String, t: String): Boolean {
         val sortedS = s.toList().sorted()
