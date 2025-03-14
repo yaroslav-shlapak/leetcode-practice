@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems1to100.problem14
 
+import java.util.*
+
 /**
  * 14. Longest Common Prefix
  *
@@ -25,6 +27,42 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem14
  * 0 <= strs[i].length <= 200
  * strs[i] consists of only lowercase English letters if it is non-empty.
  */
+class LongestCommonPrefix3 {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        if (strs.isEmpty()) return ""
+        val firstStr = strs[0]
+        var end = 0
+
+        for (i in firstStr.indices) {
+            for (j in 1 until strs.size) {
+                if (i >= strs[j].length || strs[j][i] != firstStr[i]) {
+                    return firstStr.substring(0, end)
+                }
+            }
+            end++
+        }
+
+        return firstStr.substring(0, end)
+    }
+}
+
+class LongestCommonPrefix2 {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        Arrays.sort(strs)
+        val base = strs[0]
+        var end = base.length
+        for (i in 1 until strs.size) {
+            var n = 0
+            while (n < end && strs[i].length > n && base[n] == strs[i][n]) {
+                n++
+            }
+            end = n
+        }
+
+        return base.substring(0, end)
+    }
+}
+
 class LongestCommonPrefix {
     fun longestCommonPrefix(strs: Array<String>): String {
         return when (strs.size) {
