@@ -5,6 +5,10 @@ package com.shlapak.yaroslav.leetcode.problems101to200.problem128
  *
  * 128. Longest Consecutive Sequence
  *
+ * Given an unsorted array of integers nums,
+ * return the length of the longest consecutive elements sequence.
+ * You must write an algorithm that runs in O(n) time.
+ *
  * Example 1:
  *
  * Input: nums = [100,4,200,1,3,2]
@@ -27,6 +31,46 @@ package com.shlapak.yaroslav.leetcode.problems101to200.problem128
  * 0 <= nums.length <= 10^5
  * -10^9 <= nums[i] <= 10^9
  */
+class LongestConsecutiveSequence3 {
+    fun longestConsecutive(nums: IntArray): Int {
+        val mp = HashMap<Int, Int>()
+        var res = 0
+
+        for (num in nums) {
+            if (mp[num] == null) {
+                val left = mp[num - 1] ?: 0
+                val right = mp[num + 1] ?: 0
+                val sum = left + right + 1
+                mp[num] = sum
+                mp[num - left] = sum
+                mp[num + right] = sum
+                res = maxOf(res, sum)
+            }
+        }
+        return res
+    }
+}
+
+class LongestConsecutiveSequence2 {
+    fun longestConsecutive(nums: IntArray): Int {
+        if (nums.isEmpty()) return 0
+        val set = nums.toSet()
+        var res = 0
+        for (num in set) {
+            // check if there is no left neighbour
+            if (!set.contains(num - 1)) {
+                var i = 0
+                // iterate until we have sequence
+                while (set.contains(num + i)) {
+                    i++
+                }
+                res = maxOf(res, i)
+            }
+        }
+        return res
+    }
+}
+
 class LongestConsecutiveSequence {
     /**
      *  Given an unsorted array of integers nums,
