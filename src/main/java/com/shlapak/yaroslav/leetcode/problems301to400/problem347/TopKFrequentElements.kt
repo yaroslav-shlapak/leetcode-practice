@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems301to400.problem347
 
+import java.util.PriorityQueue
+
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/description/
  *
@@ -27,6 +29,57 @@ package com.shlapak.yaroslav.leetcode.problems301to400.problem347
  *
  * Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
  */
+class TopKFrequentElements_BacketSort {
+    fun topKFrequent(nums: IntArray, k: Int): IntArray {
+        val freqMap = mutableMapOf<Int, Int>()
+        nums.forEach { freqMap[it] = (freqMap[it] ?: 0) + 1 }
+        // create freq to values list
+        // size + 1 no take into account nums that contains duplicates
+        val freq = Array<MutableList<Int>>(nums.size + 1) { mutableListOf<Int>() }
+        // populate the list
+        freqMap.forEach { (value, frequency) ->
+            freq[frequency].add(value)
+        }
+        val res = mutableListOf<Int>()
+        val n = freq.size - 1
+        outer@ for (i in n downTo 0) {
+            for (j in freq[i]) {
+                res.add(j)
+                if (res.size == k) break@outer
+            }
+        }
+
+        return res.toIntArray()
+    }
+}
+
+class TopKFrequentElements_PriorityQueue {
+    fun topKFrequent(nums: IntArray, k: Int): IntArray {
+        val map = mutableMapOf<Int, Int>()
+        for (i in nums) {
+            map[i] = (map[i] ?: 0) + 1
+        }
+        // priority queue to keep the elements in order
+        val queue = PriorityQueue<Pair<Int, Int>>(compareBy { it.second })
+
+        for ((num, freq) in map) {
+            // add to queue
+            queue.offer(num to freq)
+            // if size is larger than needed number, remove the last one in queue
+            if (queue.size > k) {
+                queue.poll()
+            }
+        }
+
+        val res = IntArray(k)
+        // add elements from largest to smallest
+        for (i in k - 1 downTo 0) {
+            res[i] = queue.poll().first
+        }
+        return res
+    }
+}
+
 class TopKFrequentElements {
 
     /**
