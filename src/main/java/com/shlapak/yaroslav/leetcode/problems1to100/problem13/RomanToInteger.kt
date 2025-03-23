@@ -4,6 +4,43 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem13
  * Created on 2019/04/12.
  * https://leetcode.com/problems/roman-to-integer/
  */
+
+class RomanToInteger {
+
+    inline val Char.romanValue: Int
+        get() = when (this) {
+            'I' -> 1
+            'V' -> 5
+            'X' -> 10
+            'L' -> 50
+            'C' -> 100
+            'D' -> 500
+            'M' -> 1000
+            else -> 0
+        }
+
+
+    fun romanToInt(s: String): Int {
+        var total = 0
+        val n = s.length
+
+        for (i in 0 until n) {
+            val currentValue = s[i].romanValue
+            val nextValue = if (i + 1 < n) s[i + 1].romanValue else 0
+
+            // If the current value is less than the next value, subtract it; otherwise, add it
+            if (currentValue < nextValue) {
+                total -= currentValue
+            } else {
+                total += currentValue
+            }
+        }
+
+        return total
+    }
+
+}
+
 class Solution {
     fun romanToInt(s: String): Int {
         val map = mapOf(
