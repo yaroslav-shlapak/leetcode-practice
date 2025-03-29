@@ -31,6 +31,29 @@ package com.shlapak.yaroslav.leetcode.problems101to200.problem128
  * 0 <= nums.length <= 10^5
  * -10^9 <= nums[i] <= 10^9
  */
+class LongestConsecutiveSequence4 {
+    fun longestConsecutive(nums: IntArray): Int {
+        if (nums.isEmpty()) return 0
+        // convert to set
+        val set = nums.toSet()
+        var res = 0
+        // iterate over set elements
+        for (i in set) {
+            // check if item i has previous items
+            if(!set.contains(i - 1)) {
+                var j = 0
+                // iterate until there are no next items in sequence
+                while (set.contains(i + j)){
+                    j++
+                }
+                // save maximum of two
+                res = maxOf(res, j)
+            }
+        }
+        return res
+
+    }
+}
 class LongestConsecutiveSequence3 {
     fun longestConsecutive(nums: IntArray): Int {
         val mp = HashMap<Int, Int>()
@@ -50,6 +73,7 @@ class LongestConsecutiveSequence3 {
         return res
     }
 }
+
 
 class LongestConsecutiveSequence2 {
     fun longestConsecutive(nums: IntArray): Int {
