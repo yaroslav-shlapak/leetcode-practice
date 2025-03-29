@@ -34,6 +34,31 @@ package com.shlapak.yaroslav.leetcode.problems101to200.problem125
  * s consists only of printable ASCII characters.
  *
  */
+class ValidPalindrome2 {
+    fun isPalindrome(s: String): Boolean {
+        var r = s.length - 1
+        var l = 0
+        while (r > l) {
+            when {
+                !s[r].isLetterOrDigit() -> {
+                    r--
+                }
+                !s[l].isLetterOrDigit() -> {
+                    l++
+                }
+                s[r].lowercase() == s[l].lowercase() -> {
+                    r--
+                    l++
+                }
+                else -> {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+}
+
 class ValidPalindrome {
     fun isPalindrome(s: String): Boolean {
         val refined = s.lowercase().filter { it in 'a'..'z' || it in '0'..'9' }
