@@ -1,4 +1,4 @@
-package com.shlapak.yaroslav.leetcode.problem2001to2100.problem2037
+package com.shlapak.yaroslav.leetcode.problems2001to2100.problem2037
 
 /*
 2037. Minimum Number of Moves to Seat Everyone
