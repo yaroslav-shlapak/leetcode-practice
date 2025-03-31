@@ -1,8 +1,49 @@
 package com.shlapak.yaroslav.leetcode.problems1to100.problem3
 
 /**
- * Created on 2019/04/08.
+ * 3. Longest Substring Without Repeating Characters
+ * Given a string s, find the length of the longest substring without duplicate characters.
+ * https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
  */
+
+class LongestSubstringWithoutRepeatingCharacters {
+    fun lengthOfLongestSubstring(s: String): Int {
+        val map = mutableMapOf<Char, Int>()
+        var max = 0
+        var startIndexOfLongestString = 0
+
+        for (i in s.indices) {
+            val ch = s[i]
+            val indexOfPreviousOccurrence = map[ch]
+            if (indexOfPreviousOccurrence != null) {
+                startIndexOfLongestString = maxOf(startIndexOfLongestString, indexOfPreviousOccurrence + 1)
+            }
+            map[ch] = i
+            max = maxOf(max, i - startIndexOfLongestString + 1)
+        }
+
+        return max
+    }
+}
+
+class LongestSubstringWithoutRepeatingCharacters_O_N {
+    fun lengthOfLongestSubstring(s: String): Int {
+        var left = 0
+        var max = 0
+        val set = mutableSetOf<Char>()
+        for (right in s.indices) {
+            // remove from the left until duplicate removed
+            while (set.contains(s[right])) {
+                set.remove(s[left])
+                left++
+            }
+            set.add(s[right])
+            max = maxOf(max, set.size)
+        }
+        return max
+    }
+}
+
 class Solution {
     var max = 0
 
