@@ -4,6 +4,84 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem34
  * Created on 2019/05/31.
  * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
  */
+class FindFirstAndLastPositionOfElementInSortedArray {
+    fun searchRange(nums: IntArray, target: Int): IntArray {
+        val res = intArrayOf(-1, -1)
+
+        res[0] = binarySearchLeft(nums, target, 0, nums.lastIndex)
+        if (res[0] == -1) return res
+        res[1] = binarySearchRight(nums, target, 0, nums.lastIndex)
+
+        return res
+    }
+
+    private fun binarySearchRight(
+        nums: IntArray,
+        target: Int,
+        start: Int,
+        end: Int,
+    ): Int {
+        var r = end
+        var l = start
+        while (r >= l) {
+            val mid = l + (r - l) / 2
+            val rightNeighbor = mid + 1
+            when {
+                nums[mid] == target -> {
+                    if (rightNeighbor < nums.size && nums[rightNeighbor] == target) {
+                        l = rightNeighbor
+                    } else {
+                        return mid
+                    }
+                }
+
+                nums[mid] < target -> {
+                    l = mid + 1
+                }
+
+                nums[mid] > target -> {
+                    r = mid - 1
+                }
+
+
+            }
+        }
+        return -1
+    }
+
+    private fun binarySearchLeft(
+        nums: IntArray,
+        target: Int,
+        start: Int,
+        end: Int,
+    ): Int {
+        var r = end
+        var l = start
+        while (r >= l) {
+            val mid = l + (r - l) / 2
+            val leftNeighbour = mid - 1
+            when {
+                nums[mid] == target -> {
+                    if (leftNeighbour >= 0 && nums[leftNeighbour] == target) {
+                        r = leftNeighbour
+                    } else {
+                        return mid
+                    }
+                }
+
+                nums[mid] < target -> {
+                    l = mid + 1
+                }
+
+                nums[mid] > target -> {
+                    r = mid - 1
+                }
+            }
+        }
+        return -1
+    }
+}
+
 class Solution {
     fun searchRange(nums: IntArray, target: Int): IntArray {
         val res = intArrayOf(-1, -1)
@@ -15,10 +93,10 @@ class Solution {
     }
 
     private fun binarySearchLeft(
-            nums: IntArray,
-            target: Int,
-            from: Int,
-            to: Int
+        nums: IntArray,
+        target: Int,
+        from: Int,
+        to: Int
     ): Int {
         var lo = from
         var hi = to
@@ -34,9 +112,11 @@ class Solution {
                         return mid
                     }
                 }
+
                 nums[mid] < target -> {
                     lo = mid + 1
                 }
+
                 nums[mid] > target -> {
                     hi = mid - 1
                 }
@@ -46,10 +126,10 @@ class Solution {
     }
 
     private fun binarySearchRight(
-            nums: IntArray,
-            target: Int,
-            from: Int,
-            to: Int
+        nums: IntArray,
+        target: Int,
+        from: Int,
+        to: Int
     ): Int {
         var lo = from
         var hi = to
@@ -65,9 +145,11 @@ class Solution {
                         return mid
                     }
                 }
+
                 nums[mid] < target -> {
                     lo = mid + 1
                 }
+
                 nums[mid] > target -> {
                     hi = mid - 1
                 }
@@ -109,11 +191,11 @@ class Solution3 {
     }
 
     private fun binarySearchRightLeft(
-            nums: IntArray,
-            target: Int,
-            from: Int,
-            to: Int,
-            isLeft: Boolean
+        nums: IntArray,
+        target: Int,
+        from: Int,
+        to: Int,
+        isLeft: Boolean
     ): Int {
         var lo = from
         var hi = to
@@ -139,9 +221,11 @@ class Solution3 {
                         }
                     }
                 }
+
                 nums[mid] < target -> {
                     lo = mid + 1
                 }
+
                 nums[mid] > target -> {
                     hi = mid - 1
                 }

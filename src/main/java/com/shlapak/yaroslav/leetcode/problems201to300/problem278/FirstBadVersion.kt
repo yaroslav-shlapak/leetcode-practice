@@ -4,6 +4,31 @@ package com.shlapak.yaroslav.leetcode.problems201to300.problem278
  * 278. First Bad Version
  * https://leetcode.com/problems/first-bad-version/description/
  */
+class Solution3: VersionControl() {
+    override fun firstBadVersion(n: Int): Int {
+        var r = n
+        var l = 0
+        while (r >= l) {
+            val mid = l + (r - l) / 2
+            val isBad = isBadVersion(mid)
+            when {
+                isBad && !isBadVersion(mid - 1) -> {
+                    return mid
+                }
+
+                isBad -> {
+                    r = mid - 1
+                }
+
+                !isBad -> {
+                    l = mid + 1
+                }
+            }
+        }
+        return -1
+    }
+}
+
 class Solution2 : VersionControl() {
     override fun firstBadVersion(n: Int): Int {
         var r = n
