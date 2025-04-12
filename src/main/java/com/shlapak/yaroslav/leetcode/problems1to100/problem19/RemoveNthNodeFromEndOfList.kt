@@ -15,6 +15,30 @@ import com.shlapak.yaroslav.leetcode.utils.ListNode
  * }
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
  */
+class RemoveNthNodeFromEndOfList {
+    fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+        // Dummy node to handle edge cases (e.g., removing the first node)
+        val dummy = ListNode(0)
+        dummy.next = head
+        // Two pointers initially pointing to the dummy node
+        var first: ListNode? = dummy
+        var second: ListNode? = dummy
+        // Move the first pointer `n+1` steps ahead so that there's a gap of `n` between first and second
+        for (i in 0..n) {
+            first = first?.next
+        }
+        // Move both pointers until the first one reaches the end of the list
+        while (first != null) {
+            first = first.next
+            second = second?.next
+        }
+        // Now, the second pointer is at the node before the one to be removed
+        second?.next = second?.next?.next
+        // Return the head, which might have changed if the first node was removed
+        return dummy.next
+    }
+}
+
 class Solution {
     fun removeNthFromEndFirst(head: ListNode?, n: Int): ListNode? {
         return if (head == null) {
