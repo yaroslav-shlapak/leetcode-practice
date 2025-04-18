@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems101to200.problem141
 
+import com.shlapak.yaroslav.leetcode.utils.ListNode
+
 class LinkedListCycle {
     fun hasCycle2(head: ListNode?): Boolean {
         var p1 = head
@@ -27,8 +29,4 @@ class LinkedListCycle {
         }
         return false
     }
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
 }
