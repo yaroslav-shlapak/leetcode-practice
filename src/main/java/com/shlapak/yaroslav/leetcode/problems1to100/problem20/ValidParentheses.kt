@@ -8,6 +8,18 @@ import java.util.*
  */
 
 class ValidParentheses {
+    fun isValid2(s: String): Boolean {
+        val stack = LinkedList<Char>()
+        val map = mapOf('(' to ')', '[' to ']', '{' to '}')
+        for (ch in s) {
+            if (!stack.isEmpty() && map[stack.peekFirst()] == ch) {
+                stack.removeFirst()
+            } else {
+                stack.addFirst(ch)
+            }
+        }
+        return stack.isEmpty()
+    }
     /**
      *  Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
      *  determine if the input string is valid.
