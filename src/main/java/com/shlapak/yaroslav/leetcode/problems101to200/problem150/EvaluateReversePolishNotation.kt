@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problems101to200.problem150
 
-import java.util.Stack
+import java.util.*
 
 /**
  * 150. Evaluate Reverse Polish Notation
@@ -42,6 +42,30 @@ import java.util.Stack
  * = 17 + 5
  * = 22
  */
+
+class EvaluateReversePolishNotation2 {
+    fun evalRPN(tokens: Array<String>): Int {
+        val stack = LinkedList<Int>()
+        val map = mutableMapOf<String, (Int, Int) -> Int>(
+            "+" to { a, b -> a + b },
+            "-" to { a, b -> a - b },
+            "*" to { a, b -> a * b },
+            "/" to { a, b -> a / b },
+        )
+        for (token in tokens) {
+            val operation = map[token]
+            if (operation != null) {
+                val first = stack.removeFirst()
+                val second = stack.removeFirst()
+                val x = operation(second, first)
+                stack.addFirst(x)
+            } else {
+                stack.addFirst(token.toInt())
+            }
+        }
+        return stack.removeFirst()
+    }
+}
 
 class EvaluateReversePolishNotation {
     private val stack: Stack<Int> = Stack()
