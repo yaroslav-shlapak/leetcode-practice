@@ -1,5 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problems701to800.problem739
 
+import java.util.LinkedList
 import java.util.Stack
 
 /**
@@ -30,6 +31,22 @@ import java.util.Stack
  * 30 <= temperatures[i] <= 100
  *
  */
+class DailyTemperatures2 {
+    fun dailyTemperatures(temperatures: IntArray): IntArray {
+        val res = IntArray(temperatures.size)
+        val stack = LinkedList<Pair<Int, Int>>()
+        for (i in temperatures.indices) {
+            res[i] = 0
+            while (stack.isNotEmpty() && stack.getFirst().second < temperatures[i]) {
+                val (index, value) = stack.removeFirst()
+                res[index] = i - index
+            }
+            stack.addFirst(i to temperatures[i])
+        }
+        return res
+    }
+}
+
 class DailyTemperatures {
     fun dailyTemperatures(temperatures: IntArray): IntArray {
 
