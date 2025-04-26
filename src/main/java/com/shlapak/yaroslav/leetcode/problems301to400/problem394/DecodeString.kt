@@ -8,34 +8,52 @@ import java.util.Stack
  * https://leetcode.com/problems/decode-string/description/
  */
 class DecodeString {
-    fun decodeString(s: String): String {
-        val stack = LinkedList<Triple<Int, Int, Int>>()
+    data class DecodePoints(
+        val startOfStringToRepeat: Int,
+        val startOfNumber: Int,
+        val repetitions: Int
+    )
 
-        for (i in s.indices) {
-            if (s[i] == '[') {
-                val (rep, start) = findRepetitions(s, i)
-                //println("rep: $rep, start: $start, i: $i")
-                stack.addFirst(Triple(i, rep, start))
-            }
-        }
+    fun decodeString(s: String): String {
+        val stack = LinkedList<DecodePoints>()
+
+        findStartingPoints(s, stack)
 
         var temp = s
         while (!stack.isEmpty()) {
-            val (index, rep, start) = stack.removeFirst()
+            val (startOfStringToRepeat, startOfNumber, repetitions) = stack.removeFirst()
             var stringToInsert = ""
-            var end = start
-            for (i in start..temp.lastIndex) {
+            var end = startOfNumber
+            for (i in startOfNumber..temp.lastIndex) {
                 if (temp[i] == ']') {
                     end = i + 1
-                    stringToInsert = temp.substring(index + 1, i).repeat(rep)
+                    stringToInsert = temp.substring(startOfStringToRepeat + 1, i).repeat(repetitions)
                     break
                 }
             }
 
-            temp = temp.substring(0, start) + stringToInsert + temp.substring(end, temp.length)
+            temp = temp.substring(0, startOfNumber) +
+                    stringToInsert +
+                    temp.substring(end, temp.length)
         }
 
         return temp
+    }
+
+    private fun findStartingPoints(
+        s: String,
+        stack: LinkedList<DecodePoints>
+    ) {
+        for (i in s.indices) {
+            if (s[i] == '[') {
+                val (rep, start) = findRepetitions(s, i)
+                stack.addFirst(/* e = */ DecodePoints(
+                    startOfStringToRepeat = i,
+                    startOfNumber = start,
+                    repetitions = rep
+                ))
+            }
+        }
     }
 
     private fun findRepetitions(s: String, end: Int): Pair<Int, Int> {
@@ -188,12 +206,13 @@ class DecodeString2 {
 
         for (c in s) {
             when (c) {
-                in '0' .. '9' -> currTimes = currTimes * 10 + (c - '0')
+                in '0'..'9' -> currTimes = currTimes * 10 + (c - '0')
                 '[' -> {
                     stack.add(currSb to currTimes)
                     currSb = StringBuilder()
                     currTimes = 0
                 }
+
                 ']' -> {
                     val (prevSb, times) = stack.removeLast()
                     repeat(times) {
@@ -201,6 +220,7 @@ class DecodeString2 {
                     }
                     currSb = prevSb
                 }
+
                 else -> currSb.append(c)
             }
         }
