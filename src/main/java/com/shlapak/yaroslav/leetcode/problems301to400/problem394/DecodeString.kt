@@ -109,7 +109,6 @@ class DecodeString2Stacks { // looks like it's the best solution
             when {
                 char.isDigit() -> {
                     temp = temp * 10 + (char - '0')
-
                 }
 
                 char == '[' -> {
@@ -117,7 +116,6 @@ class DecodeString2Stacks { // looks like it's the best solution
                     stack.push(current)
                     temp = 0
                     current = StringBuilder()
-
                 }
 
                 char == ']' -> {
