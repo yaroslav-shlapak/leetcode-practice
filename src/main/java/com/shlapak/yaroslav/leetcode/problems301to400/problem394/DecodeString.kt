@@ -9,9 +9,7 @@ import java.util.Stack
  */
 class DecodeString {
     data class DecodePoints(
-        val startOfStringToRepeat: Int,
-        val startOfNumber: Int,
-        val repetitions: Int
+        val startOfStringToRepeat: Int, val startOfNumber: Int, val repetitions: Int
     )
 
     fun decodeString(s: String): String {
@@ -32,26 +30,22 @@ class DecodeString {
                 }
             }
 
-            temp = temp.substring(0, startOfNumber) +
-                    stringToInsert +
-                    temp.substring(end, temp.length)
+            temp = temp.substring(0, startOfNumber) + stringToInsert + temp.substring(end, temp.length)
         }
 
         return temp
     }
 
     private fun findStartingPoints(
-        s: String,
-        stack: LinkedList<DecodePoints>
+        s: String, stack: LinkedList<DecodePoints>
     ) {
         for (i in s.indices) {
             if (s[i] == '[') {
                 val (rep, start) = findRepetitions(s, i)
                 stack.addFirst(/* e = */ DecodePoints(
-                    startOfStringToRepeat = i,
-                    startOfNumber = start,
-                    repetitions = rep
-                ))
+                    startOfStringToRepeat = i, startOfNumber = start, repetitions = rep
+                )
+                )
             }
         }
     }
@@ -109,7 +103,6 @@ class DecodeString2Stacks { // looks like it's the best solution
             when {
                 char.isDigit() -> {
                     temp = temp * 10 + (char - '0')
-
                 }
 
                 char == '[' -> {
@@ -117,7 +110,6 @@ class DecodeString2Stacks { // looks like it's the best solution
                     stack.push(current)
                     temp = 0
                     current = StringBuilder()
-
                 }
 
                 char == ']' -> {
@@ -132,7 +124,6 @@ class DecodeString2Stacks { // looks like it's the best solution
                 else -> {
                     current.append(char)
                 }
-
             }
 
         }
@@ -142,8 +133,7 @@ class DecodeString2Stacks { // looks like it's the best solution
 }
 
 class DecodeStringTailRecursion {
-    fun decodeString(s: String): String {
-        /*
+    fun decodeString(s: String): String {/*
             recursion?
             need to evaluate inner most bracket first
             keep going until you see 2 closest together open and cloes bracket
