@@ -8,20 +8,27 @@ import java.util.PriorityQueue
  */
 
 class KthLargest(private val k: Int, nums: IntArray) {
-    private val minQueue = PriorityQueue<Int>()
+
+    private val minHeap = PriorityQueue<Int>() // space: O(N)
 
     init {
-        for (n in nums) {
+        for (n in nums) { // O(N log k)
             add(n)
         }
     }
 
     fun add(`val`: Int): Int {
-        minQueue.offer(`val`)
-        if (minQueue.size > k) {
-            minQueue.poll()
+        minHeap.offer(`val`) // O(log k)
+        if (minHeap.size > k) {
+            minHeap.poll() // O(log k)
         }
-        return minQueue.peek()
+        return minHeap.peek() // O(1)
     }
 
 }
+
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * var obj = KthLargest(k, nums)
+ * var param_1 = obj.add(`val`)
+ */

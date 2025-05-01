@@ -24,6 +24,7 @@ class AsteroidCollision {
                         stack.removeFirst()
                     }
                     // both top and ast collide
+                    // both top and ast collide
                     movingToEachOther && abs(top) == abs(ast) -> {
                         stack.removeFirst()
                         shouldAddToStack = false
