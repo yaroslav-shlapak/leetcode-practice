@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems1to100.problem26
 
+import java.util.TreeSet
+
 /**
  * Created on 2019/05/14.
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
@@ -35,5 +37,37 @@ class Solution {
             }
         }
         return i + 1
+    }
+
+    // [0,0,1,1,1,2,2,3,3,4]
+    // [0,1,1,1,1,2,2,3,3,4]
+    //      |
+    fun removeDuplicates3(nums: IntArray): Int {
+        if (nums.size < 2) return nums.size
+        var index = 1
+        var prev = nums[0]
+        for (n in 0 until nums.size) {
+            if (prev != nums[n]) {
+                nums[index] = nums[n]
+                index++
+            }
+            prev = nums[n]
+        }
+
+        return index
+    }
+
+    fun removeDuplicates2(nums: IntArray): Int {
+        val set = TreeSet<Int>()
+        for (n in nums) {
+            set.add(n)
+        }
+
+        var index = 0
+        for (n in set) {
+            nums[index] = n
+            index++
+        }
+        return set.size
     }
 }
