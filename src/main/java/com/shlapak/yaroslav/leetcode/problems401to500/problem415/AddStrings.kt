@@ -6,30 +6,20 @@ package com.shlapak.yaroslav.leetcode.problems401to500.problem415
  */
 class AddStrings {
     fun addStrings(num1: String, num2: String): String {
-        var i = num1.lastIndex
-        var j = num2.lastIndex
-        var rem = 0
+        var i1 = num1.lastIndex
+        var i2 = num2.lastIndex
+        var carry = 0
         val sum = StringBuilder()
-        while (i >= 0 || j >= 0 || rem > 0) {
-            val temp = when {
-                i >= 0 && j >= 0 -> {
-                    num1[i].asInt() + num2[j].asInt()
-                }
+        while (i1 >= 0 || i2 >= 0 || carry > 0) {
+            val digit1 = if (i1 >= 0) num1[i1].asInt() else 0
+            val digit2 = if (i2 >= 0) num2[i2].asInt() else 0
 
-                i >= 0 -> {
-                    num1[i].asInt()
-                }
+            val interimCalcResult = digit1 + digit2 + carry
+            sum.append(interimCalcResult % 10)
+            carry = interimCalcResult / 10
 
-                j >= 0 -> {
-                    num2[j].asInt()
-                }
-
-                else -> 0
-            }
-            sum.append((temp + rem) % 10)
-            rem = (temp + rem) / 10
-            i--
-            j--
+            i1--
+            i2--
         }
 
         return sum.reverse().toString()
