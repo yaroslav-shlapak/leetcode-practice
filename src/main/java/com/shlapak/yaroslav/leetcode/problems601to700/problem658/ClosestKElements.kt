@@ -4,7 +4,40 @@ package com.shlapak.yaroslav.leetcode.problems601to700.problem658
 import java.util.PriorityQueue
 import kotlin.math.abs
 
+/**
+ * 658. Find K Closest Elements
+ * https://leetcode.com/problems/find-k-closest-elements/
+ */
 class ClosestKElements {
+    fun findClosestElements5(arr: IntArray, k: Int, x: Int): IntArray {
+        // |a - x| < |b - x|, or
+        // |a - x| == |b - x| and a < b
+        // Input: arr = [1,1,2,3,4,5], k = 4, x = -1
+        //Output: [1,1,2,3] -> 2,3,4,5
+        //
+        val minHeap = PriorityQueue<Int>(k + 1) { o1, o2 -> // 1, -1, 0
+            if (abs(o1 - x) == abs(o2 - x)) {
+                o2.compareTo(o1)  // 1, -1, 0
+            } else {
+                abs(o2 - x).compareTo(abs(o1 - x)) // 1,1,2,3 -> 2, 2, 3, 4
+            }
+        }
+
+        for (a in arr) { // N
+            minHeap.offer(a) // O(logN)
+            if (minHeap.size > k) {
+                minHeap.poll() // O(logN)
+            }
+        }
+
+        val res = IntArray(k)
+
+        for (i in 0 until minHeap.size) { // N
+            res[i] = minHeap.poll()
+        }
+        res.sort()
+        return res
+    }
 
     fun findClosestElements(arr: IntArray, k: Int, x: Int): List<Int> {
         val res = mutableListOf<Int>()
