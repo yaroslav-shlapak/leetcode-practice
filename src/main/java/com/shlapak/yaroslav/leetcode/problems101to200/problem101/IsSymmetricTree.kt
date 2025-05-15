@@ -9,6 +9,37 @@ import java.util.LinkedList
  */
 class IsSymmetricTree_IterativeBFS {
     fun isSymmetric(root: TreeNode?): Boolean {
+        val queue = LinkedList<TreeNode?>()
+        queue.offer(root)
+        while (queue.isNotEmpty()) {
+            val levelSize = queue.size
+            val levelNodes = Array<TreeNode?>(levelSize) { null }
+            var areAllNodesNull = true
+            for (i in 0 until levelSize) {
+                val node = queue.poll()
+                levelNodes[i] = node
+                if (node != null) {
+                    areAllNodesNull = false
+                    queue.offer(node.left)
+                    queue.offer(node.right)
+                }
+            }
+            if (areAllNodesNull) return true
+            var left = 0
+            var right = levelNodes.size - 1
+            while (right > left) {
+                if (levelNodes[left]?.`val` != levelNodes[right]?.`val`) {
+                    return false
+                }
+                left++
+                right--
+            }
+
+        }
+        return true
+    }
+
+    fun isSymmetric2(root: TreeNode?): Boolean {
         if (root == null) return true
         val queue = LinkedList<TreeNode?>()
         queue.offer(root)
@@ -27,22 +58,20 @@ class IsSymmetricTree_IterativeBFS {
                 }
 
             }
-
-            var right = list.size - 1
+            if (allNodesInLevelAreNull) {
+                break
+            }
             var left = 0
+            var right = list.size - 1
+
             while (right > left) {
                 if (list[right]?.`val` != list[left]?.`val`) {
                     return false
                 }
-                right--
                 left++
-            }
-
-            if (allNodesInLevelAreNull && levelSize > 0) {
-                break
+                right--
             }
         }
-
         return true
     }
 }
