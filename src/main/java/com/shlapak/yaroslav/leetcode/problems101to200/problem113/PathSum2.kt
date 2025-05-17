@@ -3,6 +3,10 @@ package com.shlapak.yaroslav.leetcode.problems101to200.problem113
 import com.shlapak.yaroslav.leetcode.utils.TreeNode
 import java.util.LinkedList
 
+/**
+ * 113. Path Sum II
+ * https://leetcode.com/problems/path-sum-ii/
+ */
 class PathSum2 {
     fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> {
         if (root == null) return emptyList()

@@ -2,6 +2,10 @@ package com.shlapak.yaroslav.leetcode.problems1to100.pronblem92
 
 import com.shlapak.yaroslav.leetcode.utils.ListNode
 
+/**
+ * 92. Reverse Linked List II
+ * https://leetcode.com/problems/reverse-linked-list-ii/
+ */
 class ReverseLinkedList2 {
     fun reverseBetween(head: ListNode?, left: Int, right: Int): ListNode? {
         // 0. Using dummy head is crucial here to address cases when reversal starts from the 1st node
