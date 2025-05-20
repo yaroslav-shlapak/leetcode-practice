@@ -10,8 +10,8 @@ class MinimumHeightTrees {
         // find leaves connections
         val adj = mutableMapOf<Int, MutableList<Int>>()
         for (edge in edges) {
-            adj[edge[0]]?.let { it.add(edge[1]) } ?: let { adj[edge[0]] = mutableListOf(edge[1])}
-            adj[edge[1]]?.let { it.add(edge[0]) } ?: let { adj[edge[1]] = mutableListOf(edge[0])}
+            adj.getOrPut(edge[0]) { mutableListOf() }.add(edge[1])
+            adj.getOrPut(edge[1]) { mutableListOf() }.add(edge[0])
         }
 
         // count neighbours and add leaves to queue
