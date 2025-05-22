@@ -50,6 +50,7 @@ class WordDictionary() {
                 }
             }
             return cur.isWordEnd
+
         }
 
         return dfs(root, 0)
