@@ -1,4 +1,4 @@
-package com.shlapak.yaroslav.leetcode.problems201to300.problem236
+package com.shlapak.yaroslav.leetcode.problems201to300.problem238
 
 /**
  * https://leetcode.com/problems/product-of-array-except-self
