@@ -31,6 +31,30 @@ import java.util.Stack
  * 30 <= temperatures[i] <= 100
  *
  */
+class DailyTemperatures3 {
+    fun dailyTemperatures(temperatures: IntArray): IntArray {
+        val len = temperatures.size
+        val stack = ArrayDeque<Int>()
+        val res = IntArray(len)
+        // the idea is to run though the array in loop while adding the items to the stack
+        // peek from stack and compare with items in another loop
+        // while it's less than the next item and
+        // calculate the difference between the current index and the head stack value
+        // [73,74,75,71,69,72,76,73]
+        // [6, 7]
+        // [ 1, 1, 4, 2, 1, 1, 0, 0]
+        for (i in 0 until len) {
+            while (stack.isNotEmpty() && temperatures[stack.first()] < temperatures[i]) {
+                val index = stack.removeFirst()
+                res[index] = i - index
+            }
+            stack.addFirst(i)
+        }
+        return res
+    }
+}
+
+
 class DailyTemperatures2 {
     fun dailyTemperatures(temperatures: IntArray): IntArray {
         val res = IntArray(temperatures.size)
