@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems301to400.problem310
 
+import java.util.LinkedList
+
 /**
  * 310. Minimum Height Trees
  * https://leetcode.com/problems/minimum-height-trees/description/
