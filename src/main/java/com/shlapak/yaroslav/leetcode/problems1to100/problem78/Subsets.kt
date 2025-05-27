@@ -1,4 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problems1to100.problem78
+
 /**
  * 78. Subsets
  * https://leetcode.com/problems/subsets/
@@ -28,7 +29,7 @@ class SubsetsRecursive {
             res.add(current.toList())
             for (i in start until nums.size) {
                 current.add(nums[i])
-                backtrack( i + 1, current)
+                backtrack(i + 1, current)
                 current.removeLast()
             }
         }
