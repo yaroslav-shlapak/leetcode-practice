@@ -40,6 +40,36 @@ class AddTwoNumbers {
         }
         return res.next
     }
+
+    class Solution {
+        fun maximumSwap(num: Int): Int {
+            // scan from right to find the max
+            val arr = num.toString().toCharArray()
+
+            val maxFromRight = IntArray(arr.size)
+
+            var max = 'a'
+            for (i in arr.size - 1 downTo 0) {
+                if (arr[i] > max || i == arr.size - 1) {
+                    maxFromRight[i] = i
+                    max = arr[i]
+                } else {
+                    maxFromRight[i] = maxFromRight[i + 1]
+                }
+            }
+
+            for (i in 0 until arr.size) {
+                if (arr[maxFromRight[i]] > arr[i]) {
+                    val temp = arr[maxFromRight[i]]
+                    arr[maxFromRight[i]] = arr[i]
+                    arr[i] = temp
+                    break
+                }
+            }
+
+            return String(arr).toInt()
+        }
+    }
 }
 
 class Solution {
