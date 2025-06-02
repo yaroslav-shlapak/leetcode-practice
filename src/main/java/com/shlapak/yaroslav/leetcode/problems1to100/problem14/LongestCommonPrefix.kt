@@ -27,6 +27,29 @@ import java.util.*
  * 0 <= strs[i].length <= 200
  * strs[i] consists of only lowercase English letters if it is non-empty.
  */
+class LongestCommonPrefix4 {
+    fun longestCommonPrefix(strs: Array<String>): String {
+        // use the first element as trie
+        // check every element for the matcing length
+        // return substring of the found length
+        val base = strs[0]
+        if (strs.size == 1) return base
+        var len = 0
+
+        outer@ for (i in 0 until base.length) {
+            for (j in 1 until strs.size) {
+                val str = strs[j]
+                if (str.length <= i || base[i] != str[i]) {
+                    break@outer
+                }
+            }
+            len = i + 1
+        }
+
+        return base.substring(0, len)
+    }
+}
+
 class LongestCommonPrefix3 {
     fun longestCommonPrefix(strs: Array<String>): String {
         if (strs.isEmpty()) return ""
