@@ -7,6 +7,19 @@ import kotlin.test.assertEquals
  * https://leetcode.com/problems/palindrome-number/
  */
 class Solution {
+    fun isPalindrome3(x: Int): Boolean {
+        val arr = x.toString()
+        var l = 0
+        var r = arr.length - 1
+        while (r > l) {
+            if (arr[r] != arr[l]) {
+                return false
+            }
+            r--
+            l++
+        }
+        return true
+    }
     fun isPalindrome1(x: Int): Boolean {
         if (x < 0) return false
         if (x / 10 < 1) return true
