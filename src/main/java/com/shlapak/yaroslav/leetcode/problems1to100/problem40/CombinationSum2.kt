@@ -7,6 +7,40 @@ import java.util.*
  * Created on 2019/07/02.
  * https://leetcode.com/problems/combination-sum-ii/
  */
+class CombinationSum2 {
+    fun combinationSum2(candidates: IntArray, target: Int): List<List<Int>> {
+        // using backtracking run all find all possible subsets
+
+        val res = mutableListOf<MutableList<Int>>()
+        val comb = mutableListOf<Int>()
+        candidates.sort()
+
+        fun backtracking(i: Int, sum: Int) {
+            if (sum == target) {
+                res.add(comb.toMutableList())
+            }
+
+            for (j in i until candidates.size) {
+                if (j > i && candidates[j] == candidates[j - 1]) {
+                    continue
+                }
+                val cand = candidates[j]
+                val newSum = sum + cand
+                if (newSum > target) {
+                    break
+                }
+                comb.add(cand)
+                backtracking(j + 1, newSum)
+                comb.removeLast()
+            }
+
+        }
+        backtracking(0, 0)
+
+        return res
+    }
+}
+
 class Solution {
     val result = mutableSetOf<List<Int>>()
     val current = mutableListOf<Int>()
