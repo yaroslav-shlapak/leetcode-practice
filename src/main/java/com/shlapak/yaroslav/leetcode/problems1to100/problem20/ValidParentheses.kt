@@ -7,6 +7,29 @@ import java.util.*
  *
  */
 
+class Solution2 {
+    fun isValid(s: String): Boolean {
+        val map = mapOf('(' to ')', '{' to '}', '[' to ']')
+        val stack = ArrayDeque<Char>()
+        // add to stack only opening brace
+        // if brace is closing peek top of the stack and get its value from map
+        // compare the value with the current char
+        // if equal pop and continue
+        // if not equal return false
+        // return true if stack is empty
+
+        for (c in s) {
+            if (stack.isNotEmpty() && map[stack.last()] == c) {
+                stack.removeLast()
+            } else {
+                stack.addLast(c)
+            }
+        }
+
+        return stack.isEmpty()
+    }
+}
+
 class ValidParentheses {
     fun isValid2(s: String): Boolean {
         val stack = LinkedList<Char>()
