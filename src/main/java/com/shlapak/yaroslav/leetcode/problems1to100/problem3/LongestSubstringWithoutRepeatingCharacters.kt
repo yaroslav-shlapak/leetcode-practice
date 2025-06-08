@@ -6,6 +6,63 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem3
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
  */
 
+class Solution_2025_06_08 {
+    fun lengthOfLongestSubstring1(s: String): Int {
+        val set = mutableSetOf<Char>()
+        var l = 0
+        var max = 0
+        for (i in 0 until s.length) {
+            while (set.contains(s[i])) {
+                set.remove(s[l])
+                l++
+            }
+            set.add(s[i])
+            max = maxOf(max, i - l + 1)
+        }
+
+        return max
+    }
+
+    fun lengthOfLongestSubstring2(s: String): Int {
+        val map = mutableMapOf<Char, Int>()
+        var max = 0
+        var prev = 0
+        for (i in 0 until s.length) {
+            val ch = s[i]
+            val idx = map[ch]
+            if (idx != null) {
+                prev = maxOf(prev, idx + 1)
+            }
+            map[ch] = i
+            max = maxOf(max, i - prev + 1)
+        }
+
+        return max
+    }
+
+    fun lengthOfLongestSubstring3(s: String): Int {
+        if (s.length < 2) return s.length
+        val map = mutableMapOf<Char, Int>()
+        var max = 0
+        for (i in 0 until s.length) {
+            val ch = s[i]
+            val start = map.getOrPut(ch) { 0 }
+            val set = mutableSetOf<Char>()
+            for (j in i until s.length) {
+                val idx = map[s[j]]
+                if (set.contains(s[j])) {
+                    break
+                }
+                set.add(s[j])
+            }
+            max = maxOf(set.size, max)
+            map[ch] = i
+        }
+
+        return max
+    }
+}
+
 class LongestSubstringWithoutRepeatingCharacters {
     fun lengthOfLongestSubstring(s: String): Int {
         val map = mutableMapOf<Char, Int>()

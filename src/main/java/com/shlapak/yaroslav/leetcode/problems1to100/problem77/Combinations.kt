@@ -1,7 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problems1to100.problem77
 
 /**
- * 
+ * 77. Combinations
+ * https://leetcode.com/problems/combinations/
  */
 class Combinations {
     fun combine(n: Int, k: Int): List<List<Int>> {
