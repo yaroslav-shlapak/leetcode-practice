@@ -21,6 +21,29 @@ class MoveZeros {
             }
         }
     }
+
+    class OnePassNoSwap {
+
+        // [0,1,0,3,12]
+        //      |      |
+        // [1,3,12,3,12
+        fun moveZeroes(nums: IntArray): Unit {
+            var i = 0
+            var j = 0
+            while (j < nums.size) {
+                if (i < nums.size) {
+                    if (nums[i] != 0) {
+                        nums[j] = nums[i]
+                        j++
+                    }
+                    i++
+                } else {
+                    nums[j] = 0
+                    j++
+                }
+            }
+        }
+    }
 }
 
 class MoveZeros_ExtraSpace {
