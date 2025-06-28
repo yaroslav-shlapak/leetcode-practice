@@ -8,6 +8,22 @@ import java.util.PriorityQueue
  */
 class FindSubsequenceOfLengthKWithLargestSum {
 
+    class PriorityQueue {
+        fun maxSubsequence(nums: IntArray, k: Int): IntArray {
+            val minHeap = PriorityQueue<Pair<Int, Int>>(compareBy { it.first })
+
+            for (i in nums.indices) {
+                minHeap.offer(nums[i] to i)
+            }
+
+            for (i in 0 until k) {
+                minHeap.poll()
+            }
+
+            return minHeap.toList().sortedBy { it.second }.map { it.first }.toIntArray()
+        }
+    }
+
     fun maxSubsequence_sorting(nums: IntArray, k: Int): IntArray {
         val list = nums.sorted()
         val arr = IntArray(k)
