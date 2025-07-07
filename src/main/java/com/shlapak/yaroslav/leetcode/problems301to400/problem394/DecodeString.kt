@@ -188,7 +188,7 @@ class DecodeStringTailRecursion {
     }
 }
 
-class DecodeString2 {
+class DecodeString_SingleStack {
     fun decodeString(s: String): String {
         val stack = mutableListOf<Pair<StringBuilder, Int>>()
         var currSb = StringBuilder()
@@ -216,5 +216,76 @@ class DecodeString2 {
         }
 
         return currSb.toString()
+    }
+}
+
+class Solution_ReversiveStack {
+    fun decodeString(s: String): String {
+        val stack = ArrayDeque<Char>()
+
+        for (ch in s) {
+            if (ch == ']') {
+                val text = StringBuilder()
+                while (stack.isNotEmpty() && stack.last().isLetter()) {
+                    text.append(stack.removeLast())
+                }
+                stack.removeLast() // remove [
+                val repStr = StringBuilder()
+                while (stack.isNotEmpty() && stack.last().isDigit()) {
+                    repStr.append(stack.removeLast())
+                }
+                val rep = repStr.reversed().toString().toInt()
+                val temp = StringBuilder()
+                for (i in 0 until rep) {
+                    temp.append(text)
+                }
+
+                for (i in temp.length - 1 downTo 0) {
+                    stack.addLast(temp[i])
+                }
+            } else {
+                stack.addLast(ch)
+            }
+        }
+
+        var res = StringBuilder()
+        for (i in 0 until stack.size) {
+            res.append(stack.removeFirst()) // reversed order
+        }
+
+        return res.toString()
+    }
+}
+
+class Solution_SayvingMainStringToStack {
+    fun decodeString(s: String): String {
+        val stack = ArrayDeque<Pair<Int, StringBuilder>>()
+        var sb = StringBuilder()
+        var curr = 0
+
+        for (ch in s) {
+            when {
+                ch in '0' .. '9' -> {
+                    curr = 10 * curr + (ch - '0')
+                }
+                ch == ']' -> {
+                    val (mult, mainString) = stack.removeLast()
+                    repeat(mult) {
+                        mainString.append(sb)
+                    }
+                    sb = mainString
+                }
+                ch == '[' -> {
+                    stack.addLast(curr to sb) // save main string
+                    sb = StringBuilder()
+                    curr = 0
+                }
+                else -> {
+                    sb.append(ch)
+                }
+            }
+        }
+
+        return sb.toString()
     }
 }
