@@ -38,6 +38,32 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem57
  * 0 <= start <= end <= 105
  */
 class InsertInterval {
+    class BruteForce {
+        fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+            var i = 0
+            val res = mutableListOf<IntArray>()
+            // add all intervals before the new interval
+            while (i < intervals.size && newInterval[0] > intervals[i][1]) {
+                res.add(intervals[i])
+                i++
+            }
+            // calculated the boundaries of insertion
+            while (i < intervals.size && newInterval[1] >= intervals[i][0]) {
+                newInterval[0] = minOf(newInterval[0], intervals[i][0])
+                newInterval[1] = maxOf(newInterval[1], intervals[i][1])
+                i++
+            }
+            res.add(newInterval)
+            // add remaining intervals
+            while (i < intervals.size) {
+                res.add(intervals[i])
+                i++
+            }
+
+            return res.toTypedArray()
+        }
+    }
+
     fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
         val res = mutableListOf<IntArray>()
         var i = 0
@@ -46,9 +72,11 @@ class InsertInterval {
                 newInterval[0] > intervals[i][1] -> { // intervals before the newInterval
                     res.add(intervals[i])
                 }
+
                 newInterval[1] < intervals[i][0] -> { // next interval is after the newInterval
                     break
                 }
+
                 else -> { // all cases in between
                     newInterval[0] = minOf(newInterval[0], intervals[i][0])
                     newInterval[1] = maxOf(newInterval[1], intervals[i][1])
