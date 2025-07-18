@@ -3,7 +3,6 @@ package com.shlapak.yaroslav.leetcode.problems3201to3300.problem3216
 class LexicographicallySmallestStringAfterASwap {
     class BruteForce {
         fun getSmallestString(s: String): String {
-            val s = s
             var cand = StringBuilder(s)
             val save = StringBuilder(s)
             for (i in 0 until save.length - 1) {
