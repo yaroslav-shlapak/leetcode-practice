@@ -5,6 +5,46 @@ package com.shlapak.yaroslav.leetcode.problems501to600.problem560
  * https://leetcode.com/problems/subarray-sum-equals-k/description/
  */
 class SubArraySumsEqualsK {
+
+    class BruteForce {
+        fun subarraySum(nums: IntArray, k: Int): Int {
+            var res = 0
+            for (i in nums.indices) {
+                var sum = 0
+                for (j in i until nums.size) {
+                    sum += nums[j]
+                    if (sum == k) {
+                        res++
+                    }
+                }
+            }
+            return res
+        }
+    }
+
+    class PrefixSum {
+        /**
+         * Using a map to store the frequency of prefix sums.
+         * The key is the prefix sum and the value is the count of how many times that sum has occurred.
+         */
+        fun subarraySum(nums: IntArray, k: Int): Int {
+            var res = 0
+            val map = mutableMapOf<Int, Int>()
+            map[0] = 1
+            var sum = 0
+            for (i in nums.indices) {
+                sum += nums[i]
+                val diff = sum - k
+                val count = map[diff]
+                if (count != null) {
+                    res += count
+                }
+                map[sum] = map.getOrDefault(sum, 0) + 1
+            }
+            return res
+        }
+    }
+
     fun subarraySum(nums: IntArray, k: Int): Int {
         var res = 0
         val sums = mutableMapOf<Int, Int>()
@@ -27,6 +67,7 @@ class SubArraySumsEqualsK {
         return res
     }
 }
+
 class SubArraySumsEqualsK_BruteForce {
     fun subarraySum(nums: IntArray, k: Int): Int {
         var res = 0
