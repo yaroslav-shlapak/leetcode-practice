@@ -1,4 +1,4 @@
-package com.shlapak.yaroslav.leetcode.problems1to100.pronblem92
+package com.shlapak.yaroslav.leetcode.problems1to100.problem92
 
 import com.shlapak.yaroslav.leetcode.utils.ListNode
 
