@@ -36,6 +36,26 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem11
  * 0 <= height[i] <= 104
  */
 class ContainerWithMostWater {
+    class Oct042025 {
+        fun maxArea(height: IntArray): Int {
+            var l = 0
+            var r = height.size - 1
+            var max = 0
+            while (r > l) {
+                val w = r - l
+                val h = minOf(height[r], height[l])
+                val area = w * h
+                max = maxOf(area, max)
+                if (height[r] > height[l]) {
+                    l++
+                } else {
+                    r--
+                }
+            }
+            return max
+        }
+    }
+
     fun maxArea(height: IntArray): Int {
         var r = height.size - 1
         var l = 0

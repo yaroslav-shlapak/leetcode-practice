@@ -22,4 +22,19 @@ class SortedArrayToBinarySearchTree {
 
         return root
     }
+
+    fun sortedArrayToBST2(nums: IntArray): TreeNode? {
+
+        fun rec(left: Int, right: Int): TreeNode? {
+            if (left > right) return null
+            val mid = left + (right - left) / 2
+            val cur = TreeNode(nums[mid])
+            cur.left = rec(left, mid - 1)
+            cur.right = rec(mid + 1, right)
+
+            return cur
+        }
+
+        return rec(0, nums.size - 1)
+    }
 }
