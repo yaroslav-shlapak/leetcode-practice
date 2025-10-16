@@ -31,71 +31,95 @@ class GroupAnagrams {
      *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
      *  typically using all the original letters exactly once.
      */
-    fun groupAnagrams(strs: Array<String>): List<List<String>> {
-        val res = mutableListOf<MutableList<String>>()
-        val map = mutableMapOf<String, Int>()
-        strs.forEach { s ->
-            val key = getKey(s)
-            val index = map[key]
-            if (index != null) {
-                res[index].add(s)
-            } else {
-                map[key] = res.size
-                res.add(mutableListOf(s))
+    class OptimalUsingCountAsKey {
+        fun groupAnagrams(strs: Array<String>): List<List<String>> {
+
+            val res = mutableMapOf<String, MutableList<String>>()
+
+            for (str in strs) {
+                val key = str.toKey()
+                val list = res[key]
+                if (list != null) {
+                    list.add(str)
+                } else {
+                    res[key] = mutableListOf(str)
+                }
             }
-        }
-        return res
-    }
 
-    private fun getKey(s: String): String {
-        val letters = CharArray(26)
-        for (c in s) {
-            letters[c - 'a']++
-        }
-        val key = String(letters)
-        return key
-    }
-}
+            return res.map { (key, value) -> value }
 
-class Solution2 {
-    /**
-     *  Given an array of strings strs, group the anagrams together.
-     *  You can return the answer in any order.
-     *
-     *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
-     *  typically using all the original letters exactly once.
-     */
-    fun groupAnagrams(strs: Array<String>): List<List<String>> {
-        val map = mutableMapOf<List<Char>, Int>()
-        val result = mutableListOf<MutableList<String>>()
-        strs.forEach { str ->
-            val key = str.toList().sorted()
-            val indexOfList = map[key]
-            if (indexOfList != null) {
-                result[indexOfList].add(str)
-            } else {
-                map[key] = result.size
-                result.add(mutableListOf(str))
+        }
+
+        private fun String.toKey(): String {
+            val res = IntArray(26)
+            for (c in this) {
+                res[c - 'a']++
             }
+            return res.joinToString(",")
         }
-        return result
     }
-}
 
-class Solution {
-    fun groupAnagrams(strs: Array<String>): List<List<String>> {
-        val result = mutableListOf<MutableList<String>>()
-        val map = mutableMapOf<List<Char>, Int>()
-        strs.asSequence().forEach { string ->
-            val key = string.toCharArray().sorted()
-            if (map.containsKey(key)) {
-                result[map[key]!!].add(string)
-            } else {
-                map[key] = result.size
-                result.add(mutableListOf(string))
+    class OptimalUsingCountAsKey1 {
+        fun groupAnagrams(strs: Array<String>): List<List<String>> {
+            val res = mutableListOf<MutableList<String>>()
+            val map = mutableMapOf<String, Int>()
+            strs.forEach { s ->
+                val key = getKey(s)
+                val index = map[key]
+                if (index != null) {
+                    res[index].add(s)
+                } else {
+                    map[key] = res.size
+                    res.add(mutableListOf(s))
+                }
             }
+            return res
         }
 
-        return result
+        private fun getKey(s: String): String {
+            val letters = CharArray(26)
+            for (c in s) {
+                letters[c - 'a']++
+            }
+            val key = String(letters)
+            return key
+        }
     }
+
+    class BruteForceMapAndSort {
+        fun groupAnagrams(strs: Array<String>): List<List<String>> {
+            val map = mutableMapOf<List<Char>, Int>()
+            val result = mutableListOf<MutableList<String>>()
+            strs.forEach { str ->
+                val key = str.toList().sorted()
+                val indexOfList = map[key]
+                if (indexOfList != null) {
+                    result[indexOfList].add(str)
+                } else {
+                    map[key] = result.size
+                    result.add(mutableListOf(str))
+                }
+            }
+            return result
+        }
+    }
+
+    class BruteForceMapAndSort1 {
+        fun groupAnagrams(strs: Array<String>): List<List<String>> {
+            val result = mutableListOf<MutableList<String>>()
+            val map = mutableMapOf<List<Char>, Int>()
+            strs.asSequence().forEach { string ->
+                val key = string.toCharArray().sorted()
+                if (map.containsKey(key)) {
+                    result[map[key]!!].add(string)
+                } else {
+                    map[key] = result.size
+                    result.add(mutableListOf(string))
+                }
+            }
+
+            return result
+        }
+    }
+
 }
