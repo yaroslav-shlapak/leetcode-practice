@@ -34,34 +34,99 @@ package com.shlapak.yaroslav.leetcode.problems101to200.problem125
  * s consists only of printable ASCII characters.
  *
  */
-class ValidPalindrome2 {
-    fun isPalindrome(s: String): Boolean {
-        var r = s.length - 1
-        var l = 0
-        while (r > l) {
-            when {
-                !s[r].isLetterOrDigit() -> {
-                    r--
+class ValidPalindrome {
+    class TwoPointers {
+        fun isPalindrome(s: String): Boolean {
+            var r = s.length - 1
+            var l = 0
+            while (r > l) {
+                when {
+                    !s[r].isLetterOrDigit() -> {
+                        r--
+                    }
+
+                    !s[l].isLetterOrDigit() -> {
+                        l++
+                    }
+
+                    s[r].lowercase() == s[l].lowercase() -> {
+                        r--
+                        l++
+                    }
+
+                    else -> {
+                        return false
+                    }
                 }
-                !s[l].isLetterOrDigit() -> {
-                    l++
+            }
+            return true
+        }
+    }
+
+    class RegexSolution {
+        fun isPalindrome(s: String): Boolean {
+            val refined = s.lowercase().replace(Regex("[^a-z0-9]"), "")
+            return refined == refined.reversed()
+        }
+    }
+
+    class StackSolution {
+        fun isPalindrome(s: String): Boolean {
+            val stack = ArrayDeque<Char>()
+            val queue = ArrayDeque<Char>()
+            for (c in s.lowercase()) {
+                if (c.isLetterOrDigit()) {
+                    stack.addLast(c)
+                    queue.addLast(c)
                 }
-                s[r].lowercase() == s[l].lowercase() -> {
-                    r--
-                    l++
-                }
-                else -> {
+            }
+            while (stack.isNotEmpty()) {
+                if (stack.removeLast() != queue.removeFirst()) {
                     return false
                 }
             }
+            return true
         }
-        return true
     }
-}
 
-class ValidPalindrome {
-    fun isPalindrome(s: String): Boolean {
-        val refined = s.lowercase().filter { it in 'a'..'z' || it in '0'..'9' }
-        return refined == refined.reversed()
+    class BuiltInFunctions {
+        fun isPalindrome(s: String): Boolean {
+            val refined = s.lowercase().filter { it.isLetterOrDigit() }
+            return refined == refined.reversed()
+        }
+    }
+
+    class DorkyTwoPointers {
+        fun isPalindrome(s: String): Boolean {
+            var r = s.length - 1
+            var l = 0
+            // "A man, a plan, a canal: Panama"
+            //  |                            |
+            while (r > l) {
+                while (l < s.length - 1 && !s[l].isLetterOrDigit()) {
+                    l++
+                }
+                while (r > 0 && !s[r].isLetterOrDigit()) {
+                    r--
+                }
+                if (r <= l) {
+                    continue
+                }
+                if (s[r].lowercase() != s[l].lowercase()) {
+
+                    return false
+                }
+                r--
+                l++
+            }
+            return true
+        }
+    }
+
+    class RefineAndCheck {
+        fun isPalindrome(s: String): Boolean {
+            val refined = s.lowercase().filter { it in 'a'..'z' || it in '0'..'9' }
+            return refined == refined.reversed()
+        }
     }
 }
