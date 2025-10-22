@@ -45,6 +45,37 @@ class RotateArray {
         }
     }
 
+    class ExtraSpace3 {
+        fun rotate(nums: IntArray, k: Int): Unit {
+            val k = k % nums.size
+            val list = ArrayList<Int>(nums.size)
+            for (i in nums.size - k until nums.size) {
+                list.add(nums[i])
+            }
+            for (i in 0 until nums.size - k) {
+                list.add(nums[i])
+            }
+            for (i in 0 until nums.size) {
+                nums[i] = list[i]
+            }
+        }
+    }
+
+    class ExtraSpace2 {
+        fun rotate(nums: IntArray, k: Int): Unit {
+            val nums2 = IntArray(nums.size)
+            val n = nums.size
+            val k = k % n
+            for (i in nums.indices) {
+                nums2[(i + k) % n] = nums[i]
+            }
+
+            for (i in nums2.indices) {
+                nums[i] = nums2[i]
+            }
+        }
+    }
+
     class ExtraSpace {
         fun rotate(nums: IntArray, k: Int): Unit {
             val nums2 = IntArray(nums.size)
