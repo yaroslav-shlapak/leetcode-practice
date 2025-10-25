@@ -9,15 +9,34 @@ package com.shlapak.yaroslav.leetcode.problems201to300.problem283
  * Note that you must do this in-place without making a copy of the array.
  */
 class MoveZeros {
-    fun moveZeroes(nums: IntArray): Unit {
-        if (nums.size == 1) return
-        var j = 0
-        for (i in nums.indices) {
-            if (nums[i] != 0) {
-                val temp = nums[i]
-                nums[i] = nums[j]
-                nums[j] = temp
-                j++
+    class OnePassOverwrite {
+        fun moveZeroes(nums: IntArray): Unit {
+            var j = 0
+            // [1,3,12,0,0]
+            //          |
+            // j = 3
+            for (i in 0 until nums.size) {
+                if (nums[i] != 0) {
+                    nums[j] = nums[i]
+                    j++
+                }
+            }
+            for (i in j until nums.size) {
+                nums[i] = 0
+            }
+        }
+    }
+    class OnePassWithSwap {
+        fun moveZeroes(nums: IntArray): Unit {
+            if (nums.size == 1) return
+            var j = 0
+            for (i in nums.indices) {
+                if (nums[i] != 0) {
+                    val temp = nums[i]
+                    nums[i] = nums[j]
+                    nums[j] = temp
+                    j++
+                }
             }
         }
     }
