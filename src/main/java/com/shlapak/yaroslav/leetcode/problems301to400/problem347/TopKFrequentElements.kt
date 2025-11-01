@@ -29,6 +29,35 @@ import java.util.PriorityQueue
  *
  * Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
  */
+class TopKFrequentElements_PrioritiyQueue2 {
+    fun topKFrequent(nums: IntArray, k: Int): IntArray {
+        val minHeap = PriorityQueue<Pair<Int, Int>>(
+            compareBy { it.first }
+        )
+        val map = mutableMapOf<Int, Int>()
+
+        for (n in nums) {
+            map[n] = (map[n] ?: 0) + 1
+        }
+
+        for (entry in map) {
+            val (value, count) = entry
+            minHeap.offer(count to value)
+        }
+
+        for (i in k until minHeap.size) {
+            minHeap.poll()
+        }
+
+        val res = IntArray(k)
+        for (i in 0 until k) {
+            res[i] = minHeap.poll().second
+        }
+
+        return res
+    }
+}
+
 class TopKFrequentElements_BacketSort {
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
         val freqMap = mutableMapOf<Int, Int>()
