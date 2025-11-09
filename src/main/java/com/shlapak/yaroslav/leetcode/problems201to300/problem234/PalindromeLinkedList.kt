@@ -2,7 +2,73 @@ package com.shlapak.yaroslav.leetcode.problems201to300.problem234
 
 import com.shlapak.yaroslav.leetcode.utils.ListNode
 
+
+/**
+ * https://leetcode.com/problems/palindrome-linked-list/
+ */
 class PalindromeLinkedList {
+
+    class BruteForce {
+        fun isPalindrome(head: ListNode?): Boolean {
+            val values = mutableListOf<Int>()
+            var pointer = head
+            while (pointer != null) {
+                values.add(pointer.`val`)
+                pointer = pointer.next
+            }
+            var l = 0
+            var r = values.size - 1
+            while (l < r) {
+                if (values[l] != values[r]) return false
+                l++
+                r--
+            }
+            return true
+        }
+    }
+
+    class InPlaceReversal {
+        class Solution {
+            fun isPalindrome(head: ListNode?): Boolean {
+                // find middle then reverse the remaining part then check if values are the same
+                var p1 = head
+                var p2 = head?.next
+                var p3: ListNode? = null
+                // find middle
+                while (p2 != null) {
+                    p3 = p1
+                    p1 = p1?.next
+                    p2 = p2?.next?.next
+                }
+                p3?.next = null
+                p2 = reverseList(p1)
+                p1 = head
+                while (p1 != null) {
+                    if (p1?.`val` != p2?.`val`) {
+                        return false
+                    }
+                    p1 = p1?.next
+                    p2 = p2?.next
+                }
+                return true
+            }
+
+            fun reverseList(head: ListNode?): ListNode? {
+                var cur = head
+                var prev: ListNode? = null
+                while (cur != null) {
+                    val temp = cur.next
+                    cur.next = prev
+                    prev = cur
+                    cur = temp
+                }
+
+                return prev
+            }
+
+        }
+    }
+
     fun isPalindrome2(head: ListNode?): Boolean {
         if (head == null) return true
         val middle = head.findMiddle()
