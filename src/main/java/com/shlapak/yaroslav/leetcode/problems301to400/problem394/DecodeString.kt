@@ -42,9 +42,10 @@ class DecodeString {
         for (i in s.indices) {
             if (s[i] == '[') {
                 val (rep, start) = findRepetitions(s, i)
-                stack.addFirst(/* e = */ DecodePoints(
-                    startOfStringToRepeat = i, startOfNumber = start, repetitions = rep
-                )
+                stack.addFirst(
+                    /* e = */ DecodePoints(
+                        startOfStringToRepeat = i, startOfNumber = start, repetitions = rep
+                    )
                 )
             }
         }
@@ -133,7 +134,8 @@ class DecodeString2Stacks { // looks like it's the best solution
 }
 
 class DecodeStringTailRecursion {
-    fun decodeString(s: String): String {/*
+    fun decodeString(s: String): String {
+        /*
             recursion?
             need to evaluate inner most bracket first
             keep going until you see 2 closest together open and cloes bracket
@@ -265,9 +267,10 @@ class Solution_SayvingMainStringToStack {
 
         for (ch in s) {
             when {
-                ch in '0' .. '9' -> {
+                ch in '0'..'9' -> {
                     curr = 10 * curr + (ch - '0')
                 }
+
                 ch == ']' -> {
                     val (mult, mainString) = stack.removeLast()
                     repeat(mult) {
@@ -275,11 +278,13 @@ class Solution_SayvingMainStringToStack {
                     }
                     sb = mainString
                 }
+
                 ch == '[' -> {
                     stack.addLast(curr to sb) // save main string
                     sb = StringBuilder()
                     curr = 0
                 }
+
                 else -> {
                     sb.append(ch)
                 }
