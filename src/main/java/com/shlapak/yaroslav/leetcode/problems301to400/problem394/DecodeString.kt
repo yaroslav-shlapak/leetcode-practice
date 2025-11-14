@@ -7,6 +7,93 @@ import java.util.Stack
  * 394. Decode String
  * https://leetcode.com/problems/decode-string/description/
  */
+
+class DecodeString2Stacks { // looks like it's the best solution
+    fun decodeString(s: String): String {
+        val countStack = Stack<Int>()
+        val stack = Stack<StringBuilder>()
+        var current = StringBuilder()
+        var temp = 0
+
+        for (char in s) {
+            when {
+                char.isDigit() -> {
+                    temp = temp * 10 + (char - '0')
+                }
+
+                char == '[' -> {
+                    countStack.push(temp)
+                    stack.push(current)
+                    temp = 0
+                    current = StringBuilder()
+                }
+
+                char == ']' -> {
+                    val charStack = stack.pop()
+                    val t = countStack.pop()
+                    repeat(t) {
+                        charStack.append(current)
+                    }
+                    current = charStack
+                }
+
+                else -> {
+                    current.append(char)
+                }
+            }
+
+        }
+        return current.toString()
+
+    }
+}
+
+class DecodeString2Stacks2 {
+    fun decodeString(s: String): String {
+        val kStack = ArrayDeque<Int>()
+        val sStack = ArrayDeque<StringBuilder>()
+        val res = StringBuilder()
+        var k = 0
+        for (ch in s) {
+            when {
+                ch.isDigit() -> {
+                    k = k * 10 + (ch - '0')
+                }
+                ch.isLetter() -> {
+                    if (sStack.isEmpty()) {
+                        sStack.addLast(StringBuilder())
+                    }
+                    sStack.last().append(ch)
+                }
+                ch == '[' -> {
+                    kStack.addLast(k)
+                    sStack.addLast(StringBuilder())
+                    k = 0
+                }
+                ch == ']' -> {
+                    val nRep = kStack.removeLast()
+                    val innerStr = sStack.removeLast()
+                    val newStr = StringBuilder()
+                    for (i in 0 until nRep) {
+                        newStr.append(innerStr)
+                    }
+
+                    if (sStack.isEmpty()) {
+                        res.append(newStr)
+                    } else {
+                        sStack.last().append(newStr)
+                    }
+                }
+            }
+        }
+        if (sStack.isNotEmpty()) {
+            res.append(sStack.removeLast())
+        }
+
+        return res.toString()
+    }
+}
+
 class DecodeString {
     data class DecodePoints(
         val startOfStringToRepeat: Int, val startOfNumber: Int, val repetitions: Int
@@ -90,46 +177,6 @@ class DecodeStingRecursive {
             }
         }
         return Pair(result.toString(), i)
-    }
-}
-
-class DecodeString2Stacks { // looks like it's the best solution
-    fun decodeString(s: String): String {
-        val countStack = Stack<Int>()
-        val stack = Stack<StringBuilder>()
-        var current = StringBuilder()
-        var temp = 0
-
-        for (char in s) {
-            when {
-                char.isDigit() -> {
-                    temp = temp * 10 + (char - '0')
-                }
-
-                char == '[' -> {
-                    countStack.push(temp)
-                    stack.push(current)
-                    temp = 0
-                    current = StringBuilder()
-                }
-
-                char == ']' -> {
-                    val charStack = stack.pop()
-                    val t = countStack.pop()
-                    repeat(t) {
-                        charStack.append(current)
-                    }
-                    current = charStack
-                }
-
-                else -> {
-                    current.append(char)
-                }
-            }
-
-        }
-        return current.toString()
-
     }
 }
 
