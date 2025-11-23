@@ -31,6 +31,47 @@ import kotlin.math.min
  * 1 <= n <= 2 * 104
  * 0 <= height[i] <= 105
  */
+class TrappingRainWater {
+    class TwoPointersOptimal {
+        /*
+        Idea in short:
+        Keep two pointers l and r, and max heights seen so far from each side: ml, mr.
+        At each step the water level is min(ml, mr).
+        Move the side with the smaller max (it’s the limiting wall there) and add level - height[index] to the result.
+
+         */
+        fun trap(height: IntArray): Int {
+            if (height.size < 3) return 0
+
+            var l = 0
+            var r = height.size - 1
+            var res = 0
+
+            var ml = height[l]          // max on the left
+            var mr = height[r]          // max on the right
+
+            while (l < r) {
+                ml = maxOf(ml, height[l])
+                mr = maxOf(mr, height[r])
+                val lev = minOf(ml, mr) // current water level = min(leftMax, rightMax)
+
+                if (ml <= mr) {
+                    // left side is limiting -> water trapped at l
+                    res += lev - height[l]
+                    l++
+                } else {
+                    // right side is limiting -> water trapped at r
+                    res += lev - height[r]
+                    r--
+                }
+            }
+
+            return res
+        }
+    }
+}
+
+
 class TrappingRainWater2{
     fun trap(height: IntArray): Int {
         val n = height.size
@@ -83,7 +124,7 @@ class TrappingRainWaterEfficientSimple {
     }
 }
 
-class TrappingRainWater {
+class TrappingRainWaterOld {
     fun trap(height: IntArray): Int {
         if (height.size < 2) return 0
         var l = 0
