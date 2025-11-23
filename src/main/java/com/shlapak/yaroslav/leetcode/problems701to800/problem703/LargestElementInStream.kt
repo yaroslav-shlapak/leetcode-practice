@@ -27,6 +27,29 @@ class KthLargest(private val k: Int, nums: IntArray) {
 
 }
 
+class KthLargest2(private val k: Int, nums: IntArray) {
+
+    private val store = PriorityQueue<Int>()
+
+    init {
+        for (n in nums) {
+            store.offer(n)
+        }
+        while (store.size > k) {
+            store.poll()
+        }
+    }
+
+    fun add(`val`: Int): Int {
+        store.offer(`val`)
+        if (store.size > k) {
+            store.poll()
+        }
+        return store.peek()
+    }
+
+}
+
 /**
  * Your KthLargest object will be instantiated and called as such:
  * var obj = KthLargest(k, nums)
