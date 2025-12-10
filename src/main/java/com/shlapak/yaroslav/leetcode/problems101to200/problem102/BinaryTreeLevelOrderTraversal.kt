@@ -50,11 +50,11 @@ class BinaryTreeLevelOrderTraversal {
                     level.add(node.`val`)
 
                     if (node.left != null) {
-                        queue.addLast(node.left)
+                        queue.addLast(node.left!!)
                     }
 
                     if (node.right != null) {
-                        queue.addLast(node.right)
+                        queue.addLast(node.right!!)
                     }
                 }
                 res.add(level)
