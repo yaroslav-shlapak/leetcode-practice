@@ -1,4 +1,4 @@
-package problem821
+package com.shlapak.yaroslav.leetcode.problems801to900.problem821
 /**
  * 821. Shortest Distance to a Character
  * https://leetcode.com/problems/shortest-distance-to-a-character/
