@@ -8,40 +8,77 @@ import java.util.LinkedList
  * https://leetcode.com/problems/path-sum-ii/
  */
 class PathSum2 {
-    fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> {
-        if (root == null) return emptyList()
-        val res = mutableListOf<List<Int>>()
+    class DfsBacktracking {
+        fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> {
+            if (root == null) return emptyList()
+            val res = mutableListOf<List<Int>>()
 
-        fun dfs(node: TreeNode, path: MutableList<Int>, sum: Int) {
-            path.add(node.`val`)
-            val newSum = sum + node.`val`
+            fun dfs(node: TreeNode, path: MutableList<Int>, sum: Int) {
+                path.add(node.`val`)
+                val newSum = sum + node.`val`
 
-            if (node.right == null && node.left == null) {
-                if (newSum == targetSum) {
-                    res.add(path.toList())
+                if (node.right == null && node.left == null) {
+                    if (newSum == targetSum) {
+                        res.add(path.toList())
+                    }
+                } else {
+                    node.left?.let {
+                        dfs(it, path, newSum)
+                    }
+                    node.right?.let {
+                        dfs(it, path, newSum)
+                    }
                 }
-            } else {
-                node.left?.let {
-                    dfs(it, path, newSum)
+                // Now, backtrack: remove the current node's value from the path
+                // so that when we explore a sibling or another branch from the parent,
+                // the path is in the correct state (reflecting the path up to the parent).
+                path.removeAt(path.size - 1)
+            }
+
+            dfs(root, mutableListOf<Int>(), 0)
+
+            return res
+        }
+    }
+
+    class DfsBacktracking2 {
+        fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> {
+            if (root == null) return emptyList()
+            val res = mutableListOf<List<Int>>()
+
+            // sum = 0
+            // node: 1
+            // list: [1,2,5]
+            // stack: [5,3]
+            fun rec(node: TreeNode?, sum: Int, list: MutableList<Int>) {
+                if (node == null) {
+                    return
                 }
-                node.right?.let {
-                    dfs(it, path, newSum)
+                if (sum == targetSum && node.right == null && node.left == null) {
+                    res.add(list.toList())
+                    return
+                }
+
+                node.left?.let { left ->
+                    list.add(left.`val`)
+                    rec(left, sum + left.`val`, list)
+                    list.removeLast()
+                }
+
+                node.right?.let { right ->
+                    list.add(right.`val`)
+                    rec(right, sum + right.`val`, list)
+                    list.removeLast()
                 }
             }
-            // Now, backtrack: remove the current node's value from the path
-            // so that when we explore a sibling or another branch from the parent,
-            // the path is in the correct state (reflecting the path up to the parent).
-            path.removeAt(path.size - 1)
+
+            rec(root, root.`val`, mutableListOf<Int>(root.`val`))
+            return res
+
         }
-
-        dfs(root, mutableListOf<Int>(), 0)
-
-        return res
     }
-}
 
-class PathSumIterative {
-    class Solution {
+    class Iterative {
         fun pathSum(root: TreeNode?, targetSum: Int): List<List<Int>> {
             if (root == null) return emptyList()
 

@@ -1,5 +1,9 @@
 package com.shlapak.yaroslav.leetcode.problems3201to3300.problem3216
 
+/**
+ * 3216. Lexicographically Smallest String After a Swap
+ * https://leetcode.com/problems/lexicographically-smallest-string-after-a-swap/
+ */
 class LexicographicallySmallestStringAfterASwap {
     class BruteForce {
         fun getSmallestString(s: String): String {
