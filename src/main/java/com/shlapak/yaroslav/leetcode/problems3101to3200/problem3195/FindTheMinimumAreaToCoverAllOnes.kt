@@ -1,5 +1,10 @@
-package com.shlapak.yaroslav.leetcode.problems3201to3300.problem3216
+package com.shlapak.yaroslav.leetcode.problems3201to3300.problem3195
 
+
+/**
+ * 3195. Find the Minimum Area to Cover All Ones
+ * https://leetcode.com/problems/find-the-minimum-area-to-cover-all-ones/
+ */
 class FindTheMinimumAreaToCoverAllOnes {
     class Optimal {
         fun minimumArea(grid: Array<IntArray>): Int {
