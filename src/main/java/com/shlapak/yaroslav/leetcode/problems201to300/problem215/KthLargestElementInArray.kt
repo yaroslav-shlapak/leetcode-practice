@@ -19,4 +19,35 @@ class KthLargestElementInArray {
         // nums.sort()
         // return nums[nums.size - k]
     }
+
+    class Solution1 {
+        fun findKthLargest(nums: IntArray, k: Int): Int {
+            val minHeap = PriorityQueue<Int>(Comparator { a, b -> a.compareTo(b) } )
+
+            for (n in nums) {
+                minHeap.offer(n)
+                if (minHeap.size > k) {
+                    minHeap.poll()
+                }
+            }
+
+            return minHeap.first()
+        }
+    }
+
+    class Solution2 {
+        fun findKthLargest(nums: IntArray, k: Int): Int {
+            val minHeap = PriorityQueue<Int>(Comparator { a, b -> a.compareTo(b) } )
+
+            for (n in nums) {
+                minHeap.offer(n)
+            }
+
+            for (i in 0 until nums.size - k) {
+                minHeap.poll()
+            }
+
+            return minHeap.poll()
+        }
+    }
 }
