@@ -6,6 +6,34 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem3
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
  */
 
+class TwoPointers {
+    fun lengthOfLongestSubstring(s: String): Int {
+        if (s.isEmpty()) return 0
+        if (s.isBlank()) return 1
+
+        // "abcabcbb"
+        //   |
+
+        val let = IntArray(128)
+        var max = 0
+        var l = 0
+
+        for (r in 0 until s.length) {
+            let[s[r].code]++
+
+            while (let[s[r].code] > 1) {
+                let[s[l].code]--
+                l++
+            }
+
+            max = maxOf(max, r - l + 1)
+        }
+
+        return max
+
+    }
+}
+
 class Solution_2025_06_08 {
     fun lengthOfLongestSubstring1(s: String): Int {
         val set = mutableSetOf<Char>()
