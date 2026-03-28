@@ -5,6 +5,48 @@ package com.shlapak.yaroslav.leetcode.problems901to1000.problem994
  * https://leetcode.com/problems/rotting-oranges/
  */
 class RootingOranges {
+
+    class BFS2 {
+        fun orangesRotting(arr: Array<IntArray>): Int {
+            val queue = ArrayDeque<Pair<Int, Int>>()
+            val n = arr.size
+            val m = arr[0].size
+            var freshCount = 0
+            for (i in 0 until n) {
+                for (j in 0 until m) {
+                    if (arr[i][j] == 2) {
+                        queue.addLast(i to j)
+                    }
+                    if (arr[i][j] == 1) {
+                        freshCount++
+                    }
+                }
+            }
+
+            var res = -1
+            val steps = listOf<Pair<Int, Int>>(-1 to 0, 1 to 0, 0 to 1, 0 to -1)
+            if (freshCount == 0) return 0
+            while (queue.isNotEmpty()) {
+                val levelSize = queue.size
+                res++
+                for (k in 0 until levelSize) {
+                    val (i, j) = queue.removeFirst()
+                    for ((sI, sJ) in steps) {
+                        val newI = (i + sI).coerceAtLeast(0).coerceAtMost(n - 1)
+                        val newJ = (j + sJ).coerceAtLeast(0).coerceAtMost(m - 1)
+                        if (arr[newI][newJ] == 1) {
+                            queue.addLast(newI to newJ)
+                            arr[newI][newJ] = 2
+                            freshCount--
+                        }
+                    }
+                }
+            }
+
+            return if (freshCount == 0) res else -1
+        }
+    }
+
     class BFS {
         fun orangesRotting(grid: Array<IntArray>): Int {
             /*
