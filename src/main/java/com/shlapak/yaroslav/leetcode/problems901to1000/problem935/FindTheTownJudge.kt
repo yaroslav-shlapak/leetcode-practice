@@ -1,4 +1,9 @@
-package com.shlapak.yaroslav.leetcode.problems901to1000.problem997
+package com.shlapak.yaroslav.leetcode.problems901to1000.problem935
+
+/**
+ * 935. Find the Town Judge
+ * https://leetcode.com/problems/find-the-town-judge/description/
+ */
 
 class FindTheTownJudge {
     class TwoMaps {
