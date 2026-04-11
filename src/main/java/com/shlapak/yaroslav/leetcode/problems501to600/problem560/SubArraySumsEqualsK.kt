@@ -93,4 +93,33 @@ class SubArraySumsEqualsK {
             return res
         }
     }
+
+    class PrefixSum3 {
+        fun subarraySum(nums: IntArray, k: Int): Int {
+            // [1, 3, 1, 4, -2, 3]
+            //0,1, 4, 5, 9,  7,10
+            //
+            val sumToCount = mutableMapOf<Int, Int>()
+            var sum = 0
+            var count = 0
+
+            for (n in nums) {
+                sum += n
+                val diff = sum - k
+                if (diff == 0) {
+                    count++
+                }
+
+                if (sumToCount[diff] != null) {
+                    count += sumToCount[diff]!!
+                }
+
+                sumToCount[sum] = sumToCount.getOrDefault(sum, 0) + 1
+
+            }
+
+            return count
+
+        }
+    }
 }
