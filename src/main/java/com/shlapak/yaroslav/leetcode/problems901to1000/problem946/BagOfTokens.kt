@@ -16,21 +16,22 @@ class BagOfTokens {
             var maxScore = 0
 
             while (r >= l) {
-                // face up
+
                 when {
+                    // face up
                     pow >= tokens[l] -> {
                         pow -= tokens[l]
                         score++
                         maxScore = maxOf(maxScore, score)
                         l++
                     }
-
+                    // face down
                     score >= 1 -> {
                         pow += tokens[r]
                         score--
                         r--
                     }
-
+                    // no reason to continue
                     else -> {
                         break;
                     }
