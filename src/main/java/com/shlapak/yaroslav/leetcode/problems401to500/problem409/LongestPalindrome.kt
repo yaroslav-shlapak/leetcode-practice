@@ -30,6 +30,29 @@ package com.shlapak.yaroslav.leetcode.problems401to500.problem409
  * s consists of lowercase and/or uppercase English letters only.
  */
 class LongestPalindrome {
+
+    class Optimal {
+        fun longestPalindrome(s: String): Int {
+            if (s.length == 1) return 1
+            val arr = IntArray(128)
+            var count = 0
+
+            for (ch in s) {
+                val idx = ch.code
+                arr[idx]++
+                if (arr[idx] % 2 == 0) {
+                    count += 2
+                }
+            }
+
+            if (count < s.length) {
+                count++
+            }
+
+            return count
+        }
+    }
+
     fun longestPalindrome(s: String): Int {
         return when (s.length) {
             0 -> 0
