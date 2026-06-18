@@ -52,31 +52,23 @@ class SingleNumber2 {
          * @return the number that appears exactly once
          */
         fun singleNumber(nums: IntArray): Int {
-            var result = 0
-
-
+            var res = 0
             // Process each bit position (0 to 31) for 32-bit integers
-            for (bitPosition in 0..31) {
+            for (pos in 0 until 32) {
                 var bitCount = 0
-
-
                 // Count how many numbers have a 1 at the current bit position
-                for (number in nums) {
+                for (i in 0 until nums.size) {
                     // Extract the bit at the current position and add to count
-                    bitCount += (number shr bitPosition) and 1
+                    bitCount += (nums[i] shr pos) and 1
                 }
-
-
                 // If bit count is not divisible by 3, the single number has a 1 at this position
                 // (All numbers appearing 3 times will contribute 0 or 3 to the count)
-                bitCount %= 3
-
-
+                bitCount = bitCount % 3
                 // Set the bit at the current position in the result if count is 1
-                result = result or (bitCount shl bitPosition)
+                res = res or (bitCount shl pos)
             }
 
-            return result
+            return res
         }
     }
 
