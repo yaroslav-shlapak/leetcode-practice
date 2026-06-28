@@ -8,6 +8,50 @@ import java.util.LinkedList
  */
 class FloodFill {
 
+    class BfsSimplified {
+        fun floodFill(image: Array<IntArray>, sr: Int, sc: Int, color: Int): Array<IntArray> {
+            val n = image.size
+            val m = image[0].size
+            val queue = ArrayDeque<Point>()
+            queue.addLast(Point(sr, sc))
+
+            val diff = listOf(
+                Point(0, -1),
+                Point(0, 1),
+                Point(-1, 0),
+                Point(1, 0)
+            )
+
+            val toFullColor = image[sr][sc]
+
+            while (queue.isNotEmpty()) {
+                val layerSize = queue.size
+
+                for (k in 0 until layerSize) {
+                    val cur = queue.removeFirst()
+
+                    image[cur.i][cur.j] = color
+                    for ((dI, dJ) in diff) {
+                        val newI = cur.i + dI
+                        val newJ = cur.j + dJ
+                        if (newI in 0..n - 1
+                            && newJ in 0..m - 1
+                            && image[newI][newJ] == toFullColor
+                            && image[newI][newJ] != color
+                        ) {
+                            queue.addLast(Point(newI, newJ))
+                        }
+                    }
+                }
+
+            }
+
+            return image
+        }
+
+        data class Point(val i: Int, val j: Int)
+    }
+
     class DfsElegant {
         class Solution {
             fun floodFill(image: Array<IntArray>, sr: Int, sc: Int, color: Int): Array<IntArray> {
