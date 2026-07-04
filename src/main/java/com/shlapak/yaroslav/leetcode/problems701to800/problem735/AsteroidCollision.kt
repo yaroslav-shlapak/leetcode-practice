@@ -3,6 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems701to800.problem735
 import java.util.LinkedList
 import kotlin.math.*
 
+
+/**
+ * 735. Asteroid Collision
+ * https://leetcode.com/problems/asteroid-collision/description/
+ */
 // Input: asteroids = [5,10,-5
 //    |
 //    [5] -> [5, 10] -> [10, -5]
@@ -11,6 +16,65 @@ import kotlin.math.*
 //     10
 // Output: [5,10]
 class AsteroidCollision {
+    class Stack20260628 {
+        fun asteroidCollision(asteroids: IntArray): IntArray {
+            //[5,10,-5]
+            //   |
+            // [5,10]
+            //[8,-8]
+            // |
+            // []
+
+            // [10,2,-5]
+            //  |
+            // [10]
+            // [3,5,-6,2,-1,4]​​​​​​​
+            //       |
+            // [-6, 2, 4]
+            // -1 - left, 1 - right
+            // 1 - right, -1 - left
+
+            val stack = ArrayDeque<Int>()
+
+            for (i in 0 until asteroids.size) {
+                val cur = asteroids[i]
+                var shouldAdd = true
+                val absCur = abs(cur)
+                while (stack.isNotEmpty() && stack.last() > 0 && cur < 0) {
+                    val last = stack.last()
+                    val absLast = abs(last)
+                    when {
+                        absLast == absCur -> {
+                            shouldAdd = false
+                            stack.removeLast()
+                            break
+                        }
+                        absLast < absCur -> {
+                            shouldAdd = true
+                            stack.removeLast()
+                        }
+                        else -> {
+                            shouldAdd = false
+                            break
+                        }
+                    }
+                }
+
+                if (shouldAdd) {
+                    stack.addLast(cur)
+                }
+            }
+
+            val res = IntArray(stack.size)
+
+            for (i in 0 until stack.size) {
+                res[i] = stack.removeFirst()
+            }
+
+            return res
+        }
+    }
+
     class RecursiveApproach {
         fun asteroidCollision(asteroids: IntArray): IntArray {
             val res = mutableListOf<Int>()
