@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems601to700.problem682
 
+import java.util.ArrayDeque
+
 /**
  * 682. Baseball Game
  * https://leetcode.com/problems/baseball-game/description/
