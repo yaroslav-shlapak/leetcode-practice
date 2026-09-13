@@ -8,6 +8,32 @@ import com.shlapak.yaroslav.leetcode.utils.TreeNode
  */
 
 class FlattenBinaryTreeToLinkedList {
+    class RecursiveUnderstandable {
+        fun flatten(root: TreeNode?) {
+
+            fun dfs(node: TreeNode?): TreeNode? {
+                if (node == null) {
+                    return null
+                }
+
+                val leftTail = dfs(node.left)
+                val rightTail = dfs(node.right)
+
+                if (node.left != null) {
+                    leftTail?.right = node.right
+                    node.right = node.left
+                    node.left = null
+                }
+
+                return rightTail ?: leftTail ?: node
+
+                // 1 -> 2 -> 3 -> 4
+            }
+
+            dfs(root)
+        }
+    }
+
     class Recursive {
         var prev: TreeNode? = null
         fun flatten(root: TreeNode?): Unit {
