@@ -1,6 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems1to100.problem49
 
 /**
+ * 49. Group Anagrams
  * https://leetcode.com/problems/group-anagrams/
  *
  * Example 1:
@@ -24,6 +25,7 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem49
  * strs[i] consists of lowercase English letters.
  */
 class GroupAnagrams {
+
     /**
      *  Given an array of strings strs, group the anagrams together.
      *  You can return the answer in any order.
@@ -31,6 +33,42 @@ class GroupAnagrams {
      *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
      *  typically using all the original letters exactly once.
      */
+    class SountAsKey2 {
+        fun groupAnagrams(strs: Array<String>): List<List<String>> {
+            // bruteforce:
+            // put to map with sorted key
+            // S: O(n * m * log m)
+            // T: O(n * m)
+
+            // but we do not need to sert we can code the inout in linear time
+            // into number coded array and then use it as string
+            // this will b
+            val map = mutableMapOf<String, Int>()
+            val res = mutableListOf<MutableList<String>>()
+
+            for (s in strs) {
+                val key = getKey(s)
+                val idx = map[key]
+                if (idx == null) {
+                    res.add(mutableListOf(s))
+                    map[key] = res.size - 1
+                } else {
+                    res[idx].add(s)
+                }
+            }
+
+            return res
+        }
+
+        private fun getKey(s: String): String {
+            val arr = IntArray(26)
+            for (ch in s) {
+                arr[ch - 'a']++
+            }
+            return arr.joinToString(",")
+        }
+    }
+
     class OptimalUsingCountAsKey {
         fun groupAnagrams(strs: Array<String>): List<List<String>> {
 
