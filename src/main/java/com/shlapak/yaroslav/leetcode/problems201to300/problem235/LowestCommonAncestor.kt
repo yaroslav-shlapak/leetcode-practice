@@ -1,4 +1,4 @@
-package com.shlapak.yaroslav.leetcode.problems201to300.package235
+package com.shlapak.yaroslav.leetcode.problems201to300.problem235
 
 import com.shlapak.yaroslav.leetcode.utils.TreeNode
 
