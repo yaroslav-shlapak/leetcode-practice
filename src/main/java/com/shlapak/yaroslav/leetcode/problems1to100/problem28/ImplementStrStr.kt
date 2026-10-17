@@ -2,6 +2,7 @@ package com.shlapak.yaroslav.leetcode.problems1to100.problem28
 
 /**
  * Created on 2019/05/19.
+ * 28. Find the Index of the First Occurrence in a String
  * https://leetcode.com/problems/implement-strstr/
  */
 class Solution {
@@ -138,7 +139,7 @@ class Solution {
         }
     }
 
-    class Good {
+    class SubstringV1 {
         fun strStr(haystack: String, needle: String): Int {
             return if (needle.isNotEmpty()) {
                 var result = -1
@@ -153,6 +154,17 @@ class Solution {
             } else {
                 0
             }
+        }
+    }
+
+    class SubstringV2 {
+        fun strStr(haystack: String, needle: String): Int {
+            for (i in needle.length .. haystack.length) {
+                if (haystack.substring(i - needle.length, i) == needle) {
+                    return i - needle.length
+                }
+            }
+            return -1
         }
     }
 }
