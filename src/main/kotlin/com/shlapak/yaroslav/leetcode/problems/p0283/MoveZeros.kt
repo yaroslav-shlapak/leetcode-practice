@@ -1,0 +1,95 @@
+package com.shlapak.yaroslav.leetcode.problems.p0283
+
+/**
+ * 283. Move Zeroes
+ * https://leetcode.com/problems/move-zeroes/description/
+ * Given an integer array nums, move all 0's to the end of it
+ * while maintaining the relative order of the non-zero elements.
+ *
+ * Note that you must do this in-place without making a copy of the array.
+ */
+class MoveZeros {
+    class OnePassOverwrite {
+        fun moveZeroes(nums: IntArray): Unit {
+            var j = 0
+            // [1,3,12,0,0]
+            //          |
+            // j = 3
+            for (i in 0 until nums.size) {
+                if (nums[i] != 0) {
+                    nums[j] = nums[i]
+                    j++
+                }
+            }
+            for (i in j until nums.size) {
+                nums[i] = 0
+            }
+        }
+    }
+    class OnePassWithSwap {
+        fun moveZeroes(nums: IntArray): Unit {
+            if (nums.size == 1) return
+            var j = 0
+            for (i in nums.indices) {
+                if (nums[i] != 0) {
+                    val temp = nums[i]
+                    nums[i] = nums[j]
+                    nums[j] = temp
+                    j++
+                }
+            }
+        }
+    }
+
+    class OnePassNoSwap {
+
+        // [0,1,0,3,12]
+        //      |      |
+        // [1,3,12,3,12
+        fun moveZeroes(nums: IntArray): Unit {
+            var i = 0
+            var j = 0
+            while (j < nums.size) {
+                if (i < nums.size) {
+                    if (nums[i] != 0) {
+                        nums[j] = nums[i]
+                        j++
+                    }
+                    i++
+                } else {
+                    nums[j] = 0
+                    j++
+                }
+            }
+        }
+    }
+}
+
+class MoveZeros_ExtraSpace {
+    fun moveZeroes(nums: IntArray): Unit {
+        if (nums.size == 1) return
+        var r = nums.size - 1
+        var l = 0
+        val nums2 = IntArray(nums.size)
+        var j = 0
+        for (num in nums) {
+            if (num != 0) {
+                nums2[j] = num
+                j++
+            }
+        }
+        for (i in nums.indices) {
+            if (nums2[i] != 0) {
+                nums[i] = nums2[i]
+            } else {
+                nums[i] = 0
+            }
+        }
+    }
+
+    fun IntArray.swap(first: Int, second: Int) {
+        val temp = this[first]
+        this[first] = this[second]
+        this[second] = temp
+    }
+}

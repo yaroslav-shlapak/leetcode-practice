@@ -1,0 +1,57 @@
+package com.shlapak.yaroslav.leetcode.problems.p0703
+
+import java.util.PriorityQueue
+
+/**
+ * 703. Kth Largest Element in a Stream
+ * https://leetcode.com/problems/kth-largest-element-in-a-stream/
+ */
+
+class KthLargest(private val k: Int, nums: IntArray) {
+
+    private val minHeap = PriorityQueue<Int>() // space: O(N)
+
+    init {
+        for (n in nums) { // O(N log k)
+            add(n)
+        }
+    }
+
+    fun add(`val`: Int): Int {
+        minHeap.offer(`val`) // O(log k)
+        if (minHeap.size > k) {
+            minHeap.poll() // O(log k)
+        }
+        return minHeap.peek() // O(1)
+    }
+
+}
+
+class KthLargest2(private val k: Int, nums: IntArray) {
+
+    private val store = PriorityQueue<Int>()
+
+    init {
+        for (n in nums) {
+            store.offer(n)
+        }
+        while (store.size > k) {
+            store.poll()
+        }
+    }
+
+    fun add(`val`: Int): Int {
+        store.offer(`val`)
+        if (store.size > k) {
+            store.poll()
+        }
+        return store.peek()
+    }
+
+}
+
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * var obj = KthLargest(k, nums)
+ * var param_1 = obj.add(`val`)
+ */
