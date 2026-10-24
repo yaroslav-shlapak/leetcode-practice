@@ -8,11 +8,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/05/11.
+ * Tests [SwapNodesInPairs].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0024.SwapNodesInPairs
- **/
 class SwapNodesInPairsTest : FreeSpec({
     "swapPairs" - {
         val inputs = getInputs()

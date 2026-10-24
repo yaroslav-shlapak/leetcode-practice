@@ -4,8 +4,11 @@ import java.util.*
 import kotlin.collections.HashMap
 
 /**
- * 981. Time Based Key-Value Store
- * https://leetcode.com/problems/time-based-key-value-store/solutions
+ * LeetCode 981: Time Based Key Value Store.
+ *
+ * Stores timestamped values and retrieves the latest value at or before a timestamp.
+ *
+ * @see <a href="https://leetcode.com/problems/time-based-key-value-store/">Problem statement</a>
  */
 class TimeMap() {
     private val map = HashMap<String, TreeMap<Int, String>>()

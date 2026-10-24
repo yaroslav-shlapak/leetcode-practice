@@ -3,9 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0040
 import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0040.CombinationSum2Legacy
- **/
+/**
+ * Tests [CombinationSum2Alternative2], [CombinationSum2Legacy].
+ */
 class CombinationSum2Test : FreeSpec() {
 
     init {

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0934
 
 /**
- * 934. Shortest Bridge
- * https://leetcode.com/problems/shortest-bridge/description/
+ * LeetCode 934: Shortest Bridge.
+ *
+ * Finds the fewest water cells needed to connect two islands.
+ *
+ * @see <a href="https://leetcode.com/problems/shortest-bridge/">Problem statement</a>
  */
 class ShortestBridge {
     class Solution {

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0328
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * 328. Odd Even Linked List
- * https://leetcode.com/problems/odd-even-linked-list/description/
+ * LeetCode 328: Odd Even Linked List.
+ *
+ * Groups linked-list nodes at odd positions before those at even positions.
+ *
+ * @see <a href="https://leetcode.com/problems/odd-even-linked-list/">Problem statement</a>
  */
 class OddEvenLinkedList {
     fun oddEvenList(head: ListNode?): ListNode? {

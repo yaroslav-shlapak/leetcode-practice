@@ -1,11 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0752
 
 /**
- * 752. Open the Lock
+ * LeetCode 752: Open the Lock.
  *
- * https://leetcode.com/problems/open-the-lock/description/
+ * Finds the fewest lock rotations needed to reach a target while avoiding dead ends.
+ *
+ * @see <a href="https://leetcode.com/problems/open-the-lock/">Problem statement</a>
  */
-
 class OpenTheLock {
 
     class Bfs {

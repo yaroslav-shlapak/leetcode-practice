@@ -5,11 +5,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/06/07.
+ * Tests [SearchInsertPosition], [SearchInsertPositionAlternative2].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0035.SearchInsertPosition
- **/
 internal class SearchInsertPositionTest : FreeSpec({
 
     "searchInsert" - {

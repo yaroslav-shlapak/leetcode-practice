@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0048
 
 /**
- * Created on 2019/07/19.
- * https://leetcode.com/problems/rotate-image/
+ * LeetCode 48: Rotate Image.
+ *
+ * Rotates a square matrix clockwise by 90 degrees.
+ *
+ * @see <a href="https://leetcode.com/problems/rotate-image/">Problem statement</a>
  */
 class RotateImage {
 

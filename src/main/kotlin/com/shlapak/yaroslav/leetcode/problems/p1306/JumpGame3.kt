@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p1306
 import kotlin.math.min
 
 /**
- * 1306. Jump Game 3
- * https://leetcode.com/problems/jump-game-iii/description/
+ * LeetCode 1306: Jump Game III.
+ *
+ * Checks whether jumps from a starting index can reach a zero value.
+ *
+ * @see <a href="https://leetcode.com/problems/jump-game-iii/">Problem statement</a>
  */
 class JumpGame3 { // constant time
     class Dfs {

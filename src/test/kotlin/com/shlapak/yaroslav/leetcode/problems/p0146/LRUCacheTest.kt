@@ -4,9 +4,10 @@ import com.shlapak.yaroslav.leetcode.problems.p0146.LRUCache
 import com.shlapak.yaroslav.leetcode.problems.p0146.LRUCache2
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0146.LRUCache
- **/
+
+/**
+ * Tests [LRUCache], [LRUCache2].
+ */
 class LRUCacheTest : FreeSpec({
     "LRUCache" - {
         val inputs = getInputs()

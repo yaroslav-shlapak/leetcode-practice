@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0029
 
 /**
- * Created on 2019/05/22.
- * https://leetcode.com/problems/divide-two-integers/
+ * LeetCode 29: Divide Two Integers.
+ *
+ * Divides integers without multiplication, division, or remainder operators.
+ *
+ * @see <a href="https://leetcode.com/problems/divide-two-integers/">Problem statement</a>
  */
 class DivideTwoIntegers {
     fun divideNaive(dividend: Int, divisor: Int): Int {

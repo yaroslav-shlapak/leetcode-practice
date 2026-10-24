@@ -5,13 +5,10 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 import kotlin.time.Duration.Companion.seconds
 
-
 /**
- * Created on 2019/05/27.
+ * Tests [SubstringWithConcatenationOfAllWords],
+ * [SubstringWithConcatenationOfAllWordsAlternative2].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0030.SubstringWithConcatenationOfAllWords
- **/
 class SubstringWithConcatenationOfAllWordsTest : FreeSpec({
     "findSubstring" - {
         val inputs = getInputs()

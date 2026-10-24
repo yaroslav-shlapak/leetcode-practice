@@ -4,13 +4,9 @@ import com.shlapak.yaroslav.leetcode.support.asString
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-
 /**
- * Created on 2019/05/29.
+ * Tests [SearchInRotatedSortedArrayAlternative2], [SearchInRotatedSortedArrayLegacy].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0033.SearchInRotatedSortedArrayLegacy
- **/
 class SearchInRotatedSortedArrayTest : FreeSpec({
 
     "search" - {

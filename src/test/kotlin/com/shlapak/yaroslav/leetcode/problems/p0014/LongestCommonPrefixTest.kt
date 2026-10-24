@@ -4,11 +4,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/04/13.
+ * Tests [LongestCommonPrefixLegacy].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0014.LongestCommonPrefixLegacy
- **/
 class LongestCommonPrefixTest : FreeSpec({
     val inputs = mapOf(
             arrayOf("flower", "flow", "flight") to "fl",

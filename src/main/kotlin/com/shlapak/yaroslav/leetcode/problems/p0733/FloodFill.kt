@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0733
 import java.util.LinkedList
 
 /**
- * 733. Flood Fill
- * https://leetcode.com/problems/flood-fill/
+ * LeetCode 733: Flood Fill.
+ *
+ * Recolors the connected region containing a selected pixel.
+ *
+ * @see <a href="https://leetcode.com/problems/flood-fill/">Problem statement</a>
  */
 class FloodFill {
 

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1328
 
 /**
- * 1328. Break a Palindrome
- * https://leetcode.com/problems/break-a-palindrome/
+ * LeetCode 1328: Break a Palindrome.
+ *
+ * Changes one character to form the smallest nonpalindromic string.
+ *
+ * @see <a href="https://leetcode.com/problems/break-a-palindrome/">Problem statement</a>
  */
 class BreakAPalindrome {
     class OptimizedMySolution {

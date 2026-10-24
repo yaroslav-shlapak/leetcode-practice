@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p3216
 
 /**
- * 3216. Lexicographically Smallest String After a Swap
- * https://leetcode.com/problems/lexicographically-smallest-string-after-a-swap/
+ * LeetCode 3216: Lexicographically Smallest String after a Swap.
+ *
+ * Finds the smallest string after at most one adjacent swap of same-parity digits.
+ *
+ * @see <a href="https://leetcode.com/problems/lexicographically-smallest-string-after-a-swap/">Problem statement</a>
  */
 class LexicographicallySmallestStringAfterASwap {
     class BruteForce {

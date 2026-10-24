@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0037
 
 /**
- * Created on 2019/06/12.
- * https://leetcode.com/problems/sudoku-solver/
+ * LeetCode 37: Sudoku Solver.
+ *
+ * Fills the empty cells of a Sudoku board.
+ *
+ * @see <a href="https://leetcode.com/problems/sudoku-solver/">Problem statement</a>
  */
 class SudokuSolver {
     private lateinit var board: Array<CharArray>

@@ -4,11 +4,8 @@ import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/05/09.
+ * Tests [GenerateParenthesesLegacy].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0022.GenerateParenthesesLegacy
- **/
 class GenerateParenthesesTest : FreeSpec({
     "generateParenthesis" - {
         val inputs = getInputs()

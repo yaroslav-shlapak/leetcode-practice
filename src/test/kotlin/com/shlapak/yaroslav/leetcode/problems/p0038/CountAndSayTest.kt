@@ -4,11 +4,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/06/24.
+ * Tests [CountAndSay].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0038.CountAndSay
- **/
 internal class CountAndSayTest : FreeSpec({
     "countAndSay" - {
         val inputs = getInputs()

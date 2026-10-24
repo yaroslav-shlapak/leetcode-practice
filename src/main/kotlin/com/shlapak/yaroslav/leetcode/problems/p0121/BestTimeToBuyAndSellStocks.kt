@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0121
 
 /**
- * 121. Best Time to Buy and Sell Stock
+ * LeetCode 121: Best Time to Buy and Sell Stock.
  *
- * https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+ * Finds the greatest profit from one stock purchase followed by one sale.
+ *
+ * @see <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Problem statement</a>
  */
 class BestTimeToBuyAndSellStocks {
     class DynamicProgramming {

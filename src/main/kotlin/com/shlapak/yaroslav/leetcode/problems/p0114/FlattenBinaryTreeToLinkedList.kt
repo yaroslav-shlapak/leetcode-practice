@@ -3,10 +3,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0114
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 114. Flatten Binary Tree to Linked List
- * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+ * LeetCode 114: Flatten Binary Tree to Linked List.
+ *
+ * Flattens a binary tree into a linked list in preorder.
+ *
+ * @see <a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list/">Problem statement</a>
  */
-
 class FlattenBinaryTreeToLinkedList {
     class RecursiveUnderstandable {
         fun flatten(root: TreeNode?) {

@@ -3,17 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0019
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * Created on 2019/04/25.
- */
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+ * LeetCode 19: Remove Nth Node from End of List.
+ *
+ * Removes the nth node counted from the end of a linked list.
+ *
+ * @see <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Problem statement</a>
  */
 class RemoveNthNodeFromEndOfList {
     fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
@@ -96,4 +90,3 @@ class RemoveNthNodeFromEndOfListLegacy {
         return dummy.next
     }
 }
-

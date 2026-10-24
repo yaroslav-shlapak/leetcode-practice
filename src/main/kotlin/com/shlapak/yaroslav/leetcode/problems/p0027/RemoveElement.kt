@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0027
 
 /**
- * Created on 2019/05/14.
- * https://leetcode.com/problems/remove-element/
+ * LeetCode 27: Remove Element.
+ *
+ * Removes occurrences of a value from an array in place.
+ *
+ * @see <a href="https://leetcode.com/problems/remove-element/">Problem statement</a>
  */
 class RemoveElement {
     fun removeElement(nums: IntArray, `val`: Int): Int {

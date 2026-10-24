@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0073
 
 /**
- * 73. Set Matrix Zeroes
- * https://leetcode.com/problems/set-matrix-zeroes/description/
+ * LeetCode 73: Set Matrix Zeroes.
+ *
+ * Sets every row and column containing a zero to zero.
+ *
+ * @see <a href="https://leetcode.com/problems/set-matrix-zeroes/">Problem statement</a>
  */
 class SetMatrixZeros {
     fun setZeroes(matrix: Array<IntArray>): Unit {

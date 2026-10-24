@@ -1,11 +1,15 @@
 package com.shlapak.yaroslav.leetcode.problems.p0108
 
-/**
- * 108. Convert Sorted Array to Binary Search Tree
- * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
- */
+
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
+/**
+ * LeetCode 108: Convert Sorted Array to Binary Search Tree.
+ *
+ * Builds a height-balanced binary search tree from a sorted array.
+ *
+ * @see <a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">Problem statement</a>
+ */
 class SortedArrayToBinarySearchTree {
     fun sortedArrayToBST(nums: IntArray): TreeNode? {
 

@@ -1,9 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problems.p0670
 
-/**
- * 670. Maximum Swap
- * https://leetcode.com/problems/maximum-swap/
- */
 class MaxSwapBruteForceMy1 {
     fun maximumSwap(num: Int): Int {
         if (num <= 11) return num
@@ -67,6 +63,13 @@ class MaxSwapBruteForceMy2 {
     }
 }
 
+/**
+ * LeetCode 670: Maximum Swap.
+ *
+ * Maximizes an integer by swapping at most one pair of digits.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-swap/">Problem statement</a>
+ */
 class MaxSwap {
     fun maximumSwap1(num: Int): Int {
         val digits = num.toString().toCharArray()

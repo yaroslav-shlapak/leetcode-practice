@@ -1,10 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0033
 
 /**
- * Created on 2019/05/29.
- * https://leetcode.com/problems/search-in-rotated-sorted-array/
+ * LeetCode 33: Search in Rotated Sorted Array.
+ *
+ * Finds a target in a rotated sorted array.
+ *
+ * @see <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Problem statement</a>
  */
-
 class SearchInRotatedSortedArray {
     fun search(nums: IntArray, target: Int): Int {
         val inflictionPoint = findInflictionPoint(nums)

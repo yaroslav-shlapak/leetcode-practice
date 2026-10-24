@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0876
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * 876. Middle of the Linked List
- * https://leetcode.com/problems/middle-of-the-linked-list/description/
+ * LeetCode 876: Middle of the Linked List.
+ *
+ * Finds the middle node of a linked list.
+ *
+ * @see <a href="https://leetcode.com/problems/middle-of-the-linked-list/">Problem statement</a>
  */
 class MiddleOfLinkedList {
     fun middleNode(head: ListNode?): ListNode? {

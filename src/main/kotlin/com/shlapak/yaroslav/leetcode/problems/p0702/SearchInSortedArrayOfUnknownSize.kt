@@ -2,10 +2,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0702
 
 import kotlin.math.min
 
-
 /**
- * 702. Search in a Sorted Array of Unknown Size
- * https://leetcode.com/problems/search-in-a-sorted-array-of-unknown-size/editorial/
+ * LeetCode 702: Search in a Sorted Array of Unknown Size.
+ *
+ * Searches a sorted array whose size is treated as unknown.
+ *
+ * @see <a href="https://leetcode.com/problems/search-in-a-sorted-array-of-unknown-size/">Problem statement</a>
  */
 class SearchInSortedArrayOfUnknownSize {
     fun search(arr: List<Int>, target: Int): Int {

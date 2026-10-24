@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0324
 import java.util.PriorityQueue
 
 /**
- * 324. Wiggle Sort II
- * https://leetcode.com/problems/wiggle-sort-ii/
+ * LeetCode 324: Wiggle Sort II.
+ *
+ * Reorders values into alternating strict peaks and valleys.
+ *
+ * @see <a href="https://leetcode.com/problems/wiggle-sort-ii/">Problem statement</a>
  */
 class WiggleSort2 {
 

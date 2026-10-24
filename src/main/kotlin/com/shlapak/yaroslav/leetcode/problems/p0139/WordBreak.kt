@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0139
 
-/*
- * 139. Word Break
- * https://leetcode.com/problems/word-break/
+/**
+ * LeetCode 139: Word Break.
+ *
+ * Determines whether a string can be segmented into dictionary words.
+ *
+ * @see <a href="https://leetcode.com/problems/word-break/">Problem statement</a>
  */
 class WordBreak {
     fun wordBreak(s: String, wordDict: List<String>): Boolean {

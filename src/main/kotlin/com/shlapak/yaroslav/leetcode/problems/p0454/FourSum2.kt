@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0454
 
 /**
- * 454. 4Sum II
- * https://leetcode.com/problems/4sum-ii/description/
+ * LeetCode 454: 4Sum II.
+ *
+ * Counts zero-sum tuples formed by choosing one value from each of four arrays.
+ *
+ * @see <a href="https://leetcode.com/problems/4sum-ii/">Problem statement</a>
  */
 class FourSum2 {
     class PairSumPlusHashMap {

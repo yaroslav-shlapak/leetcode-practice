@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0383
 
+/**
+ * LeetCode 383: Ransom Note.
+ *
+ * Checks whether available magazine characters can construct a ransom note.
+ *
+ * @see <a href="https://leetcode.com/problems/ransom-note/">Problem statement</a>
+ */
 class RansomNote {
     fun canConstruct(ransomNote: String, magazine: String): Boolean {
         val note = IntArray(26)

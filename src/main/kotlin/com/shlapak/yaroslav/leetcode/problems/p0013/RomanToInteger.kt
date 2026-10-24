@@ -1,10 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0013
 
 /**
- * Created on 2019/04/12.
- * https://leetcode.com/problems/roman-to-integer/
+ * LeetCode 13: Roman to Integer.
+ *
+ * Converts a Roman numeral to an integer.
+ *
+ * @see <a href="https://leetcode.com/problems/roman-to-integer/">Problem statement</a>
  */
-
 class RomanToInteger {
 
     class BruteForce {

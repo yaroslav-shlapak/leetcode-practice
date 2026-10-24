@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p2196
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 2196. Create Binary Tree From Descriptions
- * https://leetcode.com/problems/create-binary-tree-from-descriptions/
+ * LeetCode 2196: Create Binary Tree from Descriptions.
+ *
+ * Builds a binary tree from parent-child descriptions.
+ *
+ * @see <a href="https://leetcode.com/problems/create-binary-tree-from-descriptions/">Problem statement</a>
  */
 class CreateBinaryTreeFromDescriptions {
     class MapSolution {

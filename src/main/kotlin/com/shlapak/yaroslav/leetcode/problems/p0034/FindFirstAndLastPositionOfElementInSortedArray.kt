@@ -1,10 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problems.p0034
 
-/**
- * Created on 2019/05/31.
- * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
- */
-
 class FindFirstAndLastPositionOfElementInSortedArray_Optimized {
     class FindFirstAndLastPositionOfElementInSortedArrayLegacy {
         fun searchRange(nums: IntArray, target: Int): IntArray {
@@ -48,6 +43,14 @@ class FindFirstAndLastPositionOfElementInSortedArray_Optimized {
         }
     }
 }
+
+/**
+ * LeetCode 34: Find First and Last Position of Element in Sorted Array.
+ *
+ * Finds the first and last positions of a target in a sorted array.
+ *
+ * @see <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Problem statement</a>
+ */
 class FindFirstAndLastPositionOfElementInSortedArray {
     fun searchRange(nums: IntArray, target: Int): IntArray {
         val res = intArrayOf(-1, -1)

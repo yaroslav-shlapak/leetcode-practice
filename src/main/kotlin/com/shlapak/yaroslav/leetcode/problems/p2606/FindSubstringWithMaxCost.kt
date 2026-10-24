@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p2606
 
 /**
- * 2606. Find the Substring With Maximum Cost
- * https://leetcode.com/problems/find-the-substring-with-maximum-cost/
+ * LeetCode 2606: Find the Substring with Maximum Cost.
+ *
+ * Finds the greatest substring cost under custom character values.
+ *
+ * @see <a href="https://leetcode.com/problems/find-the-substring-with-maximum-cost/">Problem statement</a>
  */
 class FindSubstringWithMaxCost {
     fun maximumCostSubstring(s: String, chars: String, vals: IntArray): Int {

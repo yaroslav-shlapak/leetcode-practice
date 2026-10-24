@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p2062
 
+/**
+ * LeetCode 2062: Count Vowel Substrings of a String.
+ *
+ * Counts substrings containing every vowel and no consonants.
+ *
+ * @see <a href="https://leetcode.com/problems/count-vowel-substrings-of-a-string/">Problem statement</a>
+ */
 class CountVowelSubstrings {
     class BruteForce {
         fun countVowelSubstrings(word: String): Int {

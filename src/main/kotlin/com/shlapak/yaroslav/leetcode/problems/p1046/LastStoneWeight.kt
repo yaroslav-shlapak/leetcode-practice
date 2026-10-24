@@ -4,8 +4,11 @@ import java.util.Collections
 import java.util.PriorityQueue
 
 /**
- * 1046. Last Stone Weight
- * https://leetcode.com/problems/last-stone-weight/description/
+ * LeetCode 1046: Last Stone Weight.
+ *
+ * Simulates repeatedly smashing the two heaviest stones.
+ *
+ * @see <a href="https://leetcode.com/problems/last-stone-weight/">Problem statement</a>
  */
 class LastStoneWeight {
     class MaxHeapApproach {

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p2390
 
 /**
- * 2390. Removing Stars From a String
- * https://leetcode.com/problems/removing-stars-from-a-string/description/
+ * LeetCode 2390: Removing Stars from a String.
+ *
+ * Removes each star and the closest surviving character to its left.
+ *
+ * @see <a href="https://leetcode.com/problems/removing-stars-from-a-string/">Problem statement</a>
  */
 class RemovingStarsFromString {
     class SimpleAndEfficient {

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0026
 import java.util.TreeSet
 
 /**
- * Created on 2019/05/14.
- * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+ * LeetCode 26: Remove Duplicates from Sorted Array.
+ *
+ * Compacts a sorted array so each distinct value appears once.
+ *
+ * @see <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Problem statement</a>
  */
 class RemoveDuplicatesFromSortedArray {
     fun removeDuplicates1(nums: IntArray): Int {

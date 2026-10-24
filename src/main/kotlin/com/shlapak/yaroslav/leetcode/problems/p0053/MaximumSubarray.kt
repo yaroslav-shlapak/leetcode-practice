@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0053
 
 /**
- * Created on 2019/11/17.
+ * LeetCode 53: Maximum Subarray.
+ *
+ * Finds the largest sum of a nonempty contiguous subarray.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-subarray/">Problem statement</a>
  */
 class MaximumSubarray {
     fun maxSubArray(nums: IntArray): Int {

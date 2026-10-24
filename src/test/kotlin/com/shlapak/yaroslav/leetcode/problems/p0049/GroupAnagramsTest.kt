@@ -3,9 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0049
 import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see GroupAnagrams
- **/
+/**
+ * Tests [GroupAnagrams.OptimalUsingCountAsKey].
+ */
 class GroupAnagramsTest : FreeSpec() {
 
     init {

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0024
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * Created on 2019/05/11.
- * https://leetcode.com/problems/swap-nodes-in-pairs/
+ * LeetCode 24: Swap Nodes in Pairs.
+ *
+ * Swaps adjacent nodes in a linked list.
+ *
+ * @see <a href="https://leetcode.com/problems/swap-nodes-in-pairs/">Problem statement</a>
  */
 class SwapNodesInPairs {
     fun swapPairs(head: ListNode?): ListNode? {

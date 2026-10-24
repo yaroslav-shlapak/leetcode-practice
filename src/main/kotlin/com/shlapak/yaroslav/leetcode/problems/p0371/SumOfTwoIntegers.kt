@@ -1,11 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0371
 
 /**
- * 371. Sum of Two Integers
- * https://leetcode.com/problems/sum-of-two-integers/
+ * LeetCode 371: Sum of Two Integers.
  *
- * This problem can be solved using bit manipulation.
- * The idea is to use bitwise operations to calculate the sum without using the '+' operator.
+ * Adds two integers without using addition or subtraction operators.
+ *
+ * @see <a href="https://leetcode.com/problems/sum-of-two-integers/">Problem statement</a>
  */
 class SumOfTwoIntegers {
     class Naive {

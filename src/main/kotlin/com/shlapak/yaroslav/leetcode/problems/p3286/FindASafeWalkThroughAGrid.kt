@@ -1,11 +1,15 @@
 package com.shlapak.yaroslav.leetcode.problems.p3286
 
-/**
- * 3286. Find a Safe Walk Through a Grid
- * https://leetcode.com/problems/find-a-safe-walk-through-a-grid/description/
- */
+
 import java.util.ArrayDeque
 
+/**
+ * LeetCode 3286: Find a Safe Walk Through a Grid.
+ *
+ * Checks whether a grid path can be completed with positive remaining health.
+ *
+ * @see <a href="https://leetcode.com/problems/find-a-safe-walk-through-a-grid/">Problem statement</a>
+ */
 class FindASafeWalkThroughAGrid {
     class BFS_01 {
         fun findSafeWalk(grid: List<List<Int>>, health: Int): Boolean {

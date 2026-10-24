@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p2337
 
 /**
- * 2337. Move Pieces to Obtain a String
- * https://leetcode.com/problems/move-pieces-to-obtain-a-string/
+ * LeetCode 2337: Move Pieces to Obtain a String.
+ *
+ * Checks whether directional pieces can be moved to match a target string.
+ *
+ * @see <a href="https://leetcode.com/problems/move-pieces-to-obtain-a-string/">Problem statement</a>
  */
 class MovePiecesToObtainAString {
 

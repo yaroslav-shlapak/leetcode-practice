@@ -1,9 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problems.p0278
 
-/**
- * 278. First Bad Version
- * https://leetcode.com/problems/first-bad-version/description/
- */
 class FirstBadVersionAlternative3: VersionControl() {
     override fun firstBadVersion(n: Int): Int {
         var r = n
@@ -45,6 +41,13 @@ class FirstBadVersionAlternative2 : VersionControl() {
     }
 }
 
+/**
+ * LeetCode 278: First Bad Version.
+ *
+ * Finds the first bad version using the supplied version predicate.
+ *
+ * @see <a href="https://leetcode.com/problems/first-bad-version/">Problem statement</a>
+ */
 class FirstBadVersion : VersionControl() {
     override fun firstBadVersion(n: Int): Int {
         var r = n

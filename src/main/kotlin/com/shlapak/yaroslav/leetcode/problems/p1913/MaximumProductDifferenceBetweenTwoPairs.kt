@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1913
 
 /**
- * 1913. Maximum Product Difference Between Two Pairs
- * https://leetcode.com/problems/maximum-product-difference-between-two-pairs/
+ * LeetCode 1913: Maximum Product Difference Between Two Pairs.
+ *
+ * Finds the difference between the largest and smallest products of value pairs.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-product-difference-between-two-pairs/">Problem statement</a>
  */
 class MaximumProductDifferenceBetweenTwoPairs {
     class Optimal {

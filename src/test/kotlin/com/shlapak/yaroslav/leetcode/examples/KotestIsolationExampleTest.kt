@@ -5,7 +5,9 @@ import io.kotest.core.spec.style.FreeSpec
 import java.util.concurrent.atomic.AtomicInteger
 
 /**
- * Created on 2019/06/03.
+ * Demonstrates Kotest fixture initialization with single-instance isolation.
+ *
+ * Uses counters and console output to show how nested test groups share state.
  */
 class KotestIsolationExampleTest : FreeSpec() {
 
@@ -125,6 +127,3 @@ class KotestIsolationExampleTest : FreeSpec() {
     }
 
 }
-
-
-

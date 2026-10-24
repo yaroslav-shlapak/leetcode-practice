@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0456
 
 /**
- * 456. 132 Pattern
- * https://leetcode.com/problems/132-pattern/description/
+ * LeetCode 456: 132 Pattern.
+ *
+ * Checks for a subsequence with the relative order 1, 3, 2.
+ *
+ * @see <a href="https://leetcode.com/problems/132-pattern/">Problem statement</a>
  */
 class  Task132Pattern {
     class OptimalStack {

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0994
 
 /**
- * 994. Rotting Oranges
- * https://leetcode.com/problems/rotting-oranges/
+ * LeetCode 994: Rotting Oranges.
+ *
+ * Finds the time required for rot to spread to all fresh oranges.
+ *
+ * @see <a href="https://leetcode.com/problems/rotting-oranges/">Problem statement</a>
  */
 class RootingOranges {
 

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0207
 
 /**
- * 207. Course Schedule
- * https://leetcode.com/problems/course-schedule/
+ * LeetCode 207: Course Schedule.
+ *
+ * Determines whether all courses can be completed given their prerequisites.
+ *
+ * @see <a href="https://leetcode.com/problems/course-schedule/">Problem statement</a>
  */
 class CourseSchedule {
     fun canFinishRecursive(numCourses: Int, prerequisites: Array<IntArray>): Boolean {

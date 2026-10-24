@@ -4,9 +4,9 @@ import com.shlapak.yaroslav.leetcode.problems.p2273.FindResultantArrayAfterRemov
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p2273.FindResultantArrayAfterRemovingAnagrams
- **/
+/**
+ * Tests [FindResultantArrayAfterRemovingAnagrams].
+ */
 class FindResultantArrayAfterRemovingAnagramsTest : FreeSpec({
     "FindResultantArrayAfterRemovingAnagrams" - {
         val testCases = listOf<TestCase>(

@@ -5,11 +5,8 @@ import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/04/24.
+ * Tests [FourSum].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0018.FourSum
- **/
 class FourSumTest : FreeSpec({
     val inputs = mapOf(
             Prameter(

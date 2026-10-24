@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1768
 
-/*
- * 1768. Merge Strings Alternately
- * https://leetcode.com/problems/merge-strings-alternately/
+/**
+ * LeetCode 1768: Merge Strings Alternately.
+ *
+ * Merges two strings by alternating their characters.
+ *
+ * @see <a href="https://leetcode.com/problems/merge-strings-alternately/">Problem statement</a>
  */
 class MergeStringsAlternately {
     fun mergeAlternately(word1: String, word2: String): String {

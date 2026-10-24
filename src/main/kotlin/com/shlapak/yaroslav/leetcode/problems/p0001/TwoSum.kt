@@ -1,19 +1,8 @@
 package com.shlapak.yaroslav.leetcode.problems.p0001
 
-/**
- * https://leetcode.com/problems/two-sum/submissions/1543335819/
- */
 class TwoSumAlternative2 {
 
-    /**
-     * Given an array of integers nums and an integer target,
-     * return indices of the two numbers such that they add up to target.
-     *
-     * You may assume that each input would have exactly one solution,
-     * and you may not use the same element twice.
-     *
-     * You can return the answer in any order.
-     */
+
 
     fun twoSum(nums: IntArray, target: Int): IntArray {
         val possiblePair = mutableMapOf<Int, Int>()
@@ -29,7 +18,13 @@ class TwoSumAlternative2 {
     }
 }
 
-
+/**
+ * LeetCode 1: Two Sum.
+ *
+ * Finds the indices of two numbers whose sum equals a target.
+ *
+ * @see <a href="https://leetcode.com/problems/two-sum/">Problem statement</a>
+ */
 class TwoSum {
 
     fun twoSum2(nums: IntArray, target: Int): IntArray {

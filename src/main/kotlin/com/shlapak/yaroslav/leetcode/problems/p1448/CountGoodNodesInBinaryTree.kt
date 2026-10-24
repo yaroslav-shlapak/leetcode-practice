@@ -3,9 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p1448
 import java.util.Stack
 
 /**
- * 1448. class Count Good Nodes in Binary Tree {
+ * LeetCode 1448: Count Good Nodes in Binary Tree.
  *
- * https://leetcode.com/problems/count-good-nodes-in-binary-tree
+ * Counts tree nodes whose value is at least every value on their root path.
+ *
+ * @see <a href="https://leetcode.com/problems/count-good-nodes-in-binary-tree/">Problem statement</a>
  */
 class CountGoodNodesInBinaryTree {
     class Dfs {

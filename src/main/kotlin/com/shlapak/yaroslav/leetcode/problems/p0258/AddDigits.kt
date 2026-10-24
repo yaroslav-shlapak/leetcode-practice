@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0258
 
 /**
- * 258. Add Digits
- * https://leetcode.com/problems/add-digits/
+ * LeetCode 258: Add Digits.
+ *
+ * Repeatedly adds an integer's digits until one digit remains.
+ *
+ * @see <a href="https://leetcode.com/problems/add-digits/">Problem statement</a>
  */
 class AddDigits {
     class Naive {

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0146
 import java.util.*
 
 /**
- * Created on 2019/06/15.
- * https://leetcode.com/problems/lru-cache/
+ * LeetCode 146: LRU Cache.
+ *
+ * Stores key-value pairs with least-recently-used eviction.
+ *
+ * @see <a href="https://leetcode.com/problems/lru-cache/">Problem statement</a>
  */
 class LRUCache(val capacity: Int) {
     private val head = Node(0, 0)
@@ -84,10 +87,3 @@ class LRUCache2(private val capacity: Int) {
         map[key] = value
     }
 }
-
-/**
- * Your LRUCache object will be instantiated and called as such:
- * var obj = LRUCache(capacity)
- * var param_1 = obj.get(key)
- * obj.put(key,value)
- */

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0226
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 226. Invert Binary Tree
- * https://leetcode.com/problems/invert-binary-tree/description/
+ * LeetCode 226: Invert Binary Tree.
+ *
+ * Swaps the left and right children throughout a binary tree.
+ *
+ * @see <a href="https://leetcode.com/problems/invert-binary-tree/">Problem statement</a>
  */
 class InvertBinaryTreeRecursive {
     fun invertTree(root: TreeNode?): TreeNode? {

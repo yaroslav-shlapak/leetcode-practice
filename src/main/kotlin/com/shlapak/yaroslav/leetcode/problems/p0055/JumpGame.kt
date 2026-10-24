@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0055
 
-/*
-    * 55. Jump Game
-    * https://leetcode.com/problems/jump-game/
+/**
+ * LeetCode 55: Jump Game.
+ *
+ * Determines whether the last array index is reachable.
+ *
+ * @see <a href="https://leetcode.com/problems/jump-game/">Problem statement</a>
  */
 class JumpGame {
 

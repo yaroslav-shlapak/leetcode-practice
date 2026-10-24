@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p3843
 
 /**
- * https://leetcode.com/problems/first-element-with-unique-frequency
+ * LeetCode 3843: First Element with Unique Frequency.
+ *
+ * Finds the first value whose occurrence count is unique among all distinct values.
+ *
+ * @see <a href="https://leetcode.com/problems/first-element-with-unique-frequency/">Problem statement</a>
  */
 class FirstElementWithUniqueFrequency {
     class TwoHashMaps {

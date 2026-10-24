@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0100
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 100. Same Tree
- * https://leetcode.com/problems/same-tree/
+ * LeetCode 100: Same Tree.
+ *
+ * Determines whether two binary trees have identical structure and values.
+ *
+ * @see <a href="https://leetcode.com/problems/same-tree/">Problem statement</a>
  */
 class SameTree {
     fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {

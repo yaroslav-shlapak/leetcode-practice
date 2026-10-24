@@ -4,8 +4,11 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- * 532. K-diff Pairs in an Array
- * https://leetcode.com/problems/k-diff-pairs-in-an-array/description/
+ * LeetCode 532: K Diff Pairs in an Array.
+ *
+ * Counts distinct pairs whose values differ by k.
+ *
+ * @see <a href="https://leetcode.com/problems/k-diff-pairs-in-an-array/">Problem statement</a>
  */
 class KDiffPairsInArray {
     fun findPairs(nums: IntArray, k: Int): Int {

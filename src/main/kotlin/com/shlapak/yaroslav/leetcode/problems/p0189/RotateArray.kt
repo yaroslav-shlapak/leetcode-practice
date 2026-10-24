@@ -3,11 +3,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0189
 import kotlin.collections.reverse
 
 /**
- * 189. Rotate Array
- * https://leetcode.com/problems/rotate-array/description/
- * Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
+ * LeetCode 189: Rotate Array.
+ *
+ * Rotates an array to the right.
+ *
+ * @see <a href="https://leetcode.com/problems/rotate-array/">Problem statement</a>
  */
-
 class RotateArray {
     class InPlaceReversal {
         fun rotate(nums: IntArray, k: Int): Unit {

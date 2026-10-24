@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0086
 
 /**
- * 86. Partition List
- * https://leetcode.com/problems/partition-list/description/
+ * LeetCode 86: Partition List.
+ *
+ * Partitions a linked list around a value while preserving relative order.
+ *
+ * @see <a href="https://leetcode.com/problems/partition-list/">Problem statement</a>
  */
 class PartitionList {
     fun partition(head: ListNode?, x: Int): ListNode? {

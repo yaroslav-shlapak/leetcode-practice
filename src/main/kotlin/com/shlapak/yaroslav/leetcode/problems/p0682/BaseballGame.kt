@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0682
 import java.util.ArrayDeque
 
 /**
- * 682. Baseball Game
- * https://leetcode.com/problems/baseball-game/description/
+ * LeetCode 682: Baseball Game.
+ *
+ * Evaluates a baseball score record containing score-modifying operations.
+ *
+ * @see <a href="https://leetcode.com/problems/baseball-game/">Problem statement</a>
  */
 class BaseballGame {
     fun calPoints(operations: Array<String>): Int {

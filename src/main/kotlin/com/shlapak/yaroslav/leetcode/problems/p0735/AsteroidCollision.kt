@@ -4,10 +4,7 @@ import java.util.LinkedList
 import kotlin.math.*
 
 
-/**
- * 735. Asteroid Collision
- * https://leetcode.com/problems/asteroid-collision/description/
- */
+
 // Input: asteroids = [5,10,-5
 //    |
 //    [5] -> [5, 10] -> [10, -5]
@@ -15,6 +12,14 @@ import kotlin.math.*
 //     |
 //     10
 // Output: [5,10]
+
+/**
+ * LeetCode 735: Asteroid Collision.
+ *
+ * Simulates collisions between asteroids moving along a line.
+ *
+ * @see <a href="https://leetcode.com/problems/asteroid-collision/">Problem statement</a>
+ */
 class AsteroidCollision {
     class Stack20260628 {
         fun asteroidCollision(asteroids: IntArray): IntArray {

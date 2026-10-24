@@ -4,8 +4,11 @@ import com.shlapak.yaroslav.leetcode.common.TreeNode
 import java.util.LinkedList
 
 /**
- * 112. Path Sum
- * https://leetcode.com/problems/path-sum/
+ * LeetCode 112: Path Sum.
+ *
+ * Checks whether a root-to-leaf path has a target sum.
+ *
+ * @see <a href="https://leetcode.com/problems/path-sum/">Problem statement</a>
  */
 class PathSum {
     class Dfs {

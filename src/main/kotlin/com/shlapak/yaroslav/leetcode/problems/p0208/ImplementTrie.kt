@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0208
 import java.util.HashMap
 
 /**
- * 208. Implement Trie (Prefix Tree)
- * https://leetcode.com/problems/implement-trie-prefix-tree/
+ * LeetCode 208: Implement Trie (Prefix Tree).
+ *
+ * Stores words in a trie with exact and prefix lookup.
+ *
+ * @see <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">Problem statement</a>
  */
 class ImplementTrie {
 

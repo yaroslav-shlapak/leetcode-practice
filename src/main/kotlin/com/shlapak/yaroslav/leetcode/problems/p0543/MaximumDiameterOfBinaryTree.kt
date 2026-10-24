@@ -5,11 +5,6 @@ import com.shlapak.yaroslav.leetcode.common.TreeNode
 typealias Diameter = Int
 typealias Height = Int
 
-/**
- * 543. Diameter of Binary Tree
- * https://leetcode.com/problems/diameter-of-binary-tree/
- */
-
 class MaximumDiameterOfBinaryTreeIterative {
     fun diameterOfBinaryTree(root: TreeNode?): Int {
         if (root == null) return 0
@@ -66,6 +61,13 @@ class MaximumDiameterOfBinaryTreeRecursive {
     }
 }
 
+/**
+ * LeetCode 543: Diameter of Binary Tree.
+ *
+ * Finds the longest path between any two binary-tree nodes.
+ *
+ * @see <a href="https://leetcode.com/problems/diameter-of-binary-tree/">Problem statement</a>
+ */
 class MaximumDiameterOfBinaryTree {
     fun diameterOfBinaryTree(root: TreeNode?): Int {
         var res = 0

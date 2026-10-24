@@ -28,6 +28,13 @@ class SortColors2 {
     }
 }
 
+/**
+ * LeetCode 75: Sort Colors.
+ *
+ * Sorts values representing three colors in place.
+ *
+ * @see <a href="https://leetcode.com/problems/sort-colors/">Problem statement</a>
+ */
 class SortColors {
     fun sortColors(nums: IntArray): Unit {
         val next = nums.rearrangeFromIndex(start = 0, target = 0)

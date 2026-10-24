@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0680
 
 /**
- * 680. Valid Palindrome II
- * https://leetcode.com/problems/valid-palindrome-ii/
+ * LeetCode 680: Valid Palindrome II.
+ *
+ * Checks whether a string becomes a palindrome after at most one deletion.
+ *
+ * @see <a href="https://leetcode.com/problems/valid-palindrome-ii/">Problem statement</a>
  */
 class ValidPalindrome2 {
     fun validPalindrome(s: String): Boolean {

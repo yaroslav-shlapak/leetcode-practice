@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p2657
+
 /**
- * 2657. Find the Prefix Common Array
- * https://leetcode.com/problems/find-the-prefix-common-array/
+ * LeetCode 2657: Find the Prefix Common Array of Two Arrays.
+ *
+ * Counts values common to corresponding prefixes of two permutations.
+ *
+ * @see <a href="https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays/">Problem statement</a>
  */
 class FindCommonPrefix {
     fun findThePrefixCommonArray(A: IntArray, B: IntArray): IntArray {

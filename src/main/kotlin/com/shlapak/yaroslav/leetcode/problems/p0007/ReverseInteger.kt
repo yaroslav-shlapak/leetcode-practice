@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0007
 import kotlin.test.assertEquals
 
 /**
- * Created on 2019/04/09.
- * https://leetcode.com/problems/reverse-integer/
+ * LeetCode 7: Reverse Integer.
+ *
+ * Reverses a signed integer while respecting 32-bit bounds.
+ *
+ * @see <a href="https://leetcode.com/problems/reverse-integer/">Problem statement</a>
  */
 class ReverseInteger {
     fun reverse(x: Int): Int {

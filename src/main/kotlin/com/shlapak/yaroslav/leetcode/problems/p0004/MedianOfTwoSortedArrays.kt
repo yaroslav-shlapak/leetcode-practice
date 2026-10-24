@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0004
 
 /**
- * Created on 2019/04/08.
+ * LeetCode 4: Median of Two Sorted Arrays.
+ *
+ * Finds the median of two sorted arrays.
+ *
+ * @see <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">Problem statement</a>
  */
 class MedianOfTwoSortedArrays {
     fun findMedianSortedArrays1(nums1: IntArray, nums2: IntArray): Double {

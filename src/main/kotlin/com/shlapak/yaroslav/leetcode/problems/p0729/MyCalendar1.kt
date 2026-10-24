@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0729
 
 /**
- * 729. My Calendar I
+ * LeetCode 729: My Calendar I.
  *
- * https://leetcode.com/problems/my-calendar-i/description/
+ * Accepts calendar bookings only when they do not overlap existing bookings.
+ *
+ * @see <a href="https://leetcode.com/problems/my-calendar-i/">Problem statement</a>
  */
 class MyCalendar1 {
 
@@ -18,13 +20,13 @@ class MyCalendar1 {
      * 1. The closest booking before startTime
      * 2. The closest booking after startTime
      *
-     * Time complexity:
+     * Time:
      * - floorEntry: O(log n)
      * - ceilingEntry: O(log n)
      * - insert: O(log n)
      * - Total per book(): O(log n)
      *
-     * Space complexity:
+     * Space:
      * - O(n), where n is the number of accepted bookings
      */
     class TreeMapCalendar {
@@ -61,14 +63,14 @@ class MyCalendar1 {
      *
      * After adding a booking, the list is sorted again.
      *
-     * Time complexity:
+     * Time:
      * - Scanning list: O(n)
      * - Adding to list: O(1)
      * - Sorting after insert: O(n log n)
      * - Total per successful book(): O(n log n)
      * - Total per failed book(): O(n)
      *
-     * Space complexity:
+     * Space:
      * - O(n), where n is the number of accepted bookings
      */
     class BruteForce {
@@ -125,12 +127,12 @@ class MyCalendar1 {
      *
      * newStart < existingEnd && existingStart < newEnd
      *
-     * Time complexity:
+     * Time:
      * - Checking all bookings: O(n)
      * - Adding booking: O(1)
      * - Total per book(): O(n)
      *
-     * Space complexity:
+     * Space:
      * - O(n), where n is the number of accepted bookings
      */
     class Simple {

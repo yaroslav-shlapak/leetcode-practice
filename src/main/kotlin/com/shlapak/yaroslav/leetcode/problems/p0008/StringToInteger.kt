@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0008
 import kotlin.test.assertEquals
 
 /**
- * Created on 2019/04/09.
- * https://leetcode.com/problems/string-to-integer-atoi/
+ * LeetCode 8: String to Integer Atoi.
+ *
+ * Parses a signed decimal integer using the atoi conversion rules.
+ *
+ * @see <a href="https://leetcode.com/problems/string-to-integer-atoi/">Problem statement</a>
  */
 class StringToInteger {
     fun myAtoi(str: String): Int {

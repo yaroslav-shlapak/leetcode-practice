@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0061
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * 61. Rotate linked list
- * https://leetcode.com/problems/rotate-list/description/
+ * LeetCode 61: Rotate List.
+ *
+ * Rotates a linked list to the right.
+ *
+ * @see <a href="https://leetcode.com/problems/rotate-list/">Problem statement</a>
  */
 class RotateLinkedList {
     fun rotateRight(head: ListNode?, k: Int): ListNode? {

@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0046
 
-
 /**
- * Created on 2019/07/17.
- * https://leetcode.com/problems/permutations/
+ * LeetCode 46: Permutations.
+ *
+ * Generates permutations of distinct input values.
+ *
+ * @see <a href="https://leetcode.com/problems/permutations/">Problem statement</a>
  */
 class Permutations {
     private lateinit var res: MutableList<List<Int>>

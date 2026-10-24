@@ -5,11 +5,10 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/05/31.
+ * Tests [FindFirstAndLastPositionOfElementInSortedArrayAlternative2],
+ * [FindFirstAndLastPositionOfElementInSortedArrayAlternative3],
+ * [FindFirstAndLastPositionOfElementInSortedArrayLegacy].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0034.FindFirstAndLastPositionOfElementInSortedArrayLegacy
- **/
 class FindFirstAndLastPositionOfElementInSortedArrayTest : FreeSpec({
 
     "search" - {

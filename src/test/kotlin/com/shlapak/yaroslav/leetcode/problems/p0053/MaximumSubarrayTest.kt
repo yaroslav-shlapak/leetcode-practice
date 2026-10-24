@@ -3,7 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0053
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-
+/**
+ * Tests [MaximumSubarray], [MaximumSubarrayAlternative2], [MaximumSubarrayAlternative3].
+ */
 class MaximumSubarrayTest : FreeSpec() {
 
     init {

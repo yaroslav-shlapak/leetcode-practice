@@ -3,10 +3,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0703
 import java.util.PriorityQueue
 
 /**
- * 703. Kth Largest Element in a Stream
- * https://leetcode.com/problems/kth-largest-element-in-a-stream/
+ * LeetCode 703: Kth Largest Element in a Stream.
+ *
+ * Maintains the kth largest value as numbers arrive in a stream.
+ *
+ * @see <a href="https://leetcode.com/problems/kth-largest-element-in-a-stream/">Problem statement</a>
  */
-
 class KthLargest(private val k: Int, nums: IntArray) {
 
     private val minHeap = PriorityQueue<Int>() // space: O(N)
@@ -49,9 +51,3 @@ class KthLargest2(private val k: Int, nums: IntArray) {
     }
 
 }
-
-/**
- * Your KthLargest object will be instantiated and called as such:
- * var obj = KthLargest(k, nums)
- * var param_1 = obj.add(`val`)
- */

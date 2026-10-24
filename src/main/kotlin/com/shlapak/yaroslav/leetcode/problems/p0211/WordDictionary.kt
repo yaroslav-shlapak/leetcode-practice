@@ -1,14 +1,17 @@
 package com.shlapak.yaroslav.leetcode.problems.p0211
 
-/**
- * 211. Add and Search Word - Data structure design
- * https://leetcode.com/problems/add-and-search-word-data-structure-design/
- */
 class TrieNode {
     val children = HashMap<Char, TrieNode>()
     var isWordEnd = false
 }
 
+/**
+ * LeetCode 211: Design Add and Search Words Data Structure.
+ *
+ * Stores words and supports searches containing single-character wildcards.
+ *
+ * @see <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">Problem statement</a>
+ */
 class WordDictionary() {
     private val root: TrieNode = TrieNode()
 

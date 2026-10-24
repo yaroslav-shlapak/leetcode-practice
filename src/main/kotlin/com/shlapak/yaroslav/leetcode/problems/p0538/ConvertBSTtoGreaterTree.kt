@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0538
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 538. Convert BST to Greater Tree
- * https://leetcode.com/problems/convert-bst-to-greater-tree/description/
+ * LeetCode 538: Convert BST to Greater Tree.
+ *
+ * Replaces binary-search-tree values with sums of greater or equal values.
+ *
+ * @see <a href="https://leetcode.com/problems/convert-bst-to-greater-tree/">Problem statement</a>
  */
 class ConvertBSTtoGreaterTree {
     class Dfs {

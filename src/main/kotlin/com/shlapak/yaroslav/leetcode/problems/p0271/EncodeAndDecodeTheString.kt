@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0271
 
 /**
- * 271. Encode and Decode Strings
- * https://leetcode.com/problems/encode-and-decode-strings/
- * https://neetcode.io/problems/string-encode-and-decode?list=neetcode150
+ * LeetCode 271: Encode and Decode Strings.
+ *
+ * Encodes a list of strings and decodes it without losing string boundaries.
+ *
+ * @see <a href="https://leetcode.com/problems/encode-and-decode-strings/">Problem statement</a>
  */
 class EncodeAndDecodeTheString {
     class Codec() {

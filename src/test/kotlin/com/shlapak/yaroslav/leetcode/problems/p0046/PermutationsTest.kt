@@ -3,9 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0046
 import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0046.Permutations
- **/
+/**
+ * Tests [Permutations].
+ */
 class PermutationsTest : FreeSpec() {
 
     init {

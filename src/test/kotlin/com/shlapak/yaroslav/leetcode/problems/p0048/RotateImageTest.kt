@@ -3,9 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0048
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0048.RotateImage
- **/
+/**
+ * Tests [RotateImage].
+ */
 class RotateImageTest : FreeSpec() {
 
     init {

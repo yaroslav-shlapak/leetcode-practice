@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0844
 import java.util.*
 
 /**
- * 844. Backspace String Compare
- * https://leetcode.com/problems/backspace-string-compare/
+ * LeetCode 844: Backspace String Compare.
+ *
+ * Compares strings after interpreting backspace characters.
+ *
+ * @see <a href="https://leetcode.com/problems/backspace-string-compare/">Problem statement</a>
  */
 class BackspaceStringCompare {
     fun backspaceCompare(s: String, t: String): Boolean {

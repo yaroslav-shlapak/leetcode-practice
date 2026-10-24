@@ -2,6 +2,13 @@ package com.shlapak.yaroslav.leetcode.problems.p0133
 
 import com.shlapak.yaroslav.leetcode.common.Node
 
+/**
+ * LeetCode 133: Clone Graph.
+ *
+ * Creates a deep copy of a graph.
+ *
+ * @see <a href="https://leetcode.com/problems/clone-graph/">Problem statement</a>
+ */
 class CloneGraph {
     fun cloneGraph(node: Node?): Node? {
         // This map keeps track of already copied nodes

@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0028
 
 /**
- * Created on 2019/05/19.
- * 28. Find the Index of the First Occurrence in a String
- * https://leetcode.com/problems/implement-strstr/
+ * LeetCode 28: Find the Index of the First Occurrence in a String.
+ *
+ * Finds the first occurrence of one string within another.
+ *
+ * @see <a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">Problem statement</a>
  */
 class ImplementStrStr {
     class TwoPointersSimple {

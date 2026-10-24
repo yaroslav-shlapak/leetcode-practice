@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0917
 
 /**
+ * LeetCode 917: Reverse Only Letters.
  *
- * 917. Reverse Only Letters
- * https://leetcode.com/problems/reverse-only-letters/description/
+ * Reverses letters while leaving nonletter characters in their original positions.
+ *
+ * @see <a href="https://leetcode.com/problems/reverse-only-letters/">Problem statement</a>
  */
 class ReverseOnlyLetters {
     fun reverseOnlyLetters(s: String): String {

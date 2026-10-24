@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0424
 
 /**
- * 424. Longest Repeating Character Replacement
- * https://leetcode.com/problems/longest-repeating-character-replacement/
+ * LeetCode 424: Longest Repeating Character Replacement.
+ *
+ * Finds the longest substring made uniform with at most k replacements.
+ *
+ * @see <a href="https://leetcode.com/problems/longest-repeating-character-replacement/">Problem statement</a>
  */
 class LongestRepeatingCharacterReplacement {
     class MyAttempts {

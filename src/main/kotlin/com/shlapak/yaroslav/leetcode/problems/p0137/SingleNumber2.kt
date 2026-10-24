@@ -1,17 +1,17 @@
 package com.shlapak.yaroslav.leetcode.problems.p0137
 
-
 /**
- * https://leetcode.com/problems/single-number-ii/description/
+ * LeetCode 137: Single Number II.
  *
- * 137. Single Number II
+ * Finds the value appearing once when every other value appears three times.
  *
- * **/
-
+ * @see <a href="https://leetcode.com/problems/single-number-ii/">Problem statement</a>
+ */
 class SingleNumber2 {
     class BitMask {
         /**
-         * Finds the single number in an array where every other number appears exactly three times.
+         * Finds the single number in an array where every other number appears exactly three
+         * times.
          *
          * This implementation uses bit manipulation.
          *
@@ -42,8 +42,8 @@ class SingleNumber2 {
          * - `shl`: shifts the recovered bit back to its original position.
          * - `or`: adds the recovered bit to the final result.
          *
-         * Time complexity: `O(n)`, because the algorithm checks 32 bits for each number.
-         * Space complexity: `O(1)`, because it only uses a few integer variables.
+         * Time: `O(n)`, because the algorithm checks 32 bits for each number.
+         * Space: `O(1)`, because it only uses a few integer variables.
          *
          * This also works for negative numbers because all 32 bits are processed,
          * including the sign bit.

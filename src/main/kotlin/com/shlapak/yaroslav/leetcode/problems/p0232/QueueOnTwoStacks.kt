@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0232
 import java.util.*
 
 /**
- * 232. Implement Queue using Stacks
- * https://leetcode.com/problems/implement-queue-using-stacks/
+ * LeetCode 232: Implement Queue Using Stacks.
+ *
+ * Implements queue operations using two stacks.
+ *
+ * @see <a href="https://leetcode.com/problems/implement-queue-using-stacks/">Problem statement</a>
  */
 class QueueOnTwoStacks {
     class MyQueue() {

@@ -1,10 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0935
 
 /**
- * 935. Knight Dialer
- * https://leetcode.com/problems/knight-dialer/description/
+ * LeetCode 935: Knight Dialer.
+ *
+ * Counts telephone-keypad sequences reachable by knight moves.
+ *
+ * @see <a href="https://leetcode.com/problems/knight-dialer/">Problem statement</a>
  */
-
 class KnightDialler {
     class BacktrackingWithMemoization {
         fun knightDialer(n: Int): Int {

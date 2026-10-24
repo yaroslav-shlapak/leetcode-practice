@@ -5,8 +5,11 @@ import java.util.PriorityQueue
 import kotlin.math.abs
 
 /**
- * 648. Replace Words
- * https://leetcode.com/problems/replace-words/
+ * LeetCode 648: Replace Words.
+ *
+ * Replaces words with the shortest matching dictionary roots.
+ *
+ * @see <a href="https://leetcode.com/problems/replace-words/">Problem statement</a>
  */
 class ReplaceWords {
     class Trie {
@@ -94,4 +97,3 @@ class ReplaceWords {
     }
 
 }
-

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0235
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 235. Lowest Common Ancestor of a Binary Search Tree
- * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+ * LeetCode 235: Lowest Common Ancestor of a Binary Search Tree.
+ *
+ * Finds the lowest common ancestor of two nodes in a binary search tree.
+ *
+ * @see <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">Problem statement</a>
  */
 class LowestCommonAncestor {
     fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {

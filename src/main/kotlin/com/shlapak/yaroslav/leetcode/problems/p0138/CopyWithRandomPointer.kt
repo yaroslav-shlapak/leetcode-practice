@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0138
 
 /**
- * 138. Copy List with Random Pointer
- * https://leetcode.com/problems/copy-list-with-random-pointer/description/
+ * LeetCode 138: Copy List with Random Pointer.
+ *
+ * Copies a linked list with next and random pointers.
+ *
+ * @see <a href="https://leetcode.com/problems/copy-list-with-random-pointer/">Problem statement</a>
  */
 class CopyWithRandomPointer {
     fun copyRandomList(node: Node?): Node? {

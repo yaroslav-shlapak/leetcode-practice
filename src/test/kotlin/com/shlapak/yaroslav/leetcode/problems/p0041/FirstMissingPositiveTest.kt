@@ -4,9 +4,9 @@ import com.shlapak.yaroslav.leetcode.support.asString
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0041.FirstMissingPositive
- **/
+/**
+ * Tests [FirstMissingPositive], [FirstMissingPositiveAlternative2].
+ */
 class FirstMissingPositiveTest : FreeSpec() {
 
     init {

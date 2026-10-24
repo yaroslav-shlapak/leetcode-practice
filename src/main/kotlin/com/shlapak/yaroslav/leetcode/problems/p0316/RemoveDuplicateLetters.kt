@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0316
 
 /**
- * 316. Remove Duplicate Letters
- * https://leetcode.com/problems/remove-duplicate-letters/
+ * LeetCode 316: Remove Duplicate Letters.
+ *
+ * Keeps each distinct letter once to form the smallest lexicographic result.
+ *
+ * @see <a href="https://leetcode.com/problems/remove-duplicate-letters/">Problem statement</a>
  */
 class RemoveDuplicateLetters {
     class StackApproach {

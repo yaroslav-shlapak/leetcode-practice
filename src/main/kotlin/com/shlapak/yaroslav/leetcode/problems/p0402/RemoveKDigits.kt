@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0402
 
 /**
- * 402. Remove K Digits
- * https://leetcode.com/problems/remove-k-digits/
+ * LeetCode 402: Remove K Digits.
+ *
+ * Removes k digits to produce the smallest possible nonnegative integer.
+ *
+ * @see <a href="https://leetcode.com/problems/remove-k-digits/">Problem statement</a>
  */
 class RemoveKDigits {
 

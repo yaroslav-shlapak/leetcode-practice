@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0162
 
 /**
- * 162. Find Peak Element
- * https://leetcode.com/problems/find-peak-element/
+ * LeetCode 162: Find Peak Element.
+ *
+ * Finds an array element greater than its neighbors.
+ *
+ * @see <a href="https://leetcode.com/problems/find-peak-element/">Problem statement</a>
  */
 class FindPeakElement {
     class BruteForce {

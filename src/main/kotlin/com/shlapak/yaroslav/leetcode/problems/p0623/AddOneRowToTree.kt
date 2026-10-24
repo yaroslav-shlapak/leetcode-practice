@@ -5,7 +5,11 @@ import java.util.PriorityQueue
 import kotlin.math.abs
 
 /**
- * 623. Add One Row to tree
+ * LeetCode 623: Add One Row to Tree.
+ *
+ * Inserts a row of nodes at a specified binary-tree depth.
+ *
+ * @see <a href="https://leetcode.com/problems/add-one-row-to-tree/">Problem statement</a>
  */
 class AddOneRowToTree {
     class Bfs {
@@ -50,4 +54,3 @@ class AddOneRowToTree {
     }
 
 }
-

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0009
 import kotlin.test.assertEquals
 
 /**
- * Created on 2019/04/10.
- * https://leetcode.com/problems/palindrome-number/
+ * LeetCode 9: Palindrome Number.
+ *
+ * Determines whether an integer reads the same forwards and backwards.
+ *
+ * @see <a href="https://leetcode.com/problems/palindrome-number/">Problem statement</a>
  */
 class PalindromeNumber {
     fun isPalindrome3(x: Int): Boolean {

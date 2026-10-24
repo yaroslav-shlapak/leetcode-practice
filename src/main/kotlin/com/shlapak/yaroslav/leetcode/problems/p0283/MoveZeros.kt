@@ -1,12 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0283
 
 /**
- * 283. Move Zeroes
- * https://leetcode.com/problems/move-zeroes/description/
- * Given an integer array nums, move all 0's to the end of it
- * while maintaining the relative order of the non-zero elements.
+ * LeetCode 283: Move Zeroes.
  *
- * Note that you must do this in-place without making a copy of the array.
+ * Moves zeros to the end while preserving the order of nonzero values.
+ *
+ * @see <a href="https://leetcode.com/problems/move-zeroes/">Problem statement</a>
  */
 class MoveZeros {
     class OnePassOverwrite {

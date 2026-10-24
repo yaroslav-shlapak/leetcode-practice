@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1855
 
-/*
- * 1855. Maximum Distance Between a Pair of Values
- * https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/description/
+/**
+ * LeetCode 1855: Maximum Distance Between a Pair of Values.
+ *
+ * Finds the greatest valid index distance between two nonincreasing arrays.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-distance-between-a-pair-of-values/">Problem statement</a>
  */
 class MaximumDistanceBetweenAPairOfValues {
 

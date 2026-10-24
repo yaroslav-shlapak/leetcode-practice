@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p2099
 import java.util.PriorityQueue
 
 /**
- * 2099. Find Subsequence of Length K With the Largest Sum
- * https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/
+ * LeetCode 2099: Find Subsequence of Length K with the Largest Sum.
+ *
+ * Selects a length-k subsequence with the largest sum while retaining input order.
+ *
+ * @see <a href="https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/">Problem statement</a>
  */
 class FindSubsequenceOfLengthKWithLargestSum {
 

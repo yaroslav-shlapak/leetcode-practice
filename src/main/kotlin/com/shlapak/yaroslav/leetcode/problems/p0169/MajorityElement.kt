@@ -1,34 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0169
 
 /**
- * 169. Majority Element
- * https://leetcode.com/problems/majority-element/
+ * LeetCode 169: Majority Element.
  *
- * Given an array nums of size n, return the majority element.
+ * Finds the value occurring more than half the time.
  *
- * The majority element is the element that appears more than ⌊n / 2⌋ times.
- * You may assume that the majority element always exists in the array.
- *
- *
- *
- * Example 1:
- *
- * Input: nums = [3,2,3]
- * Output: 3
- * Example 2:
- *
- * Input: nums = [2,2,1,1,1,2,2]
- * Output: 2
- *
- *
- * Constraints:
- *
- * n == nums.length
- * 1 <= n <= 5 * 104
- * -109 <= nums[i] <= 109
- *
- *
- * Follow-up: Could you solve the problem in linear time and in O(1) space?
+ * @see <a href="https://leetcode.com/problems/majority-element/">Problem statement</a>
  */
 class MajorityElement {
     class ConstantSpace2 {

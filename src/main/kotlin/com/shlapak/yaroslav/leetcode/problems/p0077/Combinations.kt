@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0077
 
 /**
- * 77. Combinations
- * https://leetcode.com/problems/combinations/
+ * LeetCode 77: Combinations.
+ *
+ * Generates all k-element combinations from the integers 1 through n.
+ *
+ * @see <a href="https://leetcode.com/problems/combinations/">Problem statement</a>
  */
 class Combinations {
     fun combine(n: Int, k: Int): List<List<Int>> {

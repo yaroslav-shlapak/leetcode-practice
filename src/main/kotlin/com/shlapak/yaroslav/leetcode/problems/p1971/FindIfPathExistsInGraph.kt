@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1971
 
 /**
- * 1971. Find if Path Exists in Graph
- * https://leetcode.com/problems/find-if-path-exists-in-graph/
+ * LeetCode 1971: Find If Path Exists in Graph.
+ *
+ * Checks whether two vertices are connected in an undirected graph.
+ *
+ * @see <a href="https://leetcode.com/problems/find-if-path-exists-in-graph/">Problem statement</a>
  */
 class FindIfPathExistsInGraph {
     fun validPath(n: Int, edges: Array<IntArray>, source: Int, destination: Int): Boolean {

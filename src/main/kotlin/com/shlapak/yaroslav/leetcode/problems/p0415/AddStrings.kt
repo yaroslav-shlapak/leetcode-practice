@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0415
 
 /**
- * 415. Add Strings
- * https://leetcode.com/problems/add-strings/
+ * LeetCode 415: Add Strings.
+ *
+ * Adds nonnegative integers represented as decimal strings.
+ *
+ * @see <a href="https://leetcode.com/problems/add-strings/">Problem statement</a>
  */
 class AddStrings {
     fun addStrings(num1: String, num2: String): String {

@@ -1,9 +1,13 @@
 package com.shlapak.yaroslav.leetcode.problems.p1381
 
 import kotlin.math.min
+
 /**
- * 1381. Design a Stack With Increment Operation
- * https://leetcode.com/problems/design-a-stack-with-increment-operation/
+ * LeetCode 1381: Design a Stack with Increment Operation.
+ *
+ * Provides a bounded stack with increments to its bottom elements.
+ *
+ * @see <a href="https://leetcode.com/problems/design-a-stack-with-increment-operation/">Problem statement</a>
  */
 class CustomStack(maxSize: Int) { // constant time
     private val arr = IntArray(maxSize)

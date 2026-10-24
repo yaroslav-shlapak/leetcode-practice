@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1574
 
 /**
- * 1574. Shortest Subarray to be Removed to Make Array Sorted
- * https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/description/
+ * LeetCode 1574: Shortest Subarray to Be Removed to Make Array Sorted.
+ *
+ * Finds the shortest contiguous removal that leaves an array nondecreasing.
+ *
+ * @see <a href="https://leetcode.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/">Problem statement</a>
  */
 class ShortestSubarrayToBeRemovedToMakeArraySorted {
     class TwoPointers {

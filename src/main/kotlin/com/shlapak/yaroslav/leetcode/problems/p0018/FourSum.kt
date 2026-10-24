@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0018
 
-
 /**
- * Created on 2019/04/24.
- * https://leetcode.com/problems/4sum/
+ * LeetCode 18: 4Sum.
+ *
+ * Finds unique quadruplets whose sum equals a target.
+ *
+ * @see <a href="https://leetcode.com/problems/4sum/">Problem statement</a>
  */
 class FourSum {
     fun fourSum(nums: IntArray, target: Int): List<List<Int>> {

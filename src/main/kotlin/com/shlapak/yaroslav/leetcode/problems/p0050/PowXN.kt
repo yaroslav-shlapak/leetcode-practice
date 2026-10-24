@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0050
 import kotlin.math.round
 
 /**
- * Created on 2019/07/22.
- * https://leetcode.com/problems/powx-n/
+ * LeetCode 50: Pow(x, n).
+ *
+ * Raises a floating-point number to an integer power.
+ *
+ * @see <a href="https://leetcode.com/problems/powx-n/">Problem statement</a>
  */
 class PowXN {
     fun myPow(x: Double, n: Int): Double {

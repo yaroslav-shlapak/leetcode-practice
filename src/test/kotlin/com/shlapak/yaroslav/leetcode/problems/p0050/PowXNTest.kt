@@ -3,9 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0050
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0050.PowXN
- **/
+/**
+ * Tests [PowXN].
+ */
 class PowXNTest : FreeSpec() {
 
     init {

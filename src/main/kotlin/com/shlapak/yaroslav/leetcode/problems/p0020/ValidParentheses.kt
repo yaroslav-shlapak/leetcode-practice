@@ -2,11 +2,6 @@ package com.shlapak.yaroslav.leetcode.problems.p0020
 
 import java.util.*
 
-/**
- * https://leetcode.com/problems/valid-parentheses/
- *
- */
-
 class ValidParenthesesAlternative2 {
     fun isValid(s: String): Boolean {
         val map = mapOf('(' to ')', '{' to '}', '[' to ']')
@@ -30,6 +25,13 @@ class ValidParenthesesAlternative2 {
     }
 }
 
+/**
+ * LeetCode 20: Valid Parentheses.
+ *
+ * Checks that brackets are paired and nested correctly.
+ *
+ * @see <a href="https://leetcode.com/problems/valid-parentheses/">Problem statement</a>
+ */
 class ValidParentheses {
     fun isValid2(s: String): Boolean {
         val stack = LinkedList<Char>()

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0038
 
 /**
- * Created on 2019/06/24.
- * https://leetcode.com/problems/count-and-say/
+ * LeetCode 38: Count and Say.
+ *
+ * Generates a term of the count-and-say sequence.
+ *
+ * @see <a href="https://leetcode.com/problems/count-and-say/">Problem statement</a>
  */
 class CountAndSay {
     fun countAndSay(n: Int): String {

@@ -3,7 +3,13 @@ package com.shlapak.yaroslav.leetcode.problems.p0692
 import java.util.Comparator
 import java.util.PriorityQueue
 
-
+/**
+ * LeetCode 692: Top K Frequent Words.
+ *
+ * Finds the k most frequent words with lexicographic tie-breaking.
+ *
+ * @see <a href="https://leetcode.com/problems/top-k-frequent-words/">Problem statement</a>
+ */
 class TopKFrequentWords {
     class MinHeapApproach {
         fun topKFrequent(words: Array<String>, k: Int): List<String> {

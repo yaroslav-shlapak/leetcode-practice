@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0279
 
+/**
+ * LeetCode 279: Perfect Squares.
+ *
+ * Finds the fewest perfect squares whose sum equals n.
+ *
+ * @see <a href="https://leetcode.com/problems/perfect-squares/">Problem statement</a>
+ */
 class PerfectSquares {
     class DynamicProgramming {
         fun numSquares(n: Int): Int {

@@ -1,10 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p1436
 
 /**
- * 1436. Destination City
- * https://leetcode.com/problems/destination-city/description/
+ * LeetCode 1436: Destination City.
+ *
+ * Finds the city with no outgoing path.
+ *
+ * @see <a href="https://leetcode.com/problems/destination-city/">Problem statement</a>
  */
-
 class DestinationCity {
     fun destCity(paths: List<List<String>>): String {
         val start = paths.map { it[0] }.toSet()

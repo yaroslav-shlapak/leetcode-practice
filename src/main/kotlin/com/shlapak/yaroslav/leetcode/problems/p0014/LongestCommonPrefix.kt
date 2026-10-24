@@ -2,31 +2,6 @@ package com.shlapak.yaroslav.leetcode.problems.p0014
 
 import java.util.*
 
-/**
- * 14. Longest Common Prefix
- *
- * https://leetcode.com/problems/longest-common-prefix/
- *
- * Write a function to find the longest common prefix string amongst an array of strings.
- *
- * If there is no common prefix, return an empty string "".
- *
- * Example 1:
- *
- * Input: strs = ["flower","flow","flight"]
- * Output: "fl"
- * Example 2:
- *
- * Input: strs = ["dog","racecar","car"]
- * Output: ""
- * Explanation: There is no common prefix among the input strings.
- *
- * Constraints:
- *
- * 1 <= strs.length <= 200
- * 0 <= strs[i].length <= 200
- * strs[i] consists of only lowercase English letters if it is non-empty.
- */
 class LongestCommonPrefix4 {
     fun longestCommonPrefix(strs: Array<String>): String {
         // use the first element as trie
@@ -86,6 +61,13 @@ class LongestCommonPrefix2 {
     }
 }
 
+/**
+ * LeetCode 14: Longest Common Prefix.
+ *
+ * Finds the longest prefix shared by all input strings.
+ *
+ * @see <a href="https://leetcode.com/problems/longest-common-prefix/">Problem statement</a>
+ */
 class LongestCommonPrefix {
     fun longestCommonPrefix(strs: Array<String>): String {
         return when (strs.size) {

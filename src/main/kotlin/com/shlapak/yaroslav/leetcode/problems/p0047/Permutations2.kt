@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0047
 
 /**
- * Created on 2019/07/17.
- * https://leetcode.com/problems/permutations-ii/
+ * LeetCode 47: Permutations II.
+ *
+ * Generates unique permutations of input values that may repeat.
+ *
+ * @see <a href="https://leetcode.com/problems/permutations-ii/">Problem statement</a>
  */
 class Permutations2 {
 

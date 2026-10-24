@@ -3,11 +3,6 @@ package com.shlapak.yaroslav.leetcode.problems.p0394
 import java.util.LinkedList
 import java.util.Stack
 
-/**
- * 394. Decode String
- * https://leetcode.com/problems/decode-string/description/
- */
-
 class DecodeString2Stacks { // looks like it's the best solution
     fun decodeString(s: String): String {
         val countStack = Stack<Int>()
@@ -94,6 +89,13 @@ class DecodeString2Stacks2 {
     }
 }
 
+/**
+ * LeetCode 394: Decode String.
+ *
+ * Expands bracketed strings with repetition counts.
+ *
+ * @see <a href="https://leetcode.com/problems/decode-string/">Problem statement</a>
+ */
 class DecodeString {
     data class DecodePoints(
         val startOfStringToRepeat: Int, val startOfNumber: Int, val repetitions: Int

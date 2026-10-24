@@ -5,8 +5,11 @@ import java.util.LinkedList
 import kotlin.collections.toIntArray
 
 /**
- * 143. Reorder List
- * https://leetcode.com/problems/reorder-list/description/
+ * LeetCode 143: Reorder List.
+ *
+ * Reorders a list by alternating nodes from its beginning and end.
+ *
+ * @see <a href="https://leetcode.com/problems/reorder-list/">Problem statement</a>
  */
 class ReorderList {
     fun reorderList(head: ListNode?): Unit {

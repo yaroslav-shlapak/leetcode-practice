@@ -2,13 +2,16 @@ package com.shlapak.yaroslav.leetcode.problems.p1339
 
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
-/**
- * 1339. Maximum Product of Splitted Binary Tree
- *
- * https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/description/
- */
+
 private const val MOD = 1_000_000_007
 
+/**
+ * LeetCode 1339: Maximum Product of Splitted Binary Tree.
+ *
+ * Maximizes the product of subtree sums after removing one tree edge.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/">Problem statement</a>
+ */
 class MaximumProductOfSplittedBinaryTree {
     class Dfs2Simpler {
         fun maxProduct(root: TreeNode?): Int {

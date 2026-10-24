@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0070
 
 /**
- * 70. Climbing Stairs
- * https://leetcode.com/problems/climbing-stairs/
+ * LeetCode 70: Climbing Stairs.
+ *
+ * Counts ways to climb stairs taking one or two steps at a time.
+ *
+ * @see <a href="https://leetcode.com/problems/climbing-stairs/">Problem statement</a>
  */
 class ClimbingStairs {
     fun climbStairs(n: Int): Int {

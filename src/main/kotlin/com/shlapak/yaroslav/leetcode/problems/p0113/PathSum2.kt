@@ -4,8 +4,11 @@ import com.shlapak.yaroslav.leetcode.common.TreeNode
 import java.util.LinkedList
 
 /**
- * 113. Path Sum II
- * https://leetcode.com/problems/path-sum-ii/
+ * LeetCode 113: Path Sum II.
+ *
+ * Finds root-to-leaf paths with a target sum.
+ *
+ * @see <a href="https://leetcode.com/problems/path-sum-ii/">Problem statement</a>
  */
 class PathSum2 {
     class DfsBacktracking {

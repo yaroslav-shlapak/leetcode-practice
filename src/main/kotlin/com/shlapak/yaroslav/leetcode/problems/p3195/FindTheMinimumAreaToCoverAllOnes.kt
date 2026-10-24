@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p3195
 
-
 /**
- * 3195. Find the Minimum Area to Cover All Ones
- * https://leetcode.com/problems/find-the-minimum-area-to-cover-all-ones/
+ * LeetCode 3195: Find the Minimum Area to Cover All Ones.
+ *
+ * Finds the area of the smallest axis-aligned rectangle covering all ones.
+ *
+ * @see <a href="https://leetcode.com/problems/find-the-minimum-area-to-cover-all-ones/">Problem statement</a>
  */
 class FindTheMinimumAreaToCoverAllOnes {
     class Optimal {

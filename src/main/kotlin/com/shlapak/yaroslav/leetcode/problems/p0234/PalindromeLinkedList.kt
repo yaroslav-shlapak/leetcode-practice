@@ -2,9 +2,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0234
 
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
-
 /**
- * https://leetcode.com/problems/palindrome-linked-list/
+ * LeetCode 234: Palindrome Linked List.
+ *
+ * Determines whether a linked list is a palindrome.
+ *
+ * @see <a href="https://leetcode.com/problems/palindrome-linked-list/">Problem statement</a>
  */
 class PalindromeLinkedList {
 

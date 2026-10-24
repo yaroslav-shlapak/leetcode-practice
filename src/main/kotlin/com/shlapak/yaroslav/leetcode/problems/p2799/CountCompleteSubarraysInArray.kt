@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p2799
 
+/**
+ * LeetCode 2799: Count Complete Subarrays in an Array.
+ *
+ * Counts subarrays containing every distinct value in the full array.
+ *
+ * @see <a href="https://leetcode.com/problems/count-complete-subarrays-in-an-array/">Problem statement</a>
+ */
 class CountCompleteSubarraysInArray {
     class BruteForce {
         fun countCompleteSubarrays(nums: IntArray): Int {

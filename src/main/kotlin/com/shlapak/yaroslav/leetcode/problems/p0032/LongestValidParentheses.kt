@@ -3,10 +3,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0032
 import java.util.*
 
 /**
- * Created on 2019/05/28.
- * https://leetcode.com/problems/longest-valid-parentheses/
+ * LeetCode 32: Longest Valid Parentheses.
+ *
+ * Finds the length of the longest well-formed parentheses substring.
+ *
+ * @see <a href="https://leetcode.com/problems/longest-valid-parentheses/">Problem statement</a>
  */
-
 class LongestValidParentheses {
 
     fun longestValidParentheses(s: String): Int {

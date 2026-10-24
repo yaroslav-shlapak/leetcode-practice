@@ -3,6 +3,13 @@ package com.shlapak.yaroslav.leetcode.problems.p0977
 import kotlin.math.min
 import kotlin.math.sqrt
 
+/**
+ * LeetCode 977: Squares of a Sorted Array.
+ *
+ * Returns the sorted squares of a sorted integer array.
+ *
+ * @see <a href="https://leetcode.com/problems/squares-of-a-sorted-array/">Problem statement</a>
+ */
 class SortedSquares {
     class Optimal {
         fun sortedSquares(nums: IntArray): IntArray {

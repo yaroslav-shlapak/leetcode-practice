@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1743
 
-/*
- * 1743. Restore the Array From Adjacent Pairs
- * https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/
+/**
+ * LeetCode 1743: Restore the Array from Adjacent Pairs.
+ *
+ * Restores an array from pairs of adjacent values.
+ *
+ * @see <a href="https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/">Problem statement</a>
  */
 class RestoreTheArrayFromAdjacentPairs {
     class Solution {

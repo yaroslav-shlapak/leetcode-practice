@@ -3,9 +3,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0199
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 import java.util.LinkedList
 
-/*
- * 199. Binary Tree Right Side View
- * https://leetcode.com/problems/binary-tree-right-side-view/
+/**
+ * LeetCode 199: Binary Tree Right Side View.
+ *
+ * Finds the binary-tree values visible from the right side.
+ *
+ * @see <a href="https://leetcode.com/problems/binary-tree-right-side-view/">Problem statement</a>
  */
 class BinaryTreeRightSideView {
     fun rightSideView(root: TreeNode?): List<Int> {

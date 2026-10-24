@@ -7,11 +7,10 @@ import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.collections.shouldContainAll
 
 /**
- * Created on 2019/04/13.
+ * Tests [ThreeSumLegacy].
+ *
+ * Loads larger input and expected-output cases from classpath JSON fixtures.
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0015.ThreeSumLegacy
- **/
 class ThreeSumTest : FreeSpec({
 
     val list = getInput()

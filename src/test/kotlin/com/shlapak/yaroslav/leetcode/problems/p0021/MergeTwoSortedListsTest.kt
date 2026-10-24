@@ -6,13 +6,9 @@ import com.shlapak.yaroslav.leetcode.support.toListNode
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-
 /**
- * Created on 2019/05/03.
+ * Tests [MergeTwoSortedListsLegacy].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0021.MergeTwoSortedListsLegacy
- **/
 class MergeTwoSortedListsTest : FreeSpec({
 
     "mergeTwoLists" - {

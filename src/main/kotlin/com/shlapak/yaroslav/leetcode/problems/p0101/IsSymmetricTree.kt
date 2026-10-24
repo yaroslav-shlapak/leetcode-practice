@@ -4,8 +4,11 @@ import com.shlapak.yaroslav.leetcode.common.TreeNode
 import java.util.LinkedList
 
 /**
- * 101. Symmetric Tree
- * https://leetcode.com/problems/symmetric-tree/
+ * LeetCode 101: Symmetric Tree.
+ *
+ * Determines whether a binary tree is symmetric about its root.
+ *
+ * @see <a href="https://leetcode.com/problems/symmetric-tree/">Problem statement</a>
  */
 class IsSymmetricTree_IterativeBFS {
     fun isSymmetric(root: TreeNode?): Boolean {

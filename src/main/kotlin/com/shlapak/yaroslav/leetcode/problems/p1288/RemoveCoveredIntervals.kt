@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1288
 
 /**
- * 1288. Remove Covered Intervals
- * https://leetcode.com/problems/remove-covered-intervals
+ * LeetCode 1288: Remove Covered Intervals.
+ *
+ * Counts intervals remaining after removing those covered by another interval.
+ *
+ * @see <a href="https://leetcode.com/problems/remove-covered-intervals/">Problem statement</a>
  */
 class RemoveCoveredIntervals {
     class SortingAndPass {

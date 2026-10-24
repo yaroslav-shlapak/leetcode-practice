@@ -4,9 +4,9 @@ import com.shlapak.yaroslav.leetcode.problems.p0242.ValidAnagramLegacy
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0242.ValidAnagramLegacy
- **/
+/**
+ * Tests [ValidAnagramLegacy].
+ */
 class ValidAnagramTest : FreeSpec({
     "ValidAnagram" - {
         val testCases = listOf(

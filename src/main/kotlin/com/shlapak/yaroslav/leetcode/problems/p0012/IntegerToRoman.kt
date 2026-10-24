@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0012
 
 /**
- * Created on 2019/04/12.
- * https://leetcode.com/problems/integer-to-roman/
+ * LeetCode 12: Integer to Roman.
+ *
+ * Converts an integer to a Roman numeral.
+ *
+ * @see <a href="https://leetcode.com/problems/integer-to-roman/">Problem statement</a>
  */
 class IntegerToRoman {
     /*

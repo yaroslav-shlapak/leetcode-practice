@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0200
 
+/**
+ * LeetCode 200: Number of Islands.
+ *
+ * Counts connected islands of land in a grid.
+ *
+ * @see <a href="https://leetcode.com/problems/number-of-islands/">Problem statement</a>
+ */
 class NumberOfIslands {
     class Dfs {
         fun numIslands(grid: Array<CharArray>): Int {

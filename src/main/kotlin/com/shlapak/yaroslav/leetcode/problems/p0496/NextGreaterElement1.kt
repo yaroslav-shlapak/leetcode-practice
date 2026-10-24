@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0496
 
 /**
- * 496. Next Greater Element I
- * https://leetcode.com/problems/next-greater-element-i/
+ * LeetCode 496: Next Greater Element I.
+ *
+ * Finds each queried value's next greater element in a second array.
+ *
+ * @see <a href="https://leetcode.com/problems/next-greater-element-i/">Problem statement</a>
  */
 class NextGreaterElement1 {
     class StackAndMap {

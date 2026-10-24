@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0797
 
 /**
- * 797. All Paths From Source to Target
- * https://leetcode.com/problems/all-paths-from-source-to-target/
+ * LeetCode 797: All Paths from Source to Target.
+ *
+ * Lists paths from the first node to the last node in a directed acyclic graph.
+ *
+ * @see <a href="https://leetcode.com/problems/all-paths-from-source-to-target/">Problem statement</a>
  */
 class AllPathsFromSourceToTarget {
     class DFSAndBacktracking {

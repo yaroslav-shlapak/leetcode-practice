@@ -4,8 +4,11 @@ import java.util.Collections
 import java.util.PriorityQueue
 
 /**
- * 1011. Capacity To Ship Packages Within D Days
- * https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
+ * LeetCode 1011: Capacity to Ship Packages Within D Days.
+ *
+ * Finds the minimum shipping capacity that meets a day limit.
+ *
+ * @see <a href="https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/">Problem statement</a>
  */
 class CapacityToShipPackagesWithinDDays {
     class BinarySearch {

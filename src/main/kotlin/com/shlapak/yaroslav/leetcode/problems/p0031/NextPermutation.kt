@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0031
 
 /**
- * Created on 2019/05/28.
- * https://leetcode.com/problems/next-permutation/
+ * LeetCode 31: Next Permutation.
+ *
+ * Transforms an array into its next lexicographic permutation.
+ *
+ * @see <a href="https://leetcode.com/problems/next-permutation/">Problem statement</a>
  */
 class NextPermutation {
     lateinit var nums: IntArray

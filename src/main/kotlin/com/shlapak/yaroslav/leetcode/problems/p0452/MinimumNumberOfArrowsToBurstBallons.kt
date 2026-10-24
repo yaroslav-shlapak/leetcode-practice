@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0452
 
 /**
- * 452. Minimum Number of Arrows to Burst Balloons
- * https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/
+ * LeetCode 452: Minimum Number of Arrows to Burst Balloons.
+ *
+ * Finds the fewest arrows needed to intersect all balloon intervals.
+ *
+ * @see <a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/">Problem statement</a>
  */
 class MinimumNumberOfArrowsToBurstBallons {
     class Optimal {

@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0054
 
 /**
- * Created on 2019/11/24.
+ * LeetCode 54: Spiral Matrix.
+ *
+ * Traverses a matrix in spiral order.
+ *
+ * @see <a href="https://leetcode.com/problems/spiral-matrix/">Problem statement</a>
  */
 class SpiralMatrix {
     val set = mutableSetOf<String>()

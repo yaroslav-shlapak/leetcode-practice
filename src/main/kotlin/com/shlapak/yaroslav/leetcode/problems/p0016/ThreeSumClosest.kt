@@ -1,9 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0016
 
-
 /**
- * Created on 2019/04/18.
- * https://leetcode.com/problems/3sum-closest/
+ * LeetCode 16: 3Sum Closest.
+ *
+ * Finds the triplet sum closest to a target.
+ *
+ * @see <a href="https://leetcode.com/problems/3sum-closest/">Problem statement</a>
  */
 class ThreeSumClosest {
     fun threeSumClosestNaive(nums: IntArray, target: Int): Int {

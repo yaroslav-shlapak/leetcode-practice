@@ -2,10 +2,6 @@ package com.shlapak.yaroslav.leetcode.problems.p0005
 
 import kotlin.test.assertEquals
 
-/**
- * 5. Longest Palindromic Substring
- * https://leetcode.com/problems/longest-palindromic-substring/description/
- */
 class LongestPalindromicSubstringAlternative2 {
     class TwoPointers {
         fun longestPalindrome(s: String): String {
@@ -34,6 +30,13 @@ class LongestPalindromicSubstringAlternative2 {
     }
 }
 
+/**
+ * LeetCode 5: Longest Palindromic Substring.
+ *
+ * Finds the longest palindromic substring.
+ *
+ * @see <a href="https://leetcode.com/problems/longest-palindromic-substring/">Problem statement</a>
+ */
 class LongestPalindromicSubstring {
     var start = 0
     var end = 0

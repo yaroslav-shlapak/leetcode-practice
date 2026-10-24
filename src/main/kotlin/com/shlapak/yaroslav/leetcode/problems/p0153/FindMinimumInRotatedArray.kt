@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0153
 
 /**
- * 153. Find Minimum in Rotated Sorted Array
- * https://leetcode.com/problems/find-minimum-in-rotated-sorted-array
+ * LeetCode 153: Find Minimum in Rotated Sorted Array.
+ *
+ * Finds the minimum value in a rotated sorted array of distinct values.
+ *
+ * @see <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Problem statement</a>
  */
 class FindMinimumInRotatedArray {
     fun findMin(nums: IntArray): Int {

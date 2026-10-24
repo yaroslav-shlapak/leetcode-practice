@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0875
 
 /**
- * 875. Koko Eating Bananas
- * https://leetcode.com/problems/koko-eating-bananas/description/
+ * LeetCode 875: Koko Eating Bananas.
+ *
+ * Finds the minimum eating speed that finishes the bananas within a time limit.
+ *
+ * @see <a href="https://leetcode.com/problems/koko-eating-bananas/">Problem statement</a>
  */
 class KokoEatingBananas {
     fun minEatingSpeed(piles: IntArray, h: Int): Int {

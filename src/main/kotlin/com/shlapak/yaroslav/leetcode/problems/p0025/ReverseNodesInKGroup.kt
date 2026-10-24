@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0025
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * Created on 2019/05/12.
- * https://leetcode.com/problems/reverse-nodes-in-k-group/
+ * LeetCode 25: Reverse Nodes in K Group.
+ *
+ * Reverses linked-list nodes in groups of k.
+ *
+ * @see <a href="https://leetcode.com/problems/reverse-nodes-in-k-group/">Problem statement</a>
  */
 class ReverseNodesInKGroup {
     fun reverseKGroup(head: ListNode?, k: Int): ListNode? {

@@ -4,8 +4,11 @@ import com.shlapak.yaroslav.leetcode.common.TreeNode
 import java.util.LinkedList
 
 /**
- * 102. Binary Tree Level Order Traversal
- * https://leetcode.com/problems/binary-tree-level-order-traversal/
+ * LeetCode 102: Binary Tree Level Order Traversal.
+ *
+ * Groups binary-tree values by level.
+ *
+ * @see <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Problem statement</a>
  */
 class BinaryTreeLevelOrderTraversal {
     class BFSUsingLinkedList {

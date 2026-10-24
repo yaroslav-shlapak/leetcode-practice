@@ -1,11 +1,15 @@
 package com.shlapak.yaroslav.leetcode.problems.p3075
 
-/*
-    * 3075. Maximize Happiness of Selected Children
-    * https://leetcode.com/problems/maximize-happiness-of-selected-children/
- */
+
 */
 
+/**
+ * LeetCode 3075: Maximize Happiness of Selected Children.
+ *
+ * Maximizes the happiness obtained by selecting k children.
+ *
+ * @see <a href="https://leetcode.com/problems/maximize-happiness-of-selected-children/">Problem statement</a>
+ */
 class MaximizeHappinessOfSelectedChildren {
     fun maximumHappinessSum(happiness: IntArray, k: Int): Long {
         // [5,5,1,2,4]

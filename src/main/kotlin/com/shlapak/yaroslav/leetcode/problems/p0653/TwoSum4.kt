@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0653
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 653. Two Sum IV - Input is a BST
- * https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+ * LeetCode 653: Two Sum IV - Input is a BST.
+ *
+ * Checks whether two binary-search-tree values sum to a target.
+ *
+ * @see <a href="https://leetcode.com/problems/two-sum-iv-input-is-a-bst/">Problem statement</a>
  */
 class TwoSum4 {
 

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1403
 
 /**
- * 1403. Minimum Subsequence in Non-Increasing Order
- * https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/
+ * LeetCode 1403: Minimum Subsequence in Non Increasing Order.
+ *
+ * Selects a smallest subsequence whose sum exceeds the remaining values' sum.
+ *
+ * @see <a href="https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/">Problem statement</a>
  */
 class MinimumSubsequenceInNonIncreasing {
     class BruteForce {

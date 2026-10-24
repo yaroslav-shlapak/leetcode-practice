@@ -2,6 +2,13 @@ package com.shlapak.yaroslav.leetcode.problems.p0257
 
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
+/**
+ * LeetCode 257: Binary Tree Paths.
+ *
+ * Lists all root-to-leaf paths in a binary tree.
+ *
+ * @see <a href="https://leetcode.com/problems/binary-tree-paths/">Problem statement</a>
+ */
 class BinaryTreePaths {
     fun binaryTreePaths(root: TreeNode?): List<String> {
         val res = mutableListOf<String>()

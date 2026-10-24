@@ -5,8 +5,11 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 /**
- * Created on 2019/05/09.
- * https://leetcode.com/problems/merge-k-sorted-lists/
+ * LeetCode 23: Merge K Sorted Lists.
+ *
+ * Merges k sorted linked lists.
+ *
+ * @see <a href="https://leetcode.com/problems/merge-k-sorted-lists/">Problem statement</a>
  */
 class MergeKSortedLists {
 

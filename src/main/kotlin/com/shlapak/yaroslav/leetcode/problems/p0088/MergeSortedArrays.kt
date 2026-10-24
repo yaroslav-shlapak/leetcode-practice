@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0088
 
 /**
- * 88. Merge Sorted Array
- * https://leetcode.com/problems/merge-sorted-array/
+ * LeetCode 88: Merge Sorted Array.
+ *
+ * Merges two sorted arrays into the first array's available storage.
+ *
+ * @see <a href="https://leetcode.com/problems/merge-sorted-array/">Problem statement</a>
  */
 class MergeSortedArrays {
     fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {

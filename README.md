@@ -2,6 +2,9 @@
 
 Kotlin solutions and Kotest tests in a single Gradle module.
 
+See the [Kotlin documentation convention](docs/documentation.md) for problem KDoc,
+implementation notes, shared-type contracts, and test documentation.
+
 ## Layout
 
 All Kotlin packages below start with `com.shlapak.yaroslav.leetcode`.
@@ -224,7 +227,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 917 | [Reverse Only Letters](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0917/ReverseOnlyLetters.kt) | strings | — |
 | 934 | [Shortest Bridge](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0934/ShortestBridge.kt) | graphs | — |
 | 935 | [Knight Dialler](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0935/KnightDialler.kt) | — | — |
-| 946 | [Bag Of Tokens](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0946/BagOfTokens.kt) | — | — |
+| 948 | [Bag Of Tokens](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0946/BagOfTokens.kt) | — | — |
 | 977 | [Squares Of Sorted Array](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0977/SquaresOfSortedArray.kt) | arrays | — |
 | 981 | [Time Based Key Value Store](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0981/TimeBasedKeyValueStore.kt) | design | — |
 | 994 | [Rooting Oranges](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0994/RootingOranges.kt) | graphs | — |

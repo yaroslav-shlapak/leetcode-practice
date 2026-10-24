@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0833
 
 /**
- * 833. Find And Replace in String
- * https://leetcode.com/problems/find-and-replace-in-string/
+ * LeetCode 833: Find and Replace in String.
+ *
+ * Applies indexed string replacements whose source strings match.
+ *
+ * @see <a href="https://leetcode.com/problems/find-and-replace-in-string/">Problem statement</a>
  */
 class FindAndReplaceInString {
     class FirstSolution {

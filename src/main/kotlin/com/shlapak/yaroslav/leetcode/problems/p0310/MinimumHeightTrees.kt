@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0310
 import java.util.LinkedList
 
 /**
- * 310. Minimum Height Trees
- * https://leetcode.com/problems/minimum-height-trees/description/
+ * LeetCode 310: Minimum Height Trees.
+ *
+ * Finds roots that minimize the height of an undirected tree.
+ *
+ * @see <a href="https://leetcode.com/problems/minimum-height-trees/">Problem statement</a>
  */
 class MinimumHeightTrees {
     fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
@@ -44,4 +47,3 @@ class MinimumHeightTrees {
         return leaves.toList()
     }
 }
-

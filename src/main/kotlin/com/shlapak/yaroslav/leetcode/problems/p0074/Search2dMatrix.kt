@@ -1,10 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0074
 
 /**
- * 74. Search a 2D Matrix
- * https://leetcode.com/problems/search-a-2d-matrix/description/
+ * LeetCode 74: Search a 2D Matrix.
+ *
+ * Searches a matrix whose rows form a sorted sequence.
+ *
+ * @see <a href="https://leetcode.com/problems/search-a-2d-matrix/">Problem statement</a>
  */
-
 class Search2dMatrix {
     fun searchMatrix(matrix: Array<IntArray>, target: Int): Boolean {
         val m = matrix.size

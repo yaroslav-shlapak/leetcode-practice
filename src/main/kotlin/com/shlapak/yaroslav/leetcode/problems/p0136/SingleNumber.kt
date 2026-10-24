@@ -1,13 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0136
 
-
 /**
- * https://leetcode.com/problems/single-number/
+ * LeetCode 136: Single Number.
  *
- * 136. Single Number
+ * Finds the value appearing once when every other value appears twice.
  *
- * **/
-
+ * @see <a href="https://leetcode.com/problems/single-number/">Problem statement</a>
+ */
 class SingleNumber {
     class BitMask {
         fun singleNumber(nums: IntArray): Int {

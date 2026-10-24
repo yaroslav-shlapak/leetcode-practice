@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0268
 
 /**
- * 268. Missing Number
- * https://leetcode.com/problems/missing-number/
+ * LeetCode 268: Missing Number.
+ *
+ * Finds the missing value from an array representing the range 0 through n.
+ *
+ * @see <a href="https://leetcode.com/problems/missing-number/">Problem statement</a>
  */
 class MissingNumber {
     class HashSet {

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0303
 
-/*
-303. Range Sum Query - Immutable
-https://leetcode.com/problems/range-sum-query-immutable/description/
+/**
+ * LeetCode 303: Range Sum Query Immutable.
+ *
+ * Answers sum queries over an immutable array.
+ *
+ * @see <a href="https://leetcode.com/problems/range-sum-query-immutable/">Problem statement</a>
  */
 class NumArray(val nums: IntArray) {
 

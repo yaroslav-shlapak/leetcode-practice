@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p3026
 
-/*
-https://leetcode.com/problems/maximum-good-subarray-sum/description/
+/**
+ * LeetCode 3026: Maximum Good Subarray Sum.
+ *
+ * Finds the greatest subarray sum whose endpoint values differ by k.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-good-subarray-sum/">Problem statement</a>
  */
 class MaximumGoodSubarraySum {
 

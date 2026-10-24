@@ -2,10 +2,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0040
 
 import java.util.*
 
-
 /**
- * Created on 2019/07/02.
- * https://leetcode.com/problems/combination-sum-ii/
+ * LeetCode 40: Combination Sum II.
+ *
+ * Finds unique combinations that reach a target using each candidate at most once.
+ *
+ * @see <a href="https://leetcode.com/problems/combination-sum-ii/">Problem statement</a>
  */
 class CombinationSum2 {
     fun combinationSum2(candidates: IntArray, target: Int): List<List<Int>> {

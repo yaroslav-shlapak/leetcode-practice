@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0041
 
 /**
- * Created on 2019/07/03.
- * https://leetcode.com/problems/first-missing-positive/
+ * LeetCode 41: First Missing Positive.
+ *
+ * Finds the smallest positive integer absent from an array.
+ *
+ * @see <a href="https://leetcode.com/problems/first-missing-positive/">Problem statement</a>
  */
 class FirstMissingPositive {
     fun firstMissingPositive(nums: IntArray): Int {

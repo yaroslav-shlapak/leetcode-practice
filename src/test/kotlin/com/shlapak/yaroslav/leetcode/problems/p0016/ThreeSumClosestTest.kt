@@ -3,13 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0016
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-
 /**
- * Created on 2019/04/18.
+ * Tests [ThreeSumClosest].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0016.ThreeSumClosest
- **/
 class ThreeSumClosestTest : FreeSpec({
 
     val inputs = mapOf(

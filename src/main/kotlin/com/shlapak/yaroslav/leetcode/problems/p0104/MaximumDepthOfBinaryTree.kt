@@ -3,10 +3,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0104
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 104. Maximum Depth of Binary Tree
- * https://leetcode.com/problems/maximum-depth-of-binary-tree/
+ * LeetCode 104: Maximum Depth of Binary Tree.
+ *
+ * Finds the maximum depth of a binary tree.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Problem statement</a>
  */
-
 class MaximumDepthOfBinaryTreeRecursive {
     fun maxDepth(root: TreeNode?): Int {
         if (root == null) return 0

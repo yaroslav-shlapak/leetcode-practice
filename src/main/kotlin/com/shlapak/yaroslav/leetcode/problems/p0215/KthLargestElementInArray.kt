@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0215
 import java.util.PriorityQueue
 
 /**
- * 215. Kth Largest Element in an Array
- * https://leetcode.com/problems/kth-largest-element-in-an-array/description/
+ * LeetCode 215: Kth Largest Element in an Array.
+ *
+ * Finds the kth largest value in an array.
+ *
+ * @see <a href="https://leetcode.com/problems/kth-largest-element-in-an-array/">Problem statement</a>
  */
 class KthLargestElementInArray {
     fun findKthLargest(nums: IntArray, k: Int): Int {

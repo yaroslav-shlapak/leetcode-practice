@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p1534
 
 /**
- * 1534. Count Good Triplets
- * https://leetcode.com/problems/count-good-triplets/
+ * LeetCode 1534: Count Good Triplets.
+ *
+ * Counts index-ordered triplets satisfying three distance bounds.
+ *
+ * @see <a href="https://leetcode.com/problems/count-good-triplets/">Problem statement</a>
  */
 class CountGoodTriplets {
     fun countGoodTriplets(arr: IntArray, a: Int, b: Int, c: Int): Int {

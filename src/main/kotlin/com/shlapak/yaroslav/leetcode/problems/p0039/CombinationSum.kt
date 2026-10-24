@@ -2,10 +2,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0039
 
 import java.util.*
 
-
 /**
- * Created on 2019/07/01.
- * https://leetcode.com/problems/combination-sum/
+ * LeetCode 39: Combination Sum.
+ *
+ * Finds combinations that reach a target when candidates may be reused.
+ *
+ * @see <a href="https://leetcode.com/problems/combination-sum/">Problem statement</a>
  */
 class CombinationSum {
 
@@ -161,5 +163,3 @@ class CombinationSum {
         }
     }
 }
-
-

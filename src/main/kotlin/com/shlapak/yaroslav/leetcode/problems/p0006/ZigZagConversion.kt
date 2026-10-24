@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0006
 import kotlin.test.assertEquals
 
 /**
- * Created on 2019/04/08.
- * https://leetcode.com/problems/zigzag-conversion/
+ * LeetCode 6: Zigzag Conversion.
+ *
+ * Reorders characters by reading a zigzag arrangement row by row.
+ *
+ * @see <a href="https://leetcode.com/problems/zigzag-conversion/">Problem statement</a>
  */
 class ZigZagConversion {
     class DirectionalApproach {

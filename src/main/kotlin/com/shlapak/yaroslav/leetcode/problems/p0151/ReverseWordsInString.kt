@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0151
 
 /**
- * 151. Reverse Words in a String
- * https://leetcode.com/problems/reverse-words-in-a-string/
+ * LeetCode 151: Reverse Words in a String.
+ *
+ * Reverses word order and normalizes spaces in a string.
+ *
+ * @see <a href="https://leetcode.com/problems/reverse-words-in-a-string/">Problem statement</a>
  */
 class ReverseWordsInString {
     class ListBasedApproach {
@@ -60,4 +63,3 @@ class ReverseWordsInString {
         }
     }
 }
-

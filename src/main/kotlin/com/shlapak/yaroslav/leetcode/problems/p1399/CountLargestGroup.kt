@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p1399
 
+/**
+ * LeetCode 1399: Count Largest Group.
+ *
+ * Counts the largest groups of integers sharing the same digit sum.
+ *
+ * @see <a href="https://leetcode.com/problems/count-largest-group/">Problem statement</a>
+ */
 class CountLargestGroup {
     fun countLargestGroup(n: Int): Int {
         val map = mutableMapOf<Int, Int>()

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0560
 
 /**
- * 560. Subarray Sum Equals K
- * https://leetcode.com/problems/subarray-sum-equals-k/description/
+ * LeetCode 560: Subarray Sum Equals K.
+ *
+ * Counts contiguous subarrays whose sum equals k.
+ *
+ * @see <a href="https://leetcode.com/problems/subarray-sum-equals-k/">Problem statement</a>
  */
 class SubArraySumsEqualsK {
 
@@ -50,7 +53,8 @@ class SubArraySumsEqualsK {
     class PrefixSum {
         /**
          * Using a map to store the frequency of prefix sums.
-         * The key is the prefix sum and the value is the count of how many times that sum has occurred.
+         * The key is the prefix sum and the value is the count of how many times that sum has
+         * occurred.
          */
         fun subarraySum(nums: IntArray, k: Int): Int {
             var res = 0

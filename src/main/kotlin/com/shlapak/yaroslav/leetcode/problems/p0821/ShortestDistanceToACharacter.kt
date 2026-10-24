@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0821
+
 /**
- * 821. Shortest Distance to a Character
- * https://leetcode.com/problems/shortest-distance-to-a-character/
+ * LeetCode 821: Shortest Distance to a Character.
+ *
+ * Finds each character's distance to the nearest occurrence of a target character.
+ *
+ * @see <a href="https://leetcode.com/problems/shortest-distance-to-a-character/">Problem statement</a>
  */
 class ShortestDistanceToACharacter {
     class Straightforward {

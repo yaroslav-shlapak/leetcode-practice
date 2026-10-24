@@ -3,6 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0054
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
+/**
+ * Tests [SpiralMatrix].
+ */
 class SpiralMatrixTest : FreeSpec() {
 
     init {

@@ -1,9 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problems.p0017
 
-/**
- * Created on 2019/04/23.
- * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
- */
 class LetterCombinationsOfAPhoneNumberRecursive {
     fun letterCombinations(digits: String): List<String> {
         if (digits.isEmpty()) return emptyList()
@@ -78,6 +74,13 @@ class LetterCombinationsOfAPhoneNumberIterative {
     }
 }
 
+/**
+ * LeetCode 17: Letter Combinations of a Phone Number.
+ *
+ * Generates letter combinations represented by telephone keypad digits.
+ *
+ * @see <a href="https://leetcode.com/problems/letter-combinations-of-a-phone-number/">Problem statement</a>
+ */
 class LetterCombinationsOfAPhoneNumber {
 
     private val pad = mapOf(

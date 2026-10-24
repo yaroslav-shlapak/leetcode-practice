@@ -8,11 +8,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/05/09.
+ * Tests [MergeKSortedListsLegacy].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0023.MergeKSortedListsLegacy
- **/
 class MergeKSortedListsTest : FreeSpec({
 
     "mergeKListsNaive" - {

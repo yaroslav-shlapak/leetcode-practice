@@ -1,5 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0904
 
+/**
+ * LeetCode 904: Fruit Into Baskets.
+ *
+ * Finds the longest contiguous section containing at most two fruit types.
+ *
+ * @see <a href="https://leetcode.com/problems/fruit-into-baskets/">Problem statement</a>
+ */
 class FruitIntoBuckets {
     fun totalFruit(fruits: IntArray): Int {
         var max = 0

@@ -1,10 +1,14 @@
 package com.shlapak.yaroslav.leetcode.problems.p0946
 
 /**
- * 946. Bag of Tokens
- * https://leetcode.com/problems/bag-of-tokens/description/
+ * LeetCode 948: Bag of Tokens.
+ *
+ * Maximizes the score obtained by exchanging power and score through tokens.
+ *
+ * This source retains its historical package name, p0946.
+ *
+ * @see <a href="https://leetcode.com/problems/bag-of-tokens/">Problem statement</a>
  */
-
 class BagOfTokens {
     class TwoPointers {
         fun bagOfTokensScore(tokens: IntArray, power: Int): Int {

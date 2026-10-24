@@ -4,9 +4,10 @@ import com.shlapak.yaroslav.leetcode.support.asString
 import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0042.TrappingRainWaterLegacy
- **/
+/**
+ * Tests [TrappingRainWaterAlternative2], [TrappingRainWaterEfficientSimple],
+ * [TrappingRainWaterLegacy].
+ */
 class TrappingRainWaterTest : FreeSpec() {
 
     init {

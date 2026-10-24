@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p2095
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * 2095. Delete the Middle Node of a Linked List
- * https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/
+ * LeetCode 2095: Delete the Middle Node of a Linked List.
+ *
+ * Removes the middle node of a linked list.
+ *
+ * @see <a href="https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/">Problem statement</a>
  */
 class DeleteTheMiddleNodeInALinkedList {
     fun deleteMiddle(head: ListNode?): ListNode? {

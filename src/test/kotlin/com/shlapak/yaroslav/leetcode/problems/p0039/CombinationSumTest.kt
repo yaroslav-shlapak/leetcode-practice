@@ -3,9 +3,9 @@ package com.shlapak.yaroslav.leetcode.problems.p0039
 import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
 
-/** tests for
- * @see CombinationSum
- **/
+/**
+ * Tests [CombinationSum.BacktrackingMemo] and [CombinationSum.Backtracking].
+ */
 class CombinationSumTest : FreeSpec() {
 
     init {

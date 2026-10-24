@@ -1,7 +1,9 @@
 package com.shlapak.yaroslav.leetcode.support
 
 /**
- * Created on 2019/04/24.
+ * Formats at most the first five array values for test diagnostics.
+ *
+ * An empty array uses its default object representation.
  */
 fun IntArray.asString(): String {
     return when (val size = this.size) {
@@ -17,6 +19,9 @@ fun IntArray.asString(): String {
     }
 }
 
+/**
+ * Formats at most the first five list elements for test diagnostics.
+ */
 fun <T> List<T>.asString(): String {
     return when (val size = this.size) {
         0 -> {
@@ -31,6 +36,11 @@ fun <T> List<T>.asString(): String {
     }
 }
 
+/**
+ * Formats at most the first five characters for test diagnostics.
+ *
+ * An empty string is returned unchanged.
+ */
 fun String.asString(): String {
     return when (val size = this.length) {
         0 -> {

@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0572
 import com.shlapak.yaroslav.leetcode.common.TreeNode
 
 /**
- * 572. Subtree of Another Tree
- * https://leetcode.com/problems/subtree-of-another-tree/
+ * LeetCode 572: Subtree of Another Tree.
+ *
+ * Checks whether one tree occurs as a subtree of another.
+ *
+ * @see <a href="https://leetcode.com/problems/subtree-of-another-tree/">Problem statement</a>
  */
 class SubtreeOfAnotherTree {
     class DfsAndBfs {

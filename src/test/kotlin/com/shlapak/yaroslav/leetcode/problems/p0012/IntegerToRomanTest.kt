@@ -4,11 +4,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/04/12.
+ * Tests [IntegerToRoman].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0012.IntegerToRoman
- **/
 class IntegerToRomanTest : FreeSpec({
     val inputs = mapOf(
             1 to "I",

@@ -4,11 +4,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/05/28.
+ * Tests [LongestValidParentheses], [SolutionFaster], [SolutionSlow].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0032.LongestValidParentheses
- **/
 class LongestValidParenthesesTest : FreeSpec({
 
     "longestValidParentheses" - {

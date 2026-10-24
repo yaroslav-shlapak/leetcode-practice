@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p3071
 
 /**
- * 3071. Minimum Operations to Write Y
- * https://leetcode.com/problems/minimum-operations-to-write-y/
+ * LeetCode 3071: Minimum Operations to Write Y.
+ *
+ * Finds the fewest cell changes needed to draw a Y in a grid.
+ *
+ * @see <a href="https://leetcode.com/problems/minimum-operations-to-write-y/">Problem statement</a>
  */
 class MinimumOperationsToWriteY {
     class BruteForce {

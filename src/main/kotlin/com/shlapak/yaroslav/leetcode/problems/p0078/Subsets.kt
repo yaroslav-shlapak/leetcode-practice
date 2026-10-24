@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0078
 
 /**
- * 78. Subsets
- * https://leetcode.com/problems/subsets/
+ * LeetCode 78: Subsets.
+ *
+ * Generates all subsets of distinct input values.
+ *
+ * @see <a href="https://leetcode.com/problems/subsets/">Problem statement</a>
  */
 class SubsetsIterative {
     fun subsets(nums: IntArray): List<List<Int>> {

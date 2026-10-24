@@ -1,28 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0049
 
 /**
- * 49. Group Anagrams
- * https://leetcode.com/problems/group-anagrams/
+ * LeetCode 49: Group Anagrams.
  *
- * Example 1:
+ * Groups strings that are anagrams of one another.
  *
- * Input: strs = ["eat","tea","tan","ate","nat","bat"]
- * Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
- * Example 2:
- *
- * Input: strs = [""]
- * Output: [[""]]
- * Example 3:
- *
- * Input: strs = ["a"]
- * Output: [["a"]]
- *
- *
- * Constraints:
- *
- * 1 <= strs.length <= 104
- * 0 <= strs[i].length <= 100
- * strs[i] consists of lowercase English letters.
+ * @see <a href="https://leetcode.com/problems/group-anagrams/">Problem statement</a>
  */
 class GroupAnagrams {
 
@@ -30,7 +13,8 @@ class GroupAnagrams {
      *  Given an array of strings strs, group the anagrams together.
      *  You can return the answer in any order.
      *
-     *  An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+     *  An Anagram is a word or phrase formed by rearranging the letters of a different word or
+     * phrase,
      *  typically using all the original letters exactly once.
      */
     class SountAsKey2 {

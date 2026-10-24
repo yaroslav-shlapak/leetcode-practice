@@ -1,10 +1,12 @@
 package com.shlapak.yaroslav.leetcode.problems.p0997
 
 /**
- * 997. Find the Town Judge
- * https://leetcode.com/problems/find-the-town-judge/description/
+ * LeetCode 997: Find the Town Judge.
+ *
+ * Finds the person trusted by everyone else who trusts nobody.
+ *
+ * @see <a href="https://leetcode.com/problems/find-the-town-judge/">Problem statement</a>
  */
-
 class FindTheTownJudge {
     class TwoMaps {
         fun findJudge(n: Int, trust: Array<IntArray>): Int {

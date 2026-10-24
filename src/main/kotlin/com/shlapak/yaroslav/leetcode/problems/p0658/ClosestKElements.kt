@@ -5,8 +5,11 @@ import java.util.PriorityQueue
 import kotlin.math.abs
 
 /**
- * 658. Find K Closest Elements
- * https://leetcode.com/problems/find-k-closest-elements/
+ * LeetCode 658: Find K Closest Elements.
+ *
+ * Finds the k sorted-array values closest to a target.
+ *
+ * @see <a href="https://leetcode.com/problems/find-k-closest-elements/">Problem statement</a>
  */
 class ClosestKElements {
     fun findClosestElements5(arr: IntArray, k: Int, x: Int): IntArray {
@@ -124,4 +127,3 @@ class ClosestKElementsLegacy {
         return maxHeapByDistance.map { it.first }.sorted()
     }
 }
-

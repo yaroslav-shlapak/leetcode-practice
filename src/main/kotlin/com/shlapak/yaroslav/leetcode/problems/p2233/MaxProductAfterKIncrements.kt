@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p2233
 import java.util.PriorityQueue
 
 /**
- * 2233. Maximum Product After K Increments
- * https://leetcode.com/problems/maximum-product-after-k-increments/
+ * LeetCode 2233: Maximum Product after K Increments.
+ *
+ * Maximizes an array's product using k single-element increments.
+ *
+ * @see <a href="https://leetcode.com/problems/maximum-product-after-k-increments/">Problem statement</a>
  */
 class MaxProductAfterKIncrements {
     fun maximumProduct(nums: IntArray, k: Int): Int {

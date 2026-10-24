@@ -2,10 +2,12 @@ package com.shlapak.yaroslav.leetcode.problems.p0030
 
 import java.util.*
 
-
 /**
- * Created on 2019/05/22.
- * https://leetcode.com/problems/substring-with-concatenation-of-all-words/
+ * LeetCode 30: Substring with Concatenation of All Words.
+ *
+ * Finds substrings formed by concatenating every supplied word once.
+ *
+ * @see <a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/">Problem statement</a>
  */
 class SubstringWithConcatenationOfAllWords {
 

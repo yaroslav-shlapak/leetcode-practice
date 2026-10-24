@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p1475
 import java.util.Stack
 
 /**
- * 1475. Final Prices With a Special Discount in a Shop
- * https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop
+ * LeetCode 1475: Final Prices with a Special Discount in a Shop.
+ *
+ * Subtracts each price's first following price that is no greater.
+ *
+ * @see <a href="https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/">Problem statement</a>
  */
 class FinalPricesWithSpecialDiscountInShop {
     fun finalPrices(prices: IntArray): IntArray {

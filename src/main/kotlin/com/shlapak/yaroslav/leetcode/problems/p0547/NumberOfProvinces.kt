@@ -6,10 +6,12 @@ typealias Diameter = Int
 typealias Height = Int
 
 /**
- * 547. Number of Provinces
- * https://leetcode.com/problems/number-of-provinces/
+ * LeetCode 547: Number of Provinces.
+ *
+ * Counts connected components in a city adjacency matrix.
+ *
+ * @see <a href="https://leetcode.com/problems/number-of-provinces/">Problem statement</a>
  */
-
 class NumberOfProvinces {
     class Bfs {
         fun findCircleNum(isConnected: Array<IntArray>): Int {

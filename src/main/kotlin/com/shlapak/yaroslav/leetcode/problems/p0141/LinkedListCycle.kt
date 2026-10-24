@@ -2,6 +2,13 @@ package com.shlapak.yaroslav.leetcode.problems.p0141
 
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
+/**
+ * LeetCode 141: Linked List Cycle.
+ *
+ * Detects whether a linked list contains a cycle.
+ *
+ * @see <a href="https://leetcode.com/problems/linked-list-cycle/">Problem statement</a>
+ */
 class LinkedListCycle {
     fun hasCycle2(head: ListNode?): Boolean {
         var p1 = head

@@ -2,19 +2,6 @@ package com.shlapak.yaroslav.leetcode.problems.p0021
 
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
-/**
- * Created on 2019/05/03.
- * https://leetcode.com/problems/merge-two-sorted-lists/
- */
-/**
- * Example:
- * var li = ListNode(5)
- * var v = li.`val`
- * Definition for singly-linked list.
- * class ListNode(var `val`: Int) {
- *     var next: ListNode? = null
- * }
- */
 class MergeTwoLists_TheBest {
     fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
         val top = ListNode(Int.MIN_VALUE)
@@ -43,6 +30,13 @@ class MergeTwoLists_TheBest {
     }
 }
 
+/**
+ * LeetCode 21: Merge Two Sorted Lists.
+ *
+ * Merges two sorted linked lists.
+ *
+ * @see <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Problem statement</a>
+ */
 class MergeTwoSortedLists {
     private fun ListNode?.value(): Int = this?.`val` ?: Int.MAX_VALUE
 
@@ -140,4 +134,3 @@ class MergeTwoSortedListsLegacy {
         }
     }
 }
-

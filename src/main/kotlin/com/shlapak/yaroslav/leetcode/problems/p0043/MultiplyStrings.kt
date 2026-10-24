@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0043
 
 /**
- * Created on 2019/07/09.
- * https://leetcode.com/problems/multiply-strings/
+ * LeetCode 43: Multiply Strings.
+ *
+ * Multiplies nonnegative integers represented as decimal strings.
+ *
+ * @see <a href="https://leetcode.com/problems/multiply-strings/">Problem statement</a>
  */
 class MultiplyStrings {
     fun multiply(num1: String, num2: String): String {

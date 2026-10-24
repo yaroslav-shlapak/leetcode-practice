@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0092
 import com.shlapak.yaroslav.leetcode.common.ListNode
 
 /**
- * 92. Reverse Linked List II
- * https://leetcode.com/problems/reverse-linked-list-ii/
+ * LeetCode 92: Reverse Linked List II.
+ *
+ * Reverses the nodes between two positions in a linked list.
+ *
+ * @see <a href="https://leetcode.com/problems/reverse-linked-list-ii/">Problem statement</a>
  */
 class ReverseLinkedList2 {
     fun reverseBetween(head: ListNode?, left: Int, right: Int): ListNode? {

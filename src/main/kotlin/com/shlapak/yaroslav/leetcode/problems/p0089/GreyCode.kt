@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0089
 
 /**
- * 89. Gray Code
- * https://leetcode.com/problems/gray-code/description/
+ * LeetCode 89: Gray Code.
+ *
+ * Generates a Gray-code sequence for a given bit width.
+ *
+ * @see <a href="https://leetcode.com/problems/gray-code/">Problem statement</a>
  */
 class GreyCode {
     class Solution {

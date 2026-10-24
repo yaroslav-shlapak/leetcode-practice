@@ -1,7 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0814
+
 /**
- * 814. Binary Tree Pruning
- * https://leetcode.com/problems/binary-tree-pruning/
+ * LeetCode 814: Binary Tree Pruning.
+ *
+ * Removes binary-tree subtrees containing no node with value one.
+ *
+ * @see <a href="https://leetcode.com/problems/binary-tree-pruning/">Problem statement</a>
  */
 class BinaryTreePruning {
     class Dfs {

@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0035
 
 /**
- * Created on 2019/06/07.
- * https://leetcode.com/problems/search-remove-position/
+ * LeetCode 35: Search Insert Position.
+ *
+ * Finds a target's position or insertion index in a sorted array.
+ *
+ * @see <a href="https://leetcode.com/problems/search-insert-position/">Problem statement</a>
  */
 class SearchInsertPosition {
     fun searchInsert(nums: IntArray, target: Int): Int {

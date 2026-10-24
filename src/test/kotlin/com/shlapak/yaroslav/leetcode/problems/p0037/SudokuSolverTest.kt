@@ -4,11 +4,8 @@ import io.kotest.matchers.shouldBe
 import io.kotest.core.spec.style.FreeSpec
 
 /**
- * Created on 2019/06/12.
+ * Tests [SudokuSolver].
  */
-/** tests for
- * @see com.shlapak.yaroslav.leetcode.problems.p0037.SudokuSolver
- **/
 internal class SudokuSolverTest : FreeSpec({
 
     "solveSudoku" - {

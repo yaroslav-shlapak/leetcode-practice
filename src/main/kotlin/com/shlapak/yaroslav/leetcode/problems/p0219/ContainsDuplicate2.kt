@@ -1,8 +1,11 @@
 package com.shlapak.yaroslav.leetcode.problems.p0219
 
 /**
- * 219. Contains Duplicate II
- * https://leetcode.com/problems/contains-duplicate-ii/
+ * LeetCode 219: Contains Duplicate II.
+ *
+ * Checks for equal values whose indices are at most k positions apart.
+ *
+ * @see <a href="https://leetcode.com/problems/contains-duplicate-ii/">Problem statement</a>
  */
 class ContainsDuplicate2 {
     class Solution3 {

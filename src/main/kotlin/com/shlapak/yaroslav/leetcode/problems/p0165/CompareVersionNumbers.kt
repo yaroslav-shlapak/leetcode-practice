@@ -3,8 +3,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0165
 import kotlin.time.Duration.Companion.seconds
 
 /**
- * 165. Compare Version Numbers
- * https://leetcode.com/problems/compare-version-numbers/
+ * LeetCode 165: Compare Version Numbers.
+ *
+ * Compares version numbers by their numeric revisions.
+ *
+ * @see <a href="https://leetcode.com/problems/compare-version-numbers/">Problem statement</a>
  */
 class CompareVersionNumbers {
     class Solution {
