@@ -21,10 +21,14 @@ to the canonical problem statement:
 class ThreeSum {
 ```
 
-When a file contains several top-level implementations, attach the problem KDoc
-to the type matching the filename when possible. Other approaches share that
-context. Document a variant when its tradeoffs, assumptions, or limitations need
-explanation; avoid comments that merely repeat its name.
+For new solutions, use one outer class matching the filename and put alternative
+approaches in ordinary nested classes. Attach the problem KDoc to the outer class
+and document each approach's tradeoffs, assumptions, or limitations beside that
+approach. See the [README's structure example](../README.md#multiple-approaches-in-one-file).
+
+Existing files may contain several top-level implementations. Until those are
+migrated, attach the problem KDoc to the type matching the filename when possible.
+Other approaches share that context. Avoid comments that merely repeat a variant's name.
 
 Do not copy the full statement, sample cases, or constraint list. Keep examples
 that explain the implementation and constraints that justify a particular choice,

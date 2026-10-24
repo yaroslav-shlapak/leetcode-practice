@@ -29,12 +29,36 @@ src/
 
 1. Create `src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/pNNNN/`, padding the problem ID to at least four digits.
 2. Use the matching package, for example `com.shlapak.yaroslav.leetcode.problems.p0015`.
-3. Give the file and primary class descriptive names, such as `ThreeSum.kt` and `ThreeSum`. Keep alternative approaches in the same package. Existing `Legacy` and `Alternative` classes preserve earlier implementations.
+3. Use one file per problem, with a descriptive outer class matching the filename, such as `CheckValidCuts.kt` and `CheckValidCuts`. Put alternative approaches in nested classes named after their technique, such as `Intervals` and `InPlace`. Existing top-level `Legacy` and `Alternative` classes preserve earlier implementations and can be migrated when that problem is updated.
 4. Include the problem URL and document the approach and complexity when useful.
 5. Add a matching `ThreeSumTest.kt` under the same package in `src/test/kotlin`. Keep fixtures under `src/test/resources/problems/p0015` and load them through the classpath.
 6. Add the solution and test links to the index below. Topic tags are navigation hints; a problem has only one package regardless of its topics.
 
 Shared production types belong in `common`. Helpers used only by tests belong in `src/test/kotlin/.../support`. Keep problem-specific types beside the solution.
+
+### Multiple approaches in one file
+
+Use ordinary nested classes, without Kotlin's `inner` modifier. Each approach owns
+its implementation and state; the outer class groups solutions to the same problem.
+Keep the problem KDoc on the outer class and implementation notes on each approach.
+
+For example, `problems/p3394/CheckValidCuts.kt` contains:
+
+```kotlin
+class CheckValidCuts {
+    class Intervals {
+        // checkValidCuts implementation using separate interval projections
+    }
+
+    class InPlace {
+        // checkValidCuts implementation that sorts the input array
+    }
+}
+```
+
+Tests instantiate the approaches directly with `CheckValidCuts.Intervals()` and
+`CheckValidCuts.InPlace()`. Both share `problems/p3394/CheckValidCutsTest.kt` under
+the test source root.
 
 ## Running tests
 
@@ -273,4 +297,5 @@ The index lists existing source files, including unfinished solutions. A test li
 | 3195 | [Find The Minimum Area To Cover All Ones](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3195/FindTheMinimumAreaToCoverAllOnes.kt) | — | — |
 | 3216 | [Lexicographically Smallest String After ASwap](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3216/LexicographicallySmallestStringAfterASwap.kt) | graphs, strings | — |
 | 3286 | [Find ASafe Walk Through AGrid](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3286/FindASafeWalkThroughAGrid.kt) | graphs, arrays | — |
+| 3394 | [Check Valid Cuts](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3394/CheckValidCuts.kt) | intervals, sorting | [CheckValidCutsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/problems/p3394/CheckValidCutsTest.kt) |
 | 3843 | [First Element With Unique Frequency](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3843/FirstElementWithUniqueFrequency.kt) | — | — |
