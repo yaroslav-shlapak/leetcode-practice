@@ -16,7 +16,7 @@ class CompareVersionNumbers {
             // v2=01.02.04
             val arr1 = v1.split(".") // [“01”]
             val arr2 = v2.split(".") // [“01]
-            val n = max(arr1.size, arr2.size) //4
+            val n = maxOf(arr1.size, arr2.size) //4
             for (i in 0 until n) {
                 val i1 = if (i < arr1.size) {
                     arr1[i].toInt() // 0 ->1

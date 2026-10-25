@@ -1,7 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems.p0018
 
 import com.shlapak.yaroslav.leetcode.support.asString
-import io.kotest.matchers.collections.shouldContainAll
+import com.shlapak.yaroslav.leetcode.support.shouldMatchUnordered
 import io.kotest.core.spec.style.FreeSpec
 
 /**
@@ -67,8 +67,7 @@ class FourSumTest : FreeSpec({
                 println("actual:   $actual")
                 println("expected: $expected")
                 println("expected.size: ${expected.size}")
-                actual shouldContainAll expected
-                expected shouldContainAll actual
+                actual.map { it.sorted() }.shouldMatchUnordered(expected.map { it.sorted() })
             }
         }
     }

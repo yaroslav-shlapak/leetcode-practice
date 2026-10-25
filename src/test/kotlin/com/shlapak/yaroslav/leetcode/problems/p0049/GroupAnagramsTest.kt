@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problems.p0049
 
-import io.kotest.matchers.collections.shouldContainAll
+import com.shlapak.yaroslav.leetcode.support.shouldMatchUnordered
 import io.kotest.core.spec.style.FreeSpec
 
 /**
@@ -43,7 +43,7 @@ class GroupAnagramsTest : FreeSpec() {
                     val actual = GroupAnagrams.OptimalUsingCountAsKey().groupAnagrams(input)
                     println("actual: ${actual}")
                     println("expected: ${expected}")
-                    actual shouldContainAll expected
+                    actual.map { it.sorted() }.shouldMatchUnordered(expected.map { it.sorted() })
                 }
             }
         }

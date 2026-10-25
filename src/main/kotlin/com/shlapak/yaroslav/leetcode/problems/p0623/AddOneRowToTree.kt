@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems.p0623
 
+import com.shlapak.yaroslav.leetcode.common.TreeNode
+
 
 import java.util.PriorityQueue
 import kotlin.math.abs
@@ -42,8 +44,8 @@ class AddOneRowToTree {
                         queue.addLast(right)
                         cur.right = right
                     } else {
-                        cur.left?.let { queue.addLast(cur.left) }
-                        cur.right?.let { queue.addLast(cur.right) }
+                        cur.left?.let { queue.addLast(it) }
+                        cur.right?.let { queue.addLast(it) }
                     }
 
                 }

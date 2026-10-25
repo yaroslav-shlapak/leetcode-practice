@@ -72,19 +72,19 @@ class ZigZagConversion {
 
 
 fun main() {
-    //println(Solution().convert("PAYPALISHIRING", 5))
-    assertEquals("PYAIHRNAPLSIIG", Solution().convert("PAYPALISHIRING", 2))
+    //println(ZigZagConversion.Solution().convert("PAYPALISHIRING", 5))
+    assertEquals("PYAIHRNAPLSIIG", ZigZagConversion.Solution().convert("PAYPALISHIRING", 2))
     /*
     PYAIHRN
     APLSIIG
     */
-    assertEquals("PAHNAPLSIIGYIR", Solution().convert("PAYPALISHIRING", 3))
+    assertEquals("PAHNAPLSIIGYIR", ZigZagConversion.Solution().convert("PAYPALISHIRING", 3))
     /*
     P   A   H   N
     A P L S I I G
     Y   I   R
     */
-    assertEquals("PINALSIGYAHRPI", Solution().convert("PAYPALISHIRING", 4))
+    assertEquals("PINALSIGYAHRPI", ZigZagConversion.Solution().convert("PAYPALISHIRING", 4))
     /*
     P     I    N
     A   L S  I G
@@ -92,7 +92,7 @@ fun main() {
     P     I
     */
 
-    assertEquals("PHASIYIRPLIGAN", Solution().convert("PAYPALISHIRING", 5))
+    assertEquals("PHASIYIRPLIGAN", ZigZagConversion.Solution().convert("PAYPALISHIRING", 5))
     /*
     P       H
     A     S I
@@ -100,7 +100,7 @@ fun main() {
     P L     I G
     A       N
     */
-    assertEquals("A", Solution().convert("A", 1))
-    assertEquals("A", Solution().convert("A", 0))
-    assertEquals("AB", Solution().convert("AB", 1))
+    assertEquals("A", ZigZagConversion.Solution().convert("A", 1))
+    assertEquals("A", ZigZagConversion.Solution().convert("A", 0))
+    assertEquals("AB", ZigZagConversion.Solution().convert("AB", 1))
 }

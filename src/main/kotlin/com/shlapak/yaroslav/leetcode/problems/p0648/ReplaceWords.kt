@@ -14,7 +14,7 @@ import kotlin.math.abs
 class ReplaceWords {
     class Trie {
         fun replaceWords(dictionary: List<String>, sentence: String): String {
-            val dict = Trie()
+            val dict = PrefixTrie()
             for (s in dictionary) {
                 dict.insert(s)
             }
@@ -32,7 +32,7 @@ class ReplaceWords {
         }
     }
 
-    class Trie() {
+    private class PrefixTrie {
         private class TrieNode() {
             val children: MutableMap<Char, TrieNode> = mutableMapOf()
             var endOfWord: Boolean = false

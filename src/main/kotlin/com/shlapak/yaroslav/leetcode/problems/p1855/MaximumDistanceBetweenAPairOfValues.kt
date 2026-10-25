@@ -18,7 +18,6 @@ class MaximumDistanceBetweenAPairOfValues {
 
             var i = 0
             var j = 0
-            val n = max(nums1.size, nums2.size)
             var max = 0
             while (i < nums1.size && j < nums2.size) {
                 when {

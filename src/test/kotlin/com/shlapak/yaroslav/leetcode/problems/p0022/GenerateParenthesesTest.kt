@@ -1,26 +1,37 @@
 package com.shlapak.yaroslav.leetcode.problems.p0022
 
-import io.kotest.matchers.collections.shouldContainAll
+import com.shlapak.yaroslav.leetcode.support.shouldMatchUnordered
 import io.kotest.core.spec.style.FreeSpec
+import io.kotest.matchers.shouldBe
 
 /**
- * Tests [GenerateParenthesesLegacy].
+ * Tests every parentheses implementation with exact outputs and repeated calls on one instance.
+ * The repository defines zero pairs as an empty result.
  */
 class GenerateParenthesesTest : FreeSpec({
-    "generateParenthesis" - {
-        val inputs = getInputs()
-        inputs.asSequence().forEach { (input, expected) ->
-            "input: $input, expected: $expected" {
-                val actual = GenerateParenthesesLegacy().generateParenthesis(input)
-                println("actual:   $actual")
-                println("expected: $expected")
-                actual shouldContainAll expected
+    val implementations: Map<String, (Int) -> List<String>> = mapOf(
+        "stack" to GenerateParentheses()::generateParenthesis,
+        "recursive" to GenerateParentheses2()::generateParenthesis,
+        "legacy stack" to GenerateParenthesesLegacy()::generateParenthesis,
+    )
+    for ((name, solve) in implementations) {
+        name - {
+            for ((n, expected) in getInputs()) {
+                "generates exactly the combinations for $n pairs" {
+                    solve(n).shouldMatchUnordered(expected)
+                }
+            }
+            "resets state and preserves earlier results across calls" {
+                val first = solve(1)
+                solve(2).shouldMatchUnordered(getInputs().getValue(2))
+                solve(1).shouldMatchUnordered(getInputs().getValue(1))
+                first shouldBe listOf("()")
             }
         }
     }
 })
 
-fun getInputs(): Map<Int, List<String>> {
+private fun getInputs(): Map<Int, List<String>> {
     return mapOf(
             0 to listOf(),
             1 to listOf("()"),

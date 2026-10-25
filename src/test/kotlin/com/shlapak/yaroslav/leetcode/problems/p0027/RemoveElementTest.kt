@@ -12,11 +12,13 @@ class RemoveElementTest : FreeSpec({
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input.nums: ${input.nums.asList()}, input.value: ${input.value} expected: $expected" {
+                val expectedValues = input.nums.filter { it != input.value }.sorted()
                 val actual = RemoveElement().removeElement(input.nums, input.value)
                 println("actual:   $actual")
                 println("expected: $expected")
                 println("input:   ${input.nums.asList().take(expected)}")
                 actual shouldBe expected
+                input.nums.take(actual).sorted() shouldBe expectedValues
             }
         }
     }

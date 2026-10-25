@@ -28,8 +28,8 @@ class OddEvenLinkedList {
             curr = curr.next
             count++
         }
-        even.next = null
-        odd.next = evenStart.next
-        return oddStart.next
+        even?.next = null
+        odd?.next = evenStart?.next
+        return oddStart?.next
     }
 }

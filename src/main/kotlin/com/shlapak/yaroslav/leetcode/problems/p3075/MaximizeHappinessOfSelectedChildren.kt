@@ -1,7 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problems.p3075
 
 
-*/
 
 /**
  * LeetCode 3075: Maximize Happiness of Selected Children.

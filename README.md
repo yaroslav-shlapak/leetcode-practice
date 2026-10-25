@@ -19,7 +19,7 @@ src/
     ├── kotlin/com/shlapak/yaroslav/leetcode/
     │   ├── problems/p0015/ThreeSumTest.kt
     │   ├── support/            # Fixture builders and formatting helpers
-    │   └── examples/           # Test template and Kotest isolation example
+    │   └── regressions/        # Regression checks for repaired solutions
     └── resources/problems/p0015/
         ├── input.json
         └── expected.json
@@ -35,6 +35,9 @@ src/
 6. Add the solution and test links to the index below. Topic tags are navigation hints; a problem has only one package regardless of its topics.
 
 Shared production types belong in `common`. Helpers used only by tests belong in `src/test/kotlin/.../support`. Keep problem-specific types beside the solution.
+
+The test template and Kotest isolation demonstration live in `docs/examples/`.
+They are reference material and are not included in the test results.
 
 ### Multiple approaches in one file
 
@@ -72,7 +75,11 @@ $env:JAVA_HOME = 'C:\path\to\jdk-17'
 
 On macOS or Linux, set `JAVA_HOME` to your JDK 17 installation and use `./gradlew`.
 
-The repository contains unfinished solutions and existing compilation errors. Gradle compiles all production sources before running any test, so a filtered test command also requires those errors to be resolved. The structure migration preserves these implementations; it does not exclude unfinished files from the build.
+The standard `test` task compiles every production source and runs the full suite;
+no source exclusions are required. Collection-result tests compare complete results,
+including duplicate counts, and mutation tests check the affected array contents.
+Both substring-search implementations are enabled. The large ThreeSum fixture runs
+against the noncubic approaches; the cubic reference implementation uses the smaller cases.
 
 ## Problem index
 
@@ -85,7 +92,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 3 | [Longest Substring Without Repeating Characters](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0003/LongestSubstringWithoutRepeatingCharacters.kt) | trees, strings | — |
 | 4 | [Median Of Two Sorted Arrays](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0004/MedianOfTwoSortedArrays.kt) | arrays | — |
 | 5 | [Longest Palindromic Substring](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0005/LongestPalindromicSubstring.kt) | trees, strings | — |
-| 6 | [Zig Zag Conversion](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0006/ZigZagConversion.kt) | strings | — |
+| 6 | [Zig Zag Conversion](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0006/ZigZagConversion.kt) | strings | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 7 | [Reverse Integer](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0007/ReverseInteger.kt) | — | — |
 | 8 | [String To Integer](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0008/StringToInteger.kt) | strings | — |
 | 9 | [Palindrome Number](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0009/PalindromeNumber.kt) | strings | — |
@@ -141,7 +148,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 75 | [Sort Colors](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0075/SortColors.kt) | — | — |
 | 77 | [Combinations](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0077/Combinations.kt) | arrays | — |
 | 78 | [Subsets](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0078/Subsets.kt) | — | — |
-| 86 | [Partition List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0086/PartitionList.kt) | — | — |
+| 86 | [Partition List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0086/PartitionList.kt) | — | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 88 | [Merge Sorted Arrays](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0088/MergeSortedArrays.kt) | arrays | — |
 | 89 | [Grey Code](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0089/GreyCode.kt) | — | — |
 | 92 | [Reverse Linked List2](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0092/ReverseLinkedList2.kt) | linked-lists | — |
@@ -152,7 +159,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 108 | [Sorted Array To Binary Search Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0108/SortedArrayToBinarySearchTree.kt) | trees, arrays, binary-search | — |
 | 112 | [Path Sum](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0112/PathSum.kt) | arrays | — |
 | 113 | [Path Sum2](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0113/PathSum2.kt) | arrays | — |
-| 114 | [Flatten Binary Tree To Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0114/FlattenBinaryTreeToLinkedList.kt) | trees, linked-lists | — |
+| 114 | [Flatten Binary Tree To Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0114/FlattenBinaryTreeToLinkedList.kt) | trees, linked-lists | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 121 | [Best Time To Buy And Sell Stocks](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0121/BestTimeToBuyAndSellStocks.kt)<br>[Best Time To Buy Or Sell Stock](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0121/BestTimeToBuyOrSellStock.kt) | arrays | — |
 | 125 | [Valid Palindrome](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0125/ValidPalindrome.kt) | strings | — |
 | 128 | [Longest Consecutive Sequence](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0128/LongestConsecutiveSequence.kt) | — | — |
@@ -169,7 +176,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 153 | [Find Minimum In Rotated Array](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0153/FindMinimumInRotatedArray.kt) | arrays, binary-search | — |
 | 155 | [Min Stack](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0155/MinStack.kt) | design | — |
 | 162 | [Find Peak Element](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0162/FindPeakElement.kt) | binary-search | — |
-| 165 | [Compare Version Numbers](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0165/CompareVersionNumbers.kt) | — | — |
+| 165 | [Compare Version Numbers](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0165/CompareVersionNumbers.kt) | — | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 167 | [Two Sum2](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0167/TwoSum2.kt) | arrays | — |
 | 169 | [Majority Element](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0169/MajorityElement.kt) | — | — |
 | 189 | [Rotate Array](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0189/RotateArray.kt) | arrays | — |
@@ -177,12 +184,12 @@ The index lists existing source files, including unfinished solutions. A test li
 | 200 | [Number Of Islands](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0200/NumberOfIslands.kt) | graphs | — |
 | 206 | [Reverse Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0206/ReverseLinkedList.kt) | linked-lists | — |
 | 207 | [Course Schedule](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0207/CourseSchedule.kt) | graphs | — |
-| 208 | [Implement Trie](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0208/ImplementTrie.kt) | trie | — |
+| 208 | [Implement Trie](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0208/ImplementTrie.kt) | trie | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 211 | [Word Dictionary](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0211/WordDictionary.kt) | strings, trie | — |
 | 215 | [Kth Largest Element In Array](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0215/KthLargestElementInArray.kt) | arrays | — |
 | 217 | [Contains Duplicate](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0217/ContainsDuplicate.kt) | — | — |
 | 219 | [Contains Duplicate2](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0219/ContainsDuplicate2.kt) | — | — |
-| 226 | [Invert Binary Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0226/InvertBinaryTree.kt) | trees | — |
+| 226 | [Invert Binary Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0226/InvertBinaryTree.kt) | trees | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 232 | [Queue On Two Stacks](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0232/QueueOnTwoStacks.kt) | design | — |
 | 234 | [Palindrome Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0234/PalindromeLinkedList.kt) | linked-lists, strings | — |
 | 235 | [Lowest Common Ancestor](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0235/LowestCommonAncestor.kt) | — | — |
@@ -200,7 +207,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 310 | [Minimum Height Trees](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0310/MinimumHeightTrees.kt) | trees | — |
 | 316 | [Remove Duplicate Letters](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0316/RemoveDuplicateLetters.kt) | strings | — |
 | 324 | [Wiggle Sort2](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0324/WiggleSort2.kt) | — | — |
-| 328 | [Odd Even Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0328/OddEvenLinkedList.kt) | linked-lists | — |
+| 328 | [Odd Even Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0328/OddEvenLinkedList.kt) | linked-lists | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 347 | [Top KFrequent Elements](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0347/TopKFrequentElements.kt) | — | — |
 | 371 | [Sum Of Two Integers](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0371/SumOfTwoIntegers.kt) | arrays | — |
 | 380 | [Insert Delete Get Random](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0380/InsertDeleteGetRandom.kt) | design | — |
@@ -223,11 +230,11 @@ The index lists existing source files, including unfinished solutions. A test li
 | 547 | [Number Of Provinces](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0547/NumberOfProvinces.kt) | graphs | — |
 | 560 | [Sub Array Sums Equals K](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0560/SubArraySumsEqualsK.kt) | arrays | — |
 | 572 | [Subtree Of Another Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0572/SubtreeOfAnotherTree.kt) | trees | — |
-| 623 | [Add One Row To Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0623/AddOneRowToTree.kt) | trees | — |
-| 648 | [Replace Words](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0648/ReplaceWords.kt) | strings, trie | — |
+| 623 | [Add One Row To Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0623/AddOneRowToTree.kt) | trees | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
+| 648 | [Replace Words](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0648/ReplaceWords.kt) | strings, trie | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 653 | [Two Sum4](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0653/TwoSum4.kt) | arrays | — |
 | 658 | [Closest KElements](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0658/ClosestKElements.kt) | — | — |
-| 670 | [Max Swap](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0670/MaxSwap.kt) | — | — |
+| 670 | [Max Swap](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0670/MaxSwap.kt) | — | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 680 | [Valid Palindrome2](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0680/ValidPalindrome2.kt) | strings | — |
 | 682 | [Baseball Game](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0682/BaseballGame.kt) | — | — |
 | 692 | [Top KFrequent Words](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0692/TopKFrequentWords.kt) | strings | — |
@@ -240,18 +247,19 @@ The index lists existing source files, including unfinished solutions. A test li
 | 739 | [Daily Temperatures](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0739/DailyTemperatures.kt) | — | — |
 | 752 | [Open The Lock](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0752/OpenTheLock.kt) | — | — |
 | 797 | [All Paths From Source To Target](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0797/AllPathsFromSourceToTarget.kt) | graphs | — |
-| 814 | [Binary Tree Pruning](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0814/BinaryTreePruning.kt) | trees | — |
+| 814 | [Binary Tree Pruning](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0814/BinaryTreePruning.kt) | trees | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 821 | [Shortest Distance To ACharacter](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0821/ShortestDistanceToACharacter.kt) | — | — |
 | 833 | [Find And Replace In String](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0833/FindAndReplaceInString.kt) | strings | — |
 | 844 | [Backspace String Compare](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0844/BackspaceStringCompare.kt) | strings | — |
 | 853 | [Car Fleet](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0853/CarFleet.kt) | — | — |
 | 875 | [Koko Eating Bananas](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0875/KokoEatingBananas.kt) | — | — |
 | 876 | [Middle Of Linked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0876/MiddleOfLinkedList.kt) | linked-lists | — |
-| 904 | [Fruit Into Buckets](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0904/FruitIntoBuckets.kt) | — | — |
+| 904 | [Fruit Into Buckets](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0904/FruitIntoBuckets.kt) | — | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 917 | [Reverse Only Letters](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0917/ReverseOnlyLetters.kt) | strings | — |
 | 934 | [Shortest Bridge](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0934/ShortestBridge.kt) | graphs | — |
 | 935 | [Knight Dialler](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0935/KnightDialler.kt) | — | — |
 | 948 | [Bag Of Tokens](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0946/BagOfTokens.kt) | — | — |
+| 962 | [Maximum Width Ramp](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0962/MaximumWidthRamp.kt) | arrays, two-pointers, monotonic-stack | [MaximumWidthRampTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/problems/p0962/MaximumWidthRampTest.kt) |
 | 977 | [Squares Of Sorted Array](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0977/SquaresOfSortedArray.kt) | arrays | — |
 | 981 | [Time Based Key Value Store](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0981/TimeBasedKeyValueStore.kt) | design | — |
 | 994 | [Rooting Oranges](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p0994/RootingOranges.kt) | graphs | — |
@@ -267,22 +275,22 @@ The index lists existing source files, including unfinished solutions. A test li
 | 1399 | [Count Largest Group](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1399/CountLargestGroup.kt) | — | — |
 | 1403 | [Minimum Subsequence In Non Increasing](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1403/MinimumSubsequenceInNonIncreasing.kt) | — | — |
 | 1436 | [Destination City](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1436/DestinationCity.kt) | — | — |
-| 1448 | [Count Good Nodes In Binary Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1448/CountGoodNodesInBinaryTree.kt) | trees | — |
+| 1448 | [Count Good Nodes In Binary Tree](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1448/CountGoodNodesInBinaryTree.kt) | trees | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 1475 | [Final Prices With Special Discount In Shop](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1475/FinalPricesWithSpecialDiscountInShop.kt) | — | — |
-| 1534 | [Count Good Triplets](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1534/CountGoodTriplets.kt) | arrays | — |
+| 1534 | [Count Good Triplets](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1534/CountGoodTriplets.kt) | arrays | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 1574 | [Shortest Subarray To Be Removed To Make Array Sorted](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1574/ShortestSubarrayToBeRemovedToMakeArraySorted.kt) | arrays | — |
 | 1743 | [Restore The Array From Adjacent Pairs](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1743/RestoreTheArrayFromAdjacentPairs.kt) | arrays | — |
 | 1768 | [Merge Strings Alternately](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1768/MergeStringsAlternately.kt) | strings | — |
 | 1769 | [Minimum Number Of Operations To Move All Balls To Each Box](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1769/MinimumNumberOfOperationsToMoveAllBallsToEachBox.kt) | — | — |
 | 1791 | [Find Center Of Star Graph](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1791/FindCenterOfStarGraph.kt) | graphs | — |
-| 1855 | [Maximum Distance Between APair Of Values](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1855/MaximumDistanceBetweenAPairOfValues.kt) | — | — |
+| 1855 | [Maximum Distance Between APair Of Values](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1855/MaximumDistanceBetweenAPairOfValues.kt) | — | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 1913 | [Maximum Product Difference Between Two Pairs](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1913/MaximumProductDifferenceBetweenTwoPairs.kt) | — | — |
 | 1971 | [Find If Path Exists In Graph](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p1971/FindIfPathExistsInGraph.kt) | graphs | — |
 | 2037 | [Minimum Number Of Moves To Seat Everyone](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2037/MinimumNumberOfMovesToSeatEveryone.kt) | — | — |
 | 2062 | [Count Vowel Substrings](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2062/CountVowelSubstrings.kt) | trees, strings | — |
 | 2095 | [Delete The Middle Node In ALinked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2095/DeleteTheMiddleNodeInALinkedList.kt) | linked-lists | — |
 | 2099 | [Find Subsequence Of Length KWith Largest Sum](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2099/FindSubsequenceOfLengthKWithLargestSum.kt) | arrays | — |
-| 2130 | [Maximum Twin Sum Of ALinked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2130/MaximumTwinSumOfALinkedList.kt) | linked-lists, arrays | — |
+| 2130 | [Maximum Twin Sum Of ALinked List](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2130/MaximumTwinSumOfALinkedList.kt) | linked-lists, arrays | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 2196 | [Create Binary Tree From Descriptions](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2196/CreateBinaryTreeFromDescriptions.kt) | trees | — |
 | 2233 | [Max Product After KIncrements](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2233/MaxProductAfterKIncrements.kt) | — | — |
 | 2273 | [Find Resultant Array After Removing Anagrams](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2273/FindResultantArrayAfterRemovingAnagrams.kt) | strings, arrays | [FindResultantArrayAfterRemovingAnagramsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/problems/p2273/FindResultantArrayAfterRemovingAnagramsTest.kt) |
@@ -293,7 +301,7 @@ The index lists existing source files, including unfinished solutions. A test li
 | 2799 | [Count Complete Subarrays In Array](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p2799/CountCompleteSubarraysInArray.kt) | arrays | — |
 | 3026 | [Maximum Good Subarray Sum](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3026/MaximumGoodSubarraySum.kt) | arrays | — |
 | 3071 | [Minimum Operations To Write Y](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3071/MinimumOperationsToWriteY.kt) | — | — |
-| 3075 | [Maximize Happiness Of Selected Children](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3075/MaximizeHappinessOfSelectedChildren.kt) | — | — |
+| 3075 | [Maximize Happiness Of Selected Children](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3075/MaximizeHappinessOfSelectedChildren.kt) | — | [CompilationRepairsTest](src/test/kotlin/com/shlapak/yaroslav/leetcode/regressions/CompilationRepairsTest.kt) |
 | 3195 | [Find The Minimum Area To Cover All Ones](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3195/FindTheMinimumAreaToCoverAllOnes.kt) | — | — |
 | 3216 | [Lexicographically Smallest String After ASwap](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3216/LexicographicallySmallestStringAfterASwap.kt) | graphs, strings | — |
 | 3286 | [Find ASafe Walk Through AGrid](src/main/kotlin/com/shlapak/yaroslav/leetcode/problems/p3286/FindASafeWalkThroughAGrid.kt) | graphs, arrays | — |

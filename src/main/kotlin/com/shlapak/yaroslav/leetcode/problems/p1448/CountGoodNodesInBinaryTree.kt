@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems.p1448
 
+import com.shlapak.yaroslav.leetcode.common.TreeNode
+
 import java.util.Stack
 
 /**

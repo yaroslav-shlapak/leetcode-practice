@@ -60,7 +60,7 @@ class ImplementTrie {
 
     class Solution1 {
         class TrieNode {
-            val children = HashMap<Char, com.shlapak.yaroslav.leetcode.problems.p0208.TrieNode>()
+            val children = HashMap<Char, TrieNode>()
             var endOfWord = false
         }
 

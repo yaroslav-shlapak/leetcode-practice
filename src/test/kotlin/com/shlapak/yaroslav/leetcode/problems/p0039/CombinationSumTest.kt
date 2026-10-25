@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problems.p0039
 
-import io.kotest.matchers.collections.shouldContainAll
+import com.shlapak.yaroslav.leetcode.support.shouldMatchUnordered
 import io.kotest.core.spec.style.FreeSpec
 
 /**
@@ -14,7 +14,7 @@ class CombinationSumTest : FreeSpec() {
             inputs.asSequence().forEach { (input, expected) ->
                 "input: ${input}, expected: ${expected}" {
                     val actual = CombinationSum.BacktrackingMemo().combinationSum(input.first, input.second)
-                    actual shouldContainAll expected
+                    actual.map { it.sorted() }.shouldMatchUnordered(expected.map { it.sorted() })
                 }
             }
         }
@@ -25,7 +25,7 @@ class CombinationSumTest : FreeSpec() {
             inputs.asSequence().forEach { (input, expected) ->
                 "input: ${input}, expected: ${expected}" {
                     val actual = CombinationSum.Backtracking().combinationSum(input.first, input.second)
-                    actual shouldContainAll expected
+                    actual.map { it.sorted() }.shouldMatchUnordered(expected.map { it.sorted() })
                 }
             }
         }

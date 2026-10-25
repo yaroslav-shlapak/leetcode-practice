@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems.p1534
 
+import kotlin.math.abs
+
 /**
  * LeetCode 1534: Count Good Triplets.
  *

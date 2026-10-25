@@ -99,7 +99,8 @@ class ThreeSumTest : FreeSpec({
 
 Link nested approaches when the tests instantiate them. Explain fixture sources
 only when relevant. Test KDoc describes coverage; it does not claim that tests
-pass. Example files should explain what they demonstrate or how to use the template.
+pass. Keep assertion-free examples and test templates in `docs/examples/` so they do
+not inflate test results. Explain what each example demonstrates or how to use the template.
 
 ## Formatting and review
 

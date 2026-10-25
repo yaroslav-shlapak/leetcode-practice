@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems.p0086
 
+import com.shlapak.yaroslav.leetcode.common.ListNode
+
 /**
  * LeetCode 86: Partition List.
  *

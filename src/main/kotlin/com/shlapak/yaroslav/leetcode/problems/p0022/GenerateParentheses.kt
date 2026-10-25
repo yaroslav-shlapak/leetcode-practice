@@ -1,6 +1,5 @@
 package com.shlapak.yaroslav.leetcode.problems.p0022
 
-import com.shlapak.yaroslav.leetcode.problems.p0022.GenerateParenthesesLegacy.Candidate
 import java.util.*
 
 /**
@@ -15,12 +14,15 @@ class GenerateParentheses {
     private val stack = Stack<Candidate>()
     private var max: Int = 0
     fun generateParenthesis(n: Int): List<String> {
+        res.clear()
+        stack.clear()
+        if (n <= 0) return emptyList()
         max = n
         stack.add(Candidate("", 0, 0))
         while (stack.isNotEmpty()) {
             backtrack(stack.pop())
         }
-        return res
+        return res.toList()
     }
 
     private fun backtrack(c: Candidate) {
@@ -54,9 +56,11 @@ class GenerateParentheses2 {
     private val resultList = mutableListOf<String>()
     private var max = 0
     fun generateParenthesis(n: Int): List<String> {
+        resultList.clear()
+        if (n <= 0) return emptyList()
         max = n
         generateParenthesis(0, 0, "")
-        return resultList
+        return resultList.toList()
 
     }
 
@@ -81,12 +85,15 @@ class GenerateParenthesesLegacy {
     private val stack = Stack<Candidate>()
     private var max = 0
     fun generateParenthesis(n: Int): List<String> {
+        res.clear()
+        stack.clear()
+        if (n <= 0) return emptyList()
         max = n
         stack.add(Candidate("", 0, 0))
         while (stack.isNotEmpty()) {
             backtrack(stack.pop())
         }
-        return res
+        return res.toList()
     }
 
     private fun backtrack(c: Candidate) {

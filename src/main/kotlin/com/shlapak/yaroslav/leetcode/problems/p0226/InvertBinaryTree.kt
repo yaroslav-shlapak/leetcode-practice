@@ -34,8 +34,8 @@ class InvertBinaryTreeIterative {
             curr.left = curr.right
             curr.right = temp
 
-            if (curr.left != null) stack.addLast(curr.left)
-            if (curr.right != null) stack.addLast(curr.right)
+            curr.left?.let { stack.addLast(it) }
+            curr.right?.let { stack.addLast(it) }
         }
 
         return root

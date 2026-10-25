@@ -67,56 +67,52 @@ class SubstringWithConcatenationOfAllWords {
 
 }
 
+/**
+ * Uses word-sized sliding windows instead of enumerating permutations of the supplied words.
+ */
 class SubstringWithConcatenationOfAllWordsAlternative2 {
-
-    lateinit var w: Sequence<String>
-    lateinit var res: MutableSet<Int>
-    var size: Int = 0
-    var totalLength = 0
-    lateinit var stack: Stack<Pair<Int, MutableList<String>>>
-    lateinit var searchable: String
+    /**
+     * Tracks word frequencies for every starting offset modulo the word length.
+     * Clears the window on unknown words and shrinks it when a word appears too often.
+     * Empty word lists or empty words produce no matches. Neither input is modified.
+     *
+     * Time: O((n + m) * w) with expected constant-time hash-map operations, where n is the
+     * string length, m is the word count, and w is the word length.
+     * Space: O(m * w + r), including r returned indices.
+     */
     fun findSubstring(s: String, words: Array<String>): List<Int> {
-        init(s, words)
-        if (size == 0) {
-            return emptyList()
-        }
-        while (stack.isNotEmpty()) {
-            val pair = stack.pop()
-            //println("pair: $pair")
-            search(pair)
-        }
-        return res.toList()
-    }
+        if (words.isEmpty() || words[0].isEmpty()) return emptyList()
+        val wordLength = words[0].length
+        if (words.size > s.length / wordLength) return emptyList()
+        val expected = words.groupingBy { it }.eachCount()
+        val result = mutableListOf<Int>()
 
-    private fun init(s: String, words: Array<String>) {
-        searchable = s
-        w = words.asSequence()
-        size = words.size
-        totalLength = words.sumBy { it.length }
-        res = mutableSetOf()
-        stack = Stack()
-        val list = w.toMutableList()
-        for (i in 0 until searchable.length) {
-            stack.add(i to list)
-        }
-    }
+        for (offset in 0 until minOf(wordLength, s.length)) {
+            val seen = mutableMapOf<String, Int>()
+            var left = offset
+            var count = 0
+            var right = offset
+            while (right + wordLength <= s.length) {
+                val word = s.substring(right, right + wordLength)
+                right += wordLength
+                if (word !in expected) {
+                    seen.clear()
+                    count = 0
+                    left = right
+                    continue
+                }
 
-    private fun search(pair: Pair<Int, MutableList<String>>) {
-        val (index, list) = pair
-        if (list.isEmpty()) {
-            val startIndex = index - totalLength
-            //println("startIndex: $startIndex")
-            res.add(startIndex)
-            return
-        }
-        list.asSequence().forEachIndexed { i, word ->
-            val lastIndex = index + word.length
-            if (lastIndex <= searchable.length
-                    && searchable.substring(index, lastIndex) == word) {
-                val l = list.toMutableList()
-                l.remove(word)
-                stack.push(lastIndex to l)
+                seen[word] = seen.getOrDefault(word, 0) + 1
+                count++
+                while (seen.getValue(word) > expected.getValue(word)) {
+                    val outgoing = s.substring(left, left + wordLength)
+                    seen[outgoing] = seen.getValue(outgoing) - 1
+                    count--
+                    left += wordLength
+                }
+                if (count == words.size) result.add(left)
             }
         }
+        return result
     }
 }

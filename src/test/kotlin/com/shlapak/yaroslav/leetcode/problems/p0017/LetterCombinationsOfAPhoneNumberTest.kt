@@ -1,6 +1,6 @@
 package com.shlapak.yaroslav.leetcode.problems.p0017
 
-import io.kotest.matchers.collections.shouldContainAll
+import com.shlapak.yaroslav.leetcode.support.shouldMatchUnordered
 import io.kotest.core.spec.style.FreeSpec
 
 /**
@@ -16,7 +16,7 @@ class LetterCombinationsOfAPhoneNumberTest : FreeSpec({
             "input: $input, expected: $expected" {
                 val actual = LetterCombinationsOfAPhoneNumber().letterCombinations(input)
                 println(actual)
-                actual shouldContainAll expected
+                actual.shouldMatchUnordered(expected)
             }
         }
     }

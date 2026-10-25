@@ -1,5 +1,7 @@
 package com.shlapak.yaroslav.leetcode.problems.p0814
 
+import com.shlapak.yaroslav.leetcode.common.TreeNode
+
 /**
  * LeetCode 814: Binary Tree Pruning.
  *

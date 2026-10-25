@@ -103,7 +103,7 @@ class MaxSwap {
             val digit = (num % (power * 10)) / power
 
             val swapNum = num - (digit * power) - (maxDigit * maxDigitPower) + maxDigit * power + digit * maxDigitPower
-            maxSwapNum = max(swapNum, maxSwapNum)
+            maxSwapNum = maxOf(swapNum, maxSwapNum)
 
             if (digit > maxDigit) {
                 maxDigit = digit
@@ -115,5 +115,4 @@ class MaxSwap {
 
         return maxSwapNum
     }
-}
 }

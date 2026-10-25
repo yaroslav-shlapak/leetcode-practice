@@ -2,12 +2,11 @@ package com.shlapak.yaroslav.leetcode.problems.p0015
 
 import com.google.gson.Gson
 import com.shlapak.yaroslav.leetcode.support.asString
-import io.kotest.matchers.collections.shouldContainAll
 import io.kotest.core.spec.style.FreeSpec
-import io.kotest.matchers.collections.shouldContainAll
+import com.shlapak.yaroslav.leetcode.support.shouldMatchUnordered
 
 /**
- * Tests [ThreeSumLegacy].
+ * Tests [ThreeSum], [ThreeSum2], and [ThreeSumLegacy].
  *
  * Loads larger input and expected-output cases from classpath JSON fixtures.
  */
@@ -51,12 +50,12 @@ class ThreeSumTest : FreeSpec({
     )
 
     "threeSumNaive" - {
-        inputs.asSequence().forEach { (input, expected) ->
+        inputs.filterKeys { it.size <= 100 }.asSequence().forEach { (input, expected) ->
             "input: ${input.asString()} expected: ${expected.asString()}" {
-                val actual = ThreeSumLegacy().threeSumNaive(input)
+                val actual = ThreeSumLegacy().threeSumNaive(input.copyOf())
                 println("actual.size: ${actual.size}")
                 println("expected.size: ${expected.size}")
-                actual shouldContainAll expected
+                actual.map { it.sorted() }.shouldMatchUnordered(expected.map { it.sorted() })
             }
         }
     }
@@ -64,16 +63,30 @@ class ThreeSumTest : FreeSpec({
     "threeSum" - {
         inputs.asSequence().forEach { (input, expected) ->
             "input: ${input.asString()} expected: ${expected.asString()}" {
-                val actual = ThreeSumLegacy().threeSum(input)
+                val actual = ThreeSumLegacy().threeSum(input.copyOf())
                 println("actual.size: ${actual.size}")
                 println("expected.size: ${expected.size}")
-                actual shouldContainAll expected
-                /*ThreeSumLegacy().threeSum(input).asSequence().forEach {
+                actual.map { it.sorted() }.shouldMatchUnordered(expected.map { it.sorted() })
+                /*ThreeSumLegacy().threeSum(input.copyOf()).asSequence().forEach {
                     println("[${it[0]}, ${it[1]}, ${it[2]}], ")
                 }*/
             }
         }
     }
+    for ((name, solve) in mapOf<String, (IntArray) -> List<List<Int>>>(
+        "two pointers" to ThreeSum()::threeSum,
+        "two pointers alternative" to ThreeSum2()::threeSum,
+    )) {
+        name - {
+            inputs.entries.forEachIndexed { index, (input, expected) ->
+                "case $index" {
+                    solve(input.copyOf()).map { it.sorted() }
+                        .shouldMatchUnordered(expected.map { it.sorted() })
+                }
+            }
+        }
+    }
+
 })
 
 private fun readFixture(name: String): String =

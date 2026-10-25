@@ -50,7 +50,7 @@ class FlattenBinaryTreeToLinkedList {
         }
     }
 
-    fun Recursive2 {
+    class Recursive2 {
         fun flatten(root: TreeNode?) {
             if (root == null) return
 
@@ -63,7 +63,7 @@ class FlattenBinaryTreeToLinkedList {
             root.left = null
             root.right = left
 
-            var curr = root
+            var curr: TreeNode = root
             while (curr.right != null) {
                 curr = curr.right!!
             }
@@ -71,7 +71,7 @@ class FlattenBinaryTreeToLinkedList {
         }
     }
 
-    fun Iterative {
+    class Iterative {
         fun flatten(root: TreeNode?): Unit {
             var curr = root
 
@@ -90,7 +90,7 @@ class FlattenBinaryTreeToLinkedList {
         }
     }
 
-    fun StackBased {
+    class StackBased {
         fun flatten(root: TreeNode?) {
             if (root == null) return
 

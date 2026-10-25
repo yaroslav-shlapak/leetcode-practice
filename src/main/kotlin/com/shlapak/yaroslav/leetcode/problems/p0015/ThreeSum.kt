@@ -9,10 +9,10 @@ package com.shlapak.yaroslav.leetcode.problems.p0015
  */
 class ThreeSum {
     /**
-     * Attempts a two-pointer search after sorting [nums] in place.
+     * Finds unique triplets using two pointers after sorting [nums] in place.
      *
-     * Incomplete: negative sums do not advance either pointer, and duplicate skipping
-     * can access beyond the end of the array. Use another implementation for results.
+     * Time: O(n²).
+     * Space: O(1) auxiliary space, excluding sorting workspace and the result.
      */
     fun threeSum(nums: IntArray): List<List<Int>> {
         val res = mutableListOf<List<Int>>()
@@ -31,12 +31,13 @@ class ThreeSum {
                 val threeSum = nums[i] + nums[l] + nums[r]
                 when {
                     threeSum > 0 -> r--
-                    threeSum < 0 -> l--
+                    threeSum < 0 -> l++
                     else -> {
                         res.add(listOf(nums[i], nums[l], nums[r]))
-
-                        while (r > l && nums[r] == nums[r + 1]) {
-                            r--
+                        l++
+                        r--
+                        while (l < r && nums[l] == nums[l - 1]) {
+                            l++
                         }
                     }
                 }
@@ -138,7 +139,7 @@ class ThreeSumLegacy {
             for (j in i + 1 until nums.size) {
                 val comp = 0 - (nums[i] + nums[j])
                 if (map.contains(comp) && map[comp] != i && map[comp] != j) {
-                    res.add(listOf(comp, nums[i], nums[j]))
+                    res.add(listOf(comp, nums[i], nums[j]).sorted())
                 }
             }
         }

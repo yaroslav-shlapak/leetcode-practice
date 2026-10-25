@@ -13,11 +13,13 @@ class RemoveDuplicatesFromSortedArrayTest : FreeSpec({
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input: ${input.asList()}, expected: $expected" {
+                val expectedValues = input.distinct()
                 val actual = RemoveDuplicatesFromSortedArray().removeDuplicates1(input)
                 println("actual:   $actual")
                 println("expected: $expected")
                 println("input:   ${input.asList().take(expected)}")
                 actual shouldBe expected
+                input.take(actual) shouldBe expectedValues
             }
         }
     }
@@ -26,11 +28,13 @@ class RemoveDuplicatesFromSortedArrayTest : FreeSpec({
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input: ${input.asList()}, expected: $expected" {
+                val expectedValues = input.distinct()
                 val actual = RemoveDuplicatesFromSortedArray().removeDuplicates(input)
                 println("actual:   $actual")
                 println("expected: $expected")
                 println("input:   ${input.asList().take(expected)}")
                 actual shouldBe expected
+                input.take(actual) shouldBe expectedValues
             }
         }
     }

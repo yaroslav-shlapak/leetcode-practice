@@ -27,7 +27,7 @@ class SubstringWithConcatenationOfAllWordsTest : FreeSpec({
         val inputs = getInputs()
         inputs.asSequence().forEach { (input, expected) ->
             "input.s: ${input.s.asString()}, input.words: ${input.words.toList().asString()} expected: ${expected.asString()}"
-                    .config(timeout = 2.seconds, enabled = false) {
+                    .config(timeout = 2.seconds) {
                         val actual = SubstringWithConcatenationOfAllWordsAlternative2().findSubstring(input.s, input.words)
                         println("actual:   $actual")
                         println("expected: $expected")

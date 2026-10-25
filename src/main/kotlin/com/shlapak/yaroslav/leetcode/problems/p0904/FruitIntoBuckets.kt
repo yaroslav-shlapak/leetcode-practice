@@ -119,5 +119,4 @@ class FruitIntoBuckets {
     }
 
 
-    buffered
 }
