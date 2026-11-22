@@ -8,6 +8,25 @@ package com.shlapak.yaroslav.leetcode.problems.p0041
  * @see <a href="https://leetcode.com/problems/first-missing-positive/">Problem statement</a>
  */
 class FirstMissingPositive {
+    class HashSetScan {
+        /**
+         * Scans for the first missing value among 1 through the size of [nums].
+         * If all are present, the answer is one greater than the size. Leaves [nums] unchanged.
+         *
+         * Expected time: O(n).
+         * Space: O(n).
+         */
+        fun firstMissingPositive(nums: IntArray): Int {
+            val values = nums.toSet()
+            for (candidate in 1..nums.size) {
+                if (candidate !in values) {
+                    return candidate
+                }
+            }
+            return nums.size + 1
+        }
+    }
+
     fun firstMissingPositive(nums: IntArray): Int {
         nums.sort()
         if (nums.isEmpty() || nums[0] > 1) {
