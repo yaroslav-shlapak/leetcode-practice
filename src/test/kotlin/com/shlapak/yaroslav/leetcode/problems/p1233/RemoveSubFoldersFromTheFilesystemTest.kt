@@ -4,13 +4,11 @@ import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 
 /**
- * Tests [RemoveSubFoldersFromTheFilesystem] and [RemoveSubFoldersFromTheFilesystem.Trie]
- * for ancestry, path boundaries, and input preservation.
+ * Tests [RemoveSubFoldersFromTheFilesystem] for ancestry, path boundaries, and input preservation.
  */
 class RemoveSubFoldersFromTheFilesystemTest : FreeSpec({
     val approaches = listOf(
-        "sorting" to RemoveSubFoldersFromTheFilesystem()::removeSubfolders,
-        "trie" to RemoveSubFoldersFromTheFilesystem.Trie()::removeSubfolders
+        "sorting" to RemoveSubFoldersFromTheFilesystem()::removeSubfolders
     )
     for ((name, removeSubfolders) in approaches) {
         name - {

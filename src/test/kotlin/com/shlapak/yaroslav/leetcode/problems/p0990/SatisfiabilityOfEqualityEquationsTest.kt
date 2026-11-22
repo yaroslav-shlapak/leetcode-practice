@@ -3,11 +3,10 @@ package com.shlapak.yaroslav.leetcode.problems.p0990
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.matchers.shouldBe
 
-/** Tests [SatisfiabilityOfEqualityEquations.UnionFind] and [SatisfiabilityOfEqualityEquations.DepthFirstSearch]. */
+/** Tests [SatisfiabilityOfEqualityEquations] across equality and inequality cases. */
 class SatisfiabilityOfEqualityEquationsTest : FreeSpec({
     val solutions = listOf(
-        "union find" to SatisfiabilityOfEqualityEquations.UnionFind()::equationsPossible,
-        "depth-first search" to SatisfiabilityOfEqualityEquations.DepthFirstSearch()::equationsPossible
+        "union find" to SatisfiabilityOfEqualityEquations()::equationsPossible
     )
 
     for ((name, solve) in solutions) {
